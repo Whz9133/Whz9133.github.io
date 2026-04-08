@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Wangz Lab</title>
+<title>Notes</title>
 <meta name="description" content="Test Wang Lab">
 <meta name="keywords" content="">
 <meta name="author" content="Wang">
@@ -16,14 +16,14 @@
 
 
 <!-- Open Graph tags -->
-<meta property="og:title" content="Wangz Lab">
+<meta property="og:title" content="Notes">
 <meta property="og:description" content="Test Wang Lab">
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://Whz9133.github.io/archives/2026/04/index.html">
+<meta property="og:url" content="http://Whz9133.github.io/notes/index.html">
 
 <!-- Twitter Card tags -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Wangz Lab">
+<meta name="twitter:title" content="Notes">
 <meta name="twitter:description" content="Test Wang Lab">
 
 <!-- Academicons -->
@@ -287,53 +287,67 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <!-- About Section -->
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-base-content">About</h2>
-
-  <!-- Avatar -->
-  <div class="p-4 text-center border-base-300 flex flex-col items-center cursor-pointer lg:hidden">
-    <div class="avatar mb-4">
-      <div class="w-24 rounded-full ring ring-primary ring-offset-base-100">
-        <img
-          src="/images/wangz.png"
-          alt="Profile"
-          class="transition-transform duration-500 hover:rotate-210 cursor-pointer rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 w-24"
-        />
-      </div>
-    </div>
-    <h2 class="text-xl font-bold text-base-content">Wang</h2>
-    <p class="text-base-content opacity-80">COPD</p>
-  </div>
-
-  <!--About-->
-  <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content">
-    <div class="card-body">
-      <div class="prose max-w-none text-base">
-        2009年毕业于武汉大学获生物学学士学位，2014年于美国弗吉尼亚大学获得微生物学博士学位；2014年至2018年就职于美国葛兰素史克（GlaxoSmithKline）计算生物学部门任博士后和高级研究员。2018年10月作为华南师范大学青年拔尖人才引进到华南师范大学生命科学学院，从事人体微生物组学研究。2019年获广东省青年珠江学者，现任广东省精准医学应用学会精准健康管理分会常务委员，广东省慢阻肺康复工程技术研究中心委员会委员等。 <br><br> 从事人体微生物组学研究，在American Journal of Respiratory and Critical Care Medicine，European Respiratory Journal，Thorax，Molecular Biology and Evolution，ISME Journal，Nature等国际期刊上发表论文20余篇。相关工作得到了Science，Nature Reviews Microbiology，Lancet，Nature Genetics等期刊他人千余次引用，得到期刊Editorial报道，F1000以及著名科学媒体Science Daily，Scientific American和BBC等专题报道。主持国家自然科学基金面上项目等国家及省部级项目多项，作为主要完成人参与英国MRC和美国NSF资助重大项目。担任Molecular Biology and Evolution、mSystems等期刊审稿人。
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Research Interests -->
-
-
-<!-- Recent Notes -->
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-base-content">Recent Notes</h2>
+    <div class="container mx-auto px-4">
+  <h1 class="text-4xl font-extrabold mb-8 text-base-content">Research Notes</h1>
   
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Search and Filter -->
+  <!-- Filters -->
+  <div class="glass-card p-4 mb-8">
+    <div class="flex flex-wrap gap-4">
+      <!-- Category Filter -->
+      <div class="form-control">
+        <select class="select select-bordered" id="categoryFilter" name="categoryFilter">
+          <option value="">All Categories</option>
+          
+        </select>
+      </div>
+
+      <!-- Year Filter -->
+      <div class="form-control">
+        <select class="select select-bordered" id="yearFilter" name="yearFilter">
+          <option value="">All Years</option>
+          
+            <option value="2026">2026</option>
+          
+        </select>
+      </div>
+
+      <!-- Search -->
+      <div class="form-control flex-1">
+        <input type="text" placeholder="Search notes..." class="input input-bordered" id="searchInput" />
+      </div>
+    </div>
+
+    <!-- Results Count -->
+    <div class="mt-2 text-sm opacity-70">
+      <span id="resultsCount">Showing all 1 notes</span>
+    </div>
+
+    <!-- Search suggestions (hidden by default) -->
+    <div id="searchSuggestions" class="hidden mt-2">
+      <div class="bg-base-100 border border-base-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
+        <!-- Search suggestions will be populated here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Posts Archive -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="notesContainer">
     
-      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 h-80 flex flex-col">
+      <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 note-item h-80 flex flex-col" 
+               data-category=""
+               data-year="2026"
+               data-title="hello world"
+               data-content=""
+               data-tags="">
         <div class="card-body p-6 flex flex-col h-full">
           <!-- Header -->
           <div class="mb-4">
-            <h3 class="card-title text-lg font-bold leading-tight mb-2">
+            <h2 class="card-title text-lg font-bold leading-tight mb-2">
               <a href="/2026/04/07/test/" class="hover:text-primary no-underline transition-colors duration-200">
                 Hello World
               </a>
-            </h3>
+            </h2>
             <div class="flex items-center justify-between">
               <time class="text-sm opacity-70">
                 Apr 07, 2026
@@ -354,9 +368,7 @@ var _hmt = _hmt || [];
           <div class="card-actions justify-end mt-auto">
             <a href="/2026/04/07/test/" class="btn btn-primary btn-sm">
               Read More
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -364,70 +376,275 @@ var _hmt = _hmt || [];
     
   </div>
 
-  <!-- View All -->
-  <div class="text-center mt-8">
-    <a href="/notes" class="btn btn-primary">View All Notes</a>
+  <!-- Empty State -->
+  <div id="emptyState" class="text-center py-16 hidden">
+    <div class="text-6xl opacity-20 mb-4">📝</div>
+    <h3 class="text-xl font-semibold mb-2">No notes found</h3>
+    <p class="opacity-70">Try adjusting your search criteria</p>
   </div>
+
+  <!-- Pagination (if needed) -->
+  
 </div>
 
-<!-- Featured Publications -->
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-base-content">Featured Publications</h2>
+<script>
+let searchData = [];
+let allPosts = [];
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const yearFilter = document.getElementById('yearFilter');
+  const resultsCount = document.getElementById('resultsCount');
+  const noteItems = document.querySelectorAll('.note-item');
+
+  // Store all posts data
+  allPosts = Array.from(noteItems).map(item => ({
+    element: item,
+    title: item.dataset.title,
+    content: item.dataset.content,
+    category: item.dataset.category,
+    categories: item.dataset.category.split(',').filter(c => c.trim()),
+    year: item.dataset.year,
+    tags: item.dataset.tags ? item.dataset.tags.split(',').filter(t => t.trim()) : []
+  }));
+
+  // Handle URL parameters for category and tag filtering
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  const tagParam = urlParams.get('tag');
+  
+  if (categoryParam) {
+    categoryFilter.value = categoryParam;
+  }
+  
+  // Initial filter
+  filterPosts();
+
+  // Load search data from hexo-generator-search
+  loadSearchData();
+
+  async function loadSearchData() {
+    try {
+      const response = await fetch('/search.xml');
+      const text = await response.text();
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(text, 'text/xml');
+      const entries = xmlDoc.querySelectorAll('entry');
+      
+      searchData = Array.from(entries).map(entry => ({
+        title: entry.querySelector('title')?.textContent || '',
+        content: entry.querySelector('content')?.textContent || '',
+        url: entry.querySelector('url')?.textContent || '',
+        categories: entry.querySelector('categories')?.textContent || '',
+        tags: entry.querySelector('tags')?.textContent || ''
+      }));
+    } catch (error) {
+      console.warn('Could not load search data:', error);
+      // Fallback to local search if XML fails
+      searchData = allPosts.map(post => ({
+        title: post.title,
+        content: post.content,
+        url: post.element.querySelector('a').href,
+        categories: post.category,
+        tags: ''
+      }));
+    }
+  }
+
+  function filterPosts() {
+    const categoryVal = categoryFilter.value;
+    const yearVal = yearFilter.value;
+    const searchVal = searchInput.value.toLowerCase().trim();
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagParam = urlParams.get('tag');
     
-      <div class="card glass rounded-box shadow-md bg-base-100 text-base-content hover:shadow-lg transition-all duration-300">
-        <div class="card-body p-4">
-          <!-- Title + Type -->
-          <h3 class="card-title text-lg font-semibold flex items-center gap-2">
-            <span class="title">示例论文标题</span>
-            
-          </h3>
+    let visibleCount = 0;
 
-          <!-- Authors / Venue / Year -->
-          <div class="opacity-80 text-sm mt-1">
-            
-              <p class="authors font-medium">作者1, 作者2</p>
-            
-            
-            
-              <p class="text-xs text-gray-500">2025</p>
-            
-          </div>
+    allPosts.forEach(post => {
+      const matchesCategory = !categoryVal || post.categories.includes(categoryVal);
+      const matchesYear = !yearVal || post.year === yearVal;
+      
+      // Check if post matches tag filter
+      let matchesTag = !tagParam;
+      if (tagParam) {
+        // Use the tags data from the post data
+        matchesTag = post.tags.some(tag => tag.trim() === tagParam.trim());
+      }
+      
+      // Search functionality
+      let matchesSearch = true;
+      if (searchVal.length >= 2) {
+        matchesSearch = post.title.includes(searchVal) || 
+                      post.content.includes(searchVal);
+        
+        // Use search data if available
+        if (searchData.length > 0) {
+          const postUrl = post.element.querySelector('a').getAttribute('href');
+          const searchMatch = searchData.find(data => data.url.includes(postUrl));
+          if (searchMatch) {
+            matchesSearch = searchMatch.title.toLowerCase().includes(searchVal) ||
+                           searchMatch.content.toLowerCase().includes(searchVal) ||
+                           searchMatch.categories.toLowerCase().includes(searchVal) ||
+                           searchMatch.tags.toLowerCase().includes(searchVal);
+          }
+        }
+      } else if (searchVal.length > 0 && searchVal.length < 2) {
+        matchesSearch = false;
+      }
 
-          <!-- Buttons -->
-          <div class="card-actions justify-end mt-3 gap-2">
-            
-              <a href="https://doi.org/10.xxxx/xxxxx" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                <i class="ai ai-doi mr-1"></i>DOI
-              </a>
-            
-            
-          </div>
-        </div>
-      </div>
+      if (matchesCategory && matchesYear && matchesTag && matchesSearch) {
+        post.element.style.display = 'block';
+        visibleCount++;
+      } else {
+        post.element.style.display = 'none';
+      }
+    });
+
+    // Update results count
+    if (searchVal || categoryVal || yearVal || tagParam) {
+      resultsCount.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''}`;
+    } else {
+      resultsCount.textContent = `Showing all ${allPosts.length} notes`;
+    }
+  }
+
+  // Initialize filters
+  categoryFilter.addEventListener('change', filterPosts);
+  yearFilter.addEventListener('change', filterPosts);
+  searchInput.addEventListener('input', debounce(filterPosts, 300));
+
+  // Debounce function for search
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  function highlightText(element, query) {
+    const titleElement = element.querySelector('.card-title a, .card-title span');
+    const contentElement = element.querySelector('.prose');
     
-  </div>
-
-  <!-- View All -->
-  <div class="text-center mt-8">
-    <a href="/publications" class="btn btn-primary">View All Publications</a>
-  </div>
-</div>
-
-
-
-<!-- Featured Projects -->
-<div class="container mx-auto px-4 py-8">
-  <h2 class="text-3xl font-bold mb-8 text-base-content">Featured Projects</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    if (titleElement) {
+      titleElement.innerHTML = titleElement.innerHTML.replace(
+        new RegExp(`(${escapeRegExp(query)})`, 'gi'),
+        '<mark class="bg-yellow-200 text-yellow-800">$1</mark>'
+      );
+    }
     
-  </div>
-  <div class="text-center mt-8">
-    <a href="/projects" class="btn btn-primary">View All Projects</a>
-  </div>
-</div>
+    if (contentElement) {
+      contentElement.innerHTML = contentElement.innerHTML.replace(
+        new RegExp(`(${escapeRegExp(query)})`, 'gi'),
+        '<mark class="bg-yellow-200 text-yellow-800">$1</mark>'
+      );
+    }
+  }
 
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function showAllPosts() {
+    allPosts.forEach(post => {
+      // Restore original content
+      post.element.innerHTML = post.originalContent;
+    });
+    filterByCategories();
+  }
+
+  function filterByCategories() {
+    const selectedCategory = categoryFilter.value;
+    const selectedYear = yearFilter.value;
+    let visibleCount = 0;
+
+    allPosts.forEach(post => {
+      const matchesCategory = !selectedCategory || post.category === selectedCategory;
+      const matchesYear = !selectedYear || post.year === selectedYear;
+
+      if (matchesCategory && matchesYear) {
+        post.element.style.display = 'block';
+        visibleCount++;
+      } else {
+        post.element.style.display = 'none';
+      }
+    });
+
+    updateResultsDisplay(visibleCount);
+  }
+
+  function updateResultsDisplay(count, query = '') {
+    if (count === 0) {
+      emptyState.classList.remove('hidden');
+      notesContainer.style.display = 'none';
+      resultsCount.textContent = query ? `No results found for "${query}"` : 'No notes match the selected filters';
+    } else {
+      emptyState.classList.add('hidden');
+      notesContainer.style.display = 'grid';
+      if (query) {
+        resultsCount.textContent = `Found ${count} result${count > 1 ? 's' : ''} for "${query}"`;
+      } else {
+        resultsCount.textContent = `Showing ${count} note${count > 1 ? 's' : ''}`;
+      }
+    }
+  }
+
+  // Event listeners
+  searchBtn.addEventListener('click', () => {
+    performSearch(searchInput.value);
+  });
+
+  searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      performSearch(searchInput.value);
+    }
+  });
+
+  // Real-time search with debounce
+  let searchTimeout;
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.trim();
+    
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+      if (query.length >= 2) {
+        performSearch(query);
+        showSearchSuggestions(query);
+      } else {
+        clearSearch();
+      }
+    }, 300); // 300ms debounce
+  });
+
+  clearBtn.addEventListener('click', clearSearch);
+
+  function clearSearch() {
+    searchInput.value = '';
+    showAllPosts();
+  }
+
+  categoryFilter.addEventListener('change', () => {
+    if (searchInput.value.trim()) {
+      performSearch(searchInput.value);
+    } else {
+      filterByCategories();
+    }
+  });
+
+  yearFilter.addEventListener('change', () => {
+    if (searchInput.value.trim()) {
+      performSearch(searchInput.value);
+    } else {
+      filterByCategories();
+    }
+  });
+});
+</script>
   </div>
 
   <!-- Fixed top navbar for desktop -->
