@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Culture</title>
+<title>Taxonomy</title>
 <meta name="description" content="Test Wangz Lab">
 <meta name="keywords" content="">
 <meta name="author" content="Dr. Zhang Wang">
@@ -16,14 +16,14 @@
 
 
 <!-- Open Graph tags -->
-<meta property="og:title" content="Culture">
+<meta property="og:title" content="Taxonomy">
 <meta property="og:description" content="Test Wangz Lab">
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://Whz9133.github.io/database/culture/index.html">
+<meta property="og:url" content="http://Whz9133.github.io/database/taxonomy/taxonomy.html">
 
 <!-- Twitter Card tags -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Culture">
+<meta name="twitter:title" content="Taxonomy">
 <meta name="twitter:description" content="Test Wangz Lab">
 
 <!-- Academicons -->
@@ -307,90 +307,56 @@ var _hmt = _hmt || [];
     </a>
   </div>
 
-  <h1 class="text-3xl font-bold mb-8 text-base-content">Cultivated Bacterial Strains</h1>
+  <h1 class="text-3xl font-bold mb-8 text-base-content">Fungi & Taxonomy</h1>
 
-  <!-- Filters -->
-  <div class="glass-card p-4 mb-8">
-    <div class="flex flex-wrap gap-4">
-      <div class="form-control flex-1">
-        <input type="text" placeholder="Search strains..." class="input input-bordered" id="searchInput" />
-      </div>
-    </div>
-  </div>
-
-  <!-- List -->
-  <div id="cultureList" class="space-y-6">
+  <div class="space-y-6">
     
-    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-         data-title="b4070"
-         data-species="streptococcus xiaochunlingii">
+    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
       <div class="card-body relative">
         <div class="absolute top-4 right-4">
-          <div class="badge badge-secondary badge-lg">Strain</div>
+          <div class="badge badge-accent badge-lg">Fungus</div>
         </div>
 
-        <h2 class="card-title text-xl font-bold mb-3 pr-20">B4070</h2>
+        <h2 class="card-title text-xl font-bold mb-3">Aspergillus aculeatinus</h2>
 
         
-        <div class="text-info font-medium mb-3">Streptococcus xiaochunlingii</div>
+        <div class="mb-2">Taxonomy: <span class="text-info">Fungi / Ascomycota / Eurotiomycetes</span></div>
         
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
-          <div class="p-2 bg-base-300/30 rounded">Size: 4.72 Mb</div>
-          <div class="p-2 bg-base-300/30 rounded">GC: 51%</div>
-          <div class="p-2 bg-base-300/30 rounded">Completeness: 99.09%</div>
-        </div>
+        
+        <div class="mb-2">Genome Size: 38.49 Mb</div>
+        
 
         
-        <a href="/data/B4070_genome.fasta" class="btn btn-sm btn-outline">
-          <i class="fa-solid fa-download"></i> Download
-        </a>
+        <a href="#" target="_blank" class="btn btn-sm btn-outline mt-2">View</a>
         
       </div>
     </div>
     
-    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-         data-title="b5102"
-         data-species="moraxella catarrhalis">
+    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
       <div class="card-body relative">
         <div class="absolute top-4 right-4">
-          <div class="badge badge-secondary badge-lg">Strain</div>
+          <div class="badge badge-accent badge-lg">Fungus</div>
         </div>
 
-        <h2 class="card-title text-xl font-bold mb-3 pr-20">B5102</h2>
+        <h2 class="card-title text-xl font-bold mb-3">Candida albicans</h2>
 
         
-        <div class="text-info font-medium mb-3">Moraxella catarrhalis</div>
+        <div class="mb-2">Taxonomy: <span class="text-info">Fungi / Ascomycota / Saccharomycetes</span></div>
         
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
-          <div class="p-2 bg-base-300/30 rounded">Size: 3.21 Mb</div>
-          <div class="p-2 bg-base-300/30 rounded">GC: 47.5%</div>
-          <div class="p-2 bg-base-300/30 rounded">Completeness: 98.76%</div>
-        </div>
+        
+        <div class="mb-2">Genome Size: 14.8 Mb</div>
+        
 
         
-        <a href="/data/B5102_genome.fasta" class="btn btn-sm btn-outline">
-          <i class="fa-solid fa-download"></i> Download
-        </a>
+        <a href="#" target="_blank" class="btn btn-sm btn-outline mt-2">View</a>
         
       </div>
     </div>
     
   </div>
 </div>
-
-<script>
-  const search = document.getElementById('searchInput');
-  const list = document.getElementById('cultureList');
-  search.addEventListener('input', () => {
-    const val = search.value.toLowerCase();
-    document.querySelectorAll('.timeline-item').forEach(item => {
-      const match = item.dataset.title.includes(val) || item.dataset.species.includes(val);
-      item.style.display = match ? 'block' : 'none';
-    });
-  });
-</script>
   </div>
 
   <!-- Fixed top navbar for desktop -->
