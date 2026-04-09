@@ -519,67 +519,160 @@ var _hmt = _hmt || [];
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
     <div class="container mx-auto px-4 py-8">
-
-  <!-- 返回按钮 -->
-  <div class="mb-6">
-    <a href="/database/" class="btn btn-sm btn-outline btn-neutral gap-2">
-      <i class="fa-solid fa-arrow-left"></i>
-      Back to Database Home
-    </a>
+  <h1 class="text-3xl font-bold mb-6 text-base-content">Data Resources</h1>
+  <div class="glass-card p-6 mb-8 prose max-w-none">
+    <p class="text-lg leading-relaxed">
+      This page provides access to key analytical datasets generated in this study.
+      <strong>Large files (>100 MB) are hosted on public data repositories</strong> to ensure stable and fast downloads.
+      Small summary files can be downloaded directly.
+    </p>
   </div>
 
-  <h1 class="text-3xl font-bold mb-8 text-base-content">Raw Data & Contigs</h1>
+  <!-- 1. 基因组统计数据（小文件，直接下载） -->
+  <div class="glass-card p-6 mb-8">
+    <div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+      <div>
+        <h2 class="text-2xl font-bold mb-2">Genome Assembly Statistics</h2>
+        <p class="text-base-content/80">Summary statistics of bacterial, fungal, and viral genomes assembled in this study.</p>
+      </div>
+      <a href="/data/genome_stats.csv" class="btn btn-primary btn-sm gap-2" download>
+        <i class="fa-solid fa-download"></i> Download CSV
+      </a>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full text-sm">
+        <thead><tr><th>Category</th><th>Number of Genomes</th><th>Avg. Size (Mb)</th><th>Avg. GC%</th><th>Avg. Completeness (%)</th></tr></thead>
+        <tbody>
+          <tr><td>Bacteria (Culture)</td><td>4</td><td>4.12</td><td>45.2</td><td>99.7</td></tr>
+          <tr><td>Bacteria (MAG)</td><td>3</td><td>1.54</td><td>37.0</td><td>87.3</td></tr>
+          <tr><td>Bacteria (Public)</td><td>3</td><td>5.26</td><td>61.0</td><td>99.9</td></tr>
+          <tr><td>Fungi</td><td>6</td><td>23.2</td><td>44.5</td><td>96.8</td></tr>
+          <tr><td>Virus</td><td>5</td><td>0.023</td><td>41.2</td><td>61.9</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-  <div class="space-y-6">
-    
-    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-      <div class="card-body relative">
-        <div class="absolute top-4 right-4">
-          <div class="badge badge-neutral badge-lg">Contig</div>
-        </div>
+  <!-- 2. 分类学分配数据（小文件，直接下载） -->
+  <div class="glass-card p-6 mb-8">
+    <div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+      <div>
+        <h2 class="text-2xl font-bold mb-2">Taxonomic Assignments</h2>
+        <p class="text-base-content/80">Complete taxonomic lineage for each genome (Kingdom to Species).</p>
+      </div>
+      <a href="/data/taxonomy_assignments.xlsx" class="btn btn-primary btn-sm gap-2" download>
+        <i class="fa-solid fa-download"></i> Download Excel
+      </a>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full text-sm">
+        <thead><tr><th>Genome ID</th><th>Domain</th><th>Phylum</th><th>Class</th><th>Order</th><th>Family</th><th>Genus</th><th>Species</th></tr></thead>
+        <tbody>
+          <tr><td>B1257.bin.12</td><td>Bacteria</td><td>Firmicutes</td><td>Bacilli</td><td>Lactobacillales</td><td>Streptococcaceae</td><td>Streptococcus</td><td>S. xiaochunlingii</td></tr>
+          <tr><td>B1403.scaffolds</td><td>Bacteria</td><td>Proteobacteria</td><td>Gammaproteobacteria</td><td>Enterobacterales</td><td>Enterobacteriaceae</td><td>Escherichia</td><td>E. coli</td></tr>
+          <tr><td>F7100.scaffolds</td><td>Fungi</td><td>Ascomycota</td><td>Eurotiomycetes</td><td>Eurotiales</td><td>Aspergillaceae</td><td>Aspergillus</td><td>A. aculeatinus</td></tr>
+          <tr><td>RNA_002VWWX_k141_13488</td><td>Virus</td><td>Lenarviricota</td><td>Amabiliviricetes</td><td>Wolframvirales</td><td>Narnaviridae</td><td>Unclassified</td><td>Barns_Ness_..._virus_1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-        <h2 class="card-title text-xl font-bold mb-3">Virus_Contig_001</h2>
-
-        
-        <div class="mb-3">Type: RNA Virus</div>
-        
-
-        
-        <p class="mb-3">Novel RNA virus assembled from metatranscriptome.</p>
-        
-
-        
-        <a href="/data/virus_001.fasta" class="btn btn-sm btn-primary">
-          <i class="fa-solid fa-download"></i> Download
-        </a>
-        
+  <!-- 3. 功能注释数据（小文件，多个格式直接下载） -->
+  <div class="glass-card p-6 mb-8">
+    <div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+      <div>
+        <h2 class="text-2xl font-bold mb-2">Functional Annotations</h2>
+        <p class="text-base-content/80">KO, COG, Pfam, and CAZy annotations for all predicted genes.</p>
+      </div>
+      <div class="flex gap-2">
+        <a href="/data/functional_annotations.ko.tsv" class="btn btn-outline btn-sm" download>KO (TSV)</a>
+        <a href="/data/functional_annotations.cog.tsv" class="btn btn-outline btn-sm" download>COG (TSV)</a>
+        <a href="/data/functional_annotations.pfam.tsv" class="btn btn-outline btn-sm" download>Pfam (TSV)</a>
+        <a href="/data/functional_annotations.cazy.tsv" class="btn btn-outline btn-sm" download>CAZy (TSV)</a>
       </div>
     </div>
-    
-    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
-      <div class="card-body relative">
-        <div class="absolute top-4 right-4">
-          <div class="badge badge-neutral badge-lg">Contig</div>
+    <div class="alert alert-info shadow-lg">
+      <i class="fa-solid fa-circle-info"></i>
+      <span>Small tab-separated files, each < 5 MB.</span>
+    </div>
+  </div>
+
+  <!-- 4. 元数据与样本信息（小文件，直接下载） -->
+  <div class="glass-card p-6 mb-8">
+    <div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+      <div>
+        <h2 class="text-2xl font-bold mb-2">Sample Metadata</h2>
+        <p class="text-base-content/80">Clinical and environmental metadata for all isolates and metagenomic samples.</p>
+      </div>
+      <a href="/data/sample_metadata.csv" class="btn btn-primary btn-sm gap-2" download>
+        <i class="fa-solid fa-download"></i> Download CSV
+      </a>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full text-sm">
+        <thead><tr><th>Sample ID</th><th>Disease</th><th>Location</th><th>Source</th><th>Sequencing Type</th></tr></thead>
+        <tbody>
+          <tr><td>B4070</td><td>COPD</td><td>China</td><td>Sputum</td><td>Bacteria (Culture)</td></tr>
+          <tr><td>B4996</td><td>Bronchiectasis</td><td>China</td><td>Sputum</td><td>Bacteria (Culture)</td></tr>
+          <tr><td>F7100.scaffolds</td><td>COPD</td><td>China</td><td>Sputum</td><td>Fungi</td></tr>
+          <tr><td>SRR24741460.mbin.8</td><td>Healthy</td><td>Uganda</td><td>Stool</td><td>MAG</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5. 大文件：原始基因组序列、完整组装等（外部链接） -->
+  <div class="glass-card p-6 mb-8 border-primary bg-primary/5">
+    <h2 class="text-2xl font-bold mb-2">Large Datasets (Hosted on External Repositories)</h2>
+    <p class="text-base-content/80 mb-4">Due to file size, the following data are available via public data repositories.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="flex items-start gap-3">
+        <i class="fa-solid fa-database text-2xl text-primary mt-1"></i>
+        <div>
+          <h3 class="font-bold">Complete Genome Assemblies (FASTA)</h3>
+          <p class="text-sm text-base-content/70">All bacterial, fungal, and viral genomes in FASTA format (~1.2 GB).</p>
+          <a href="https://zenodo.org/record/xxxxx" target="_blank" class="btn btn-sm btn-outline mt-2 gap-1">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Zenodo
+          </a>
         </div>
-
-        <h2 class="card-title text-xl font-bold mb-3">MAG_Contig_007</h2>
-
-        
-        <div class="mb-3">Type: Bacterial MAG</div>
-        
-
-        
-        <p class="mb-3">High-quality metagenome-assembled genome.</p>
-        
-
-        
-        <a href="/data/mag_007.fasta" class="btn btn-sm btn-primary">
-          <i class="fa-solid fa-download"></i> Download
-        </a>
-        
+      </div>
+      <div class="flex items-start gap-3">
+        <i class="fa-solid fa-chart-line text-2xl text-primary mt-1"></i>
+        <div>
+          <h3 class="font-bold">Functional Annotation Full Tables</h3>
+          <p class="text-sm text-base-content/70">Complete KO/COG/Pfam/CAZy tables for all genes (~300 MB).</p>
+          <a href="https://figshare.com/articles/xxxxx" target="_blank" class="btn btn-sm btn-outline mt-2 gap-1">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Figshare
+          </a>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <i class="fa-solid fa-dna text-2xl text-primary mt-1"></i>
+        <div>
+          <h3 class="font-bold">Raw Sequencing Reads (SRA)</h3>
+          <p class="text-sm text-base-content/70">Raw metagenomic and isolate sequencing data.</p>
+          <a href="https://www.ncbi.nlm.nih.gov/sra?term=PRJNAxxxxx" target="_blank" class="btn btn-sm btn-outline mt-2 gap-1">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> NCBI SRA
+          </a>
+        </div>
+      </div>
+      <div class="flex items-start gap-3">
+        <i class="fa-solid fa-box-archive text-2xl text-primary mt-1"></i>
+        <div>
+          <h3 class="font-bold">All Data Bundle (ZIP)</h3>
+          <p class="text-sm text-base-content/70">Complete archive including genomes, annotations, metadata, and scripts (~2.3 GB).</p>
+          <a href="https://zenodo.org/record/yyyyy" target="_blank" class="btn btn-sm btn-outline mt-2 gap-1">
+            <i class="fa-solid fa-file-zipper"></i> Download from Zenodo
+          </a>
+        </div>
       </div>
     </div>
-    
+  </div>
+
+  <!-- 额外说明：如何引用 -->
+  <div class="alert alert-success shadow-lg">
+    <i class="fa-solid fa-quote-left"></i>
+    <span>If you use these data, please cite our paper: <strong>Author et al. (2025) Journal Name, DOI: 10.xxxx/xxxxx</strong>. Data are available under CC-BY 4.0 license.</span>
   </div>
 </div>
   </div>

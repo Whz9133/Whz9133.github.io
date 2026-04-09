@@ -518,355 +518,388 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <!-- ========== 全屏封面 Hero Section（类似 Mic_Theme）========== -->
+    <div class="container mx-auto px-4 py-8">
+  <h1 class="text-4xl font-extrabold mb-8 text-base-content">Curriculum Vitae</h1>
 
-<div class="hero min-h-screen relative flex items-center justify-center"
-     style="background-image: url('../images/cover.jpg');
-            background-size: cover;
-            background-position: center;">
+  <!-- Jump to section -->
+  <p class="mb-2 text-base-content font-medium">Click a section below to jump to it:</p>
+  <nav class="flex flex-wrap gap-2 mb-6">
+    
+      <a href="#education" class="btn btn-outline btn-secondary">Education</a>
+    
+    
+      <a href="#experience" class="btn btn-outline btn-secondary">Experience</a>
+    
+    
+    
+      <a href="#awards" class="btn btn-outline btn-secondary">Awards</a>
+    
+    
+    
+      <a href="#teaching" class="btn btn-outline btn-secondary">Teaching</a>
+    
+    
+      <a href="#contact" class="btn btn-outline btn-secondary">Contact</a>
+    
+  </nav>
 
-  <!-- 遮罩层 -->
-  <div class="hero-overlay bg-opacity-60 bg-black absolute inset-0"></div>
-
-  <!-- 居中内容（类似 Mic_Theme 的 Intro） -->
-  <div class="hero-content text-center text-white relative z-10 px-4">
-
-    <!-- 标语/副标题 -->
-    <p class="text-4xl md:text-4xl mb-8 opacity-0 max-w-2xl mx-auto leading-relaxed">
-      111
-    </p>
-
-    <!-- 标语/副标题 -->
-    <p class="text-4xl md:text-4xl mb-8 opacity-0 max-w-2xl mx-auto leading-relaxed">
-      111
-    </p>
-
-    <!-- 标语/副标题 -->
-    <p class="text-4xl md:text-4xl mb-8 opacity-0 max-w-2xl mx-auto leading-relaxed">
-      111
-    </p>
-
-    <!-- 标语/副标题 -->
-    <p class="text-4xl md:text-4xl mb-8 opacity-0 max-w-2xl mx-auto leading-relaxed">
-      111
-    </p>
-
-    <!-- 标语/副标题 -->
-    <p class="text-4xl md:text-4xl mb-8 opacity-0 max-w-2xl mx-auto leading-relaxed">
-      111
-    </p>
-
-    <!-- 进入按钮 -->
-    <a href="#main-content"
-       class="btn btn-primary btn-lg text-lg px-8 py-3"
-       onclick="event.preventDefault(); document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });">
-      HEMGC
-    </a>
-
+  <!-- Download CV -->
+  <div class="text-right mb-8 flex justify-end items-center space-x-2">
+    
+      <a href="/files/cv-template.pdf"
+         class="btn btn-primary glass-button inline-flex items-center space-x-2 px-4 py-2"
+         target="_blank" rel="noopener noreferrer"
+         title="Download PDF"
+         download>
+        <i class="fa-solid fa-file-arrow-down"></i>
+        <span>Download PDF</span>
+      </a>
+    
   </div>
 
-  <!-- 向下滚动指示器 -->
-  <div class="absolute bottom-8 cursor-pointer animate-pulse z-20"
-       style="left: 50%; transform: translateX(-50%);"
-       onclick="document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
-    </svg>
-  </div>
-</div>
-
-
-<!-- ========== 主内容区域（滚动后显示） ========== -->
-<div id="main-content">
-
-  <!-- Recent Notes -->
-  <div class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl font-bold mb-8 text-base-content">Recent Notes</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Education -->
+  
+  <section class="mb-8" id="education">
+    <h2 class="text-2xl font-bold mb-4 text-base-content">Education</h2>
+    <div class="grid gap-6">
       
-        <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 h-80 flex flex-col">
-          <div class="card-body p-6 flex flex-col h-full">
-            <!-- Header -->
-            <div class="mb-4">
-              <h3 class="card-title text-lg font-bold leading-tight mb-2">
-                <a href="../2026/04/09/about/" class="hover:text-primary no-underline transition-colors duration-200">
-                  page
-                </a>
-              </h3>
-              <div class="flex items-center justify-between">
-                <time class="text-sm opacity-70">
-                  Apr 09, 2026
-                </time>
-                
-              </div>
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+            Ph.D. in Computer Science
+            
+              <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2015 - 2019</div>
+            
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Stanford University</p>
+              
+                <p class="mt-2 opacity-90">Specialized in Machine Learning and Artificial Intelligence</p>
+              
             </div>
-
-            <!-- Excerpt -->
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+            M.S. in Computer Science
             
-              <div class="flex-1"></div>
+              <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2013 - 2015</div>
             
-
-            <!-- Tags -->
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Massachusetts Institute of Technology</p>
+              
+                <p class="mt-2 opacity-90">Focus on Natural Language Processing</p>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+            B.S. in Computer Science
             
+              <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2009 - 2013</div>
+            
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">University of California, Berkeley</p>
+              
+                <p class="mt-2 opacity-90">Graduated with Honors</p>
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+  
 
-            <!-- Read More -->
-            <div class="card-actions justify-end mt-auto">
-              <a href="../2026/04/09/about/" class="btn btn-primary btn-sm">
-                Read More
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+  <!-- Professional Experience -->
+  
+  <section class="mb-8" id="experience">
+    <h2 class="text-2xl font-bold mb-4 text-base-content">Professional Experience</h2>
+    <div class="grid gap-6">
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold">
+              Associate Professor
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2021 - Present</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Stanford University</p>
+              <p class="mt-2 opacity-90">Leading research in machine learning and artificial intelligence</p>
+              
+                <ul class="list-disc list-inside mt-3 opacity-90">
+                  
+                    <li>Supervising 5 PhD students and 3 postdoctoral researchers</li>
+                  
+                    <li>Teaching advanced courses in machine learning and AI</li>
+                  
+                    <li>Securing and managing multiple research grants</li>
+                  
+                    <li>Publishing in top-tier conferences and journals</li>
+                  
+                </ul>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold">
+              Assistant Professor
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2019 - 2021</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">University of California, Berkeley</p>
+              <p class="mt-2 opacity-90">Established and led the AI Research Lab</p>
+              
+                <ul class="list-disc list-inside mt-3 opacity-90">
+                  
+                    <li>Developed and taught undergraduate and graduate courses</li>
+                  
+                    <li>Mentored 3 PhD students</li>
+                  
+                    <li>Published 10+ papers in top conferences</li>
+                  
+                </ul>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold">
+              Research Scientist
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2018 - 2019</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Google AI</p>
+              <p class="mt-2 opacity-90">Worked on natural language processing projects</p>
+              
+                <ul class="list-disc list-inside mt-3 opacity-90">
+                  
+                    <li>Developed new algorithms for text understanding</li>
+                  
+                    <li>Collaborated with product teams on AI applications</li>
+                  
+                    <li>Published 5 papers and filed 3 patents</li>
+                  
+                </ul>
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+  
+
+  <!-- Skills -->
+  
+
+  <!-- Awards & Honors -->
+  
+  <section class="mb-8" id="awards">
+    <h2 class="text-2xl font-bold mb-4 text-base-content">Awards & Honors</h2>
+    <div class="grid gap-6">
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+              Best Paper Award
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2022</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">International Conference on Machine Learning</p>
+              
+                <p class="mt-2 opacity-90">For outstanding contribution to the field of machine learning</p>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+              Early Career Research Award
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2021-02-21</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">National Science Foundation</p>
+              
+                <p class="mt-2 opacity-90">Recognizing exceptional promise in research</p>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+              Teaching Excellence Award
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2020</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Stanford University</p>
+              
+                <p class="mt-2 opacity-90">For outstanding contributions to teaching</p>
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+  
+
+  <!-- Languages -->
+  
+
+  <!-- Teaching -->
+  
+  <section class="mb-8" id="teaching">
+    <h2 class="text-2xl font-bold mb-4 text-base-content">Teaching Experience</h2>
+    <div class="grid gap-6">
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+              CS229: Machine Learning
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2021 - Present</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Stanford University</p>
+              
+                <p class="text-sm opacity-70">Instructor</p>
+              
+              
+                <p class="mt-2 opacity-90">Advanced graduate course covering machine learning algorithms and applications</p>
+              
+              
+                <p class="text-sm mt-2 opacity-70">Students: 120 students per semester</p>
+              
+              
+                <p class="text-sm mt-1 opacity-70">Evaluation: 4.8/5.0</p>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+              CS106A: Programming Fundamentals
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2020 - 2021</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Stanford University</p>
+              
+                <p class="text-sm opacity-70">Teaching Assistant</p>
+              
+              
+                <p class="mt-2 opacity-90">Introductory programming course in Python</p>
+              
+              
+                <p class="text-sm mt-2 opacity-70">Students: 300 students</p>
+              
+              
+                <p class="text-sm mt-1 opacity-70">Evaluation: 4.6/5.0</p>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-bold flex flex-wrap gap-2 items-start">
+              AI Ethics and Society
+              
+                <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2022 - Present</div>
+              
+            </h2>
+            <div class="text-base-content opacity-80">
+              <p class="font-medium">Stanford University</p>
+              
+                <p class="text-sm opacity-70">Co-Instructor</p>
+              
+              
+                <p class="mt-2 opacity-90">Interdisciplinary course exploring ethical implications of AI</p>
+              
+              
+                <p class="text-sm mt-2 opacity-70">Students: 80 students per semester</p>
+              
+              
+                <p class="text-sm mt-1 opacity-70">Evaluation: 4.9/5.0</p>
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </section>
+  
+
+    <!-- Contact (整合自 contact.ejs，格式与 CV 卡片统一) -->
+    
+    <section class="mb-8" id="contact">
+      <h2 class="text-2xl font-bold mb-4 text-base-content">Contact</h2>
+      <div class="grid gap-6">
+        
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+            <div class="card-body">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fas fa-envelope mr-2"></i>Email
+              </h2>
+              <a href="mailto:wangz@m.scnu.edu.cn" class="link text-lg font-medium mt-2 block">
+                wangz@m.scnu.edu.cn
               </a>
             </div>
           </div>
-        </article>
-      
-        <article class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-105 transition-all duration-300 h-80 flex flex-col">
-          <div class="card-body p-6 flex flex-col h-full">
-            <!-- Header -->
-            <div class="mb-4">
-              <h3 class="card-title text-lg font-bold leading-tight mb-2">
-                <a href="../2026/04/07/test/" class="hover:text-primary no-underline transition-colors duration-200">
-                  Hello World
-                </a>
-              </h3>
-              <div class="flex items-center justify-between">
-                <time class="text-sm opacity-70">
-                  Apr 07, 2026
-                </time>
-                
-              </div>
-            </div>
+        
 
-            <!-- Excerpt -->
-            
-              <div class="flex-1"></div>
-            
+        
 
-            <!-- Tags -->
-            
-
-            <!-- Read More -->
-            <div class="card-actions justify-end mt-auto">
-              <a href="../2026/04/07/test/" class="btn btn-primary btn-sm">
-                Read More
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </article>
-      
-    </div>
-
-    <!-- View All -->
-    <div class="text-center mt-8">
-      <a href="../notes" class="btn btn-primary">View All Notes</a>
-    </div>
-  </div>
-
-  <!-- Featured Publications -->
-  <div class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl font-bold mb-8 text-base-content">Featured Publications</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-        <div class="card glass rounded-box shadow-md bg-base-100 text-base-content hover:shadow-lg transition-all duration-300">
-          <div class="card-body p-4">
-            <!-- Title + Type -->
-            <h3 class="card-title text-lg font-semibold flex items-center gap-2">
-              <span class="title">AI-Driven Literature Synthesis</span>
+        
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+            <div class="card-body">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fas fa-map-marker-alt mr-2"></i>Office Location
+              </h2>
               
-                <div class="badge badge-primary text-xs">Journal</div>
-              
-            </h3>
-
-            <!-- Authors / Venue / Year -->
-            <div class="opacity-80 text-sm mt-1">
-              
-                <p class="authors font-medium">Smith A., Zhang E., Doe J.</p>
-              
-              
-                <p class="italic text-sm mt-0.5">Nature Machine Intelligence</p>
-              
-              
-                <p class="text-xs text-gray-500">2024</p>
-              
-            </div>
-
-            <!-- Buttons -->
-            <div class="card-actions justify-end mt-3 gap-2">
-              
-                <a href="https://doi.org/10.1001/jama.2016.9797" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="ai ai-doi mr-1"></i>DOI
-                </a>
-              
-              
-                <a href="https://example.com/papers/ai-synthesis.pdf" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-file-pdf mr-1"></i>PDF
-                </a>
+                <p class="text-lg font-medium mt-2">Room 123, Department of Biology, University of Example, 12345 City, Country</p>
               
             </div>
           </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-md bg-base-100 text-base-content hover:shadow-lg transition-all duration-300">
-          <div class="card-body p-4">
-            <!-- Title + Type -->
-            <h3 class="card-title text-lg font-semibold flex items-center gap-2">
-              <span class="title">Deep Learning for Pathology Image Segmentation</span>
-              
-                <div class="badge badge-primary text-xs">Conference</div>
-              
-            </h3>
+        
 
-            <!-- Authors / Venue / Year -->
-            <div class="opacity-80 text-sm mt-1">
-              
-                <p class="authors font-medium">Lee B., Park S., Vega C.</p>
-              
-              
-                <p class="italic text-sm mt-0.5">CVPR</p>
-              
-              
-                <p class="text-xs text-gray-500">2023</p>
-              
-            </div>
-
-            <!-- Buttons -->
-            <div class="card-actions justify-end mt-3 gap-2">
-              
-                <a href="https://doi.org/10.1016/j.molp.2017.12.003" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="ai ai-doi mr-1"></i>DOI
-                </a>
-              
-              
-                <a href="https://example.com/papers/pathology-segmentation.pdf" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-file-pdf mr-1"></i>PDF
-                </a>
-              
-            </div>
-          </div>
-        </div>
-      
-    </div>
-
-    <!-- View All -->
-    <div class="text-center mt-8">
-      <a href="../publications" class="btn btn-primary">View All Publications</a>
-    </div>
-  </div>
-
-  <!-- Featured Projects -->
-  <div class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl font-bold mb-8 text-base-content">Featured Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-        <div class="card glass rounded-box shadow-md bg-base-100 text-base-content hover:shadow-lg transition-all duration-300">
-          <div class="card-body p-4">
-            <h3 class="card-title text-lg font-semibold flex items-center gap-2">
-              <span class="title">AI-Powered Research Assistant</span>
-              
-                <div class="badge badge-primary text-xs">current</div>
-              
-            </h3>
-            <div class="opacity-80 text-sm mt-1">
-              
-                <p class="flex items-center text-sm mb-1">
-                  <i class="far fa-calendar-alt mr-2"></i>2023 - Present
-                </p>
-              
-              
-            </div>
-            
-              <p class="mt-3 text-base-content opacity-90 text-sm">An AI system designed to help researchers conduct efficient literature reviews and synthesize scientific knowledge.</p>
-            
-            <div class="card-actions justify-end mt-4 gap-2 flex-wrap">
-              
-                <a href="https://research-assistant.ai" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-external-link-alt mr-1"></i>Website
-                </a>
-              
-              
-                <a href="https://github.com/username/ai-research-assistant" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-github mr-1"></i>Code
-                </a>
-              
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-md bg-base-100 text-base-content hover:shadow-lg transition-all duration-300">
-          <div class="card-body p-4">
-            <h3 class="card-title text-lg font-semibold flex items-center gap-2">
-              <span class="title">Next-Gen Sequencing Analysis Pipeline</span>
-              
-                <div class="badge badge-primary text-xs">current</div>
-              
-            </h3>
-            <div class="opacity-80 text-sm mt-1">
-              
-                <p class="flex items-center text-sm mb-1">
-                  <i class="far fa-calendar-alt mr-2"></i>2022 - Present
-                </p>
-              
-              
-            </div>
-            
-              <p class="mt-3 text-base-content opacity-90 text-sm">An automated pipeline for NGS data processing and variant calling optimized for large datasets.</p>
-            
-            <div class="card-actions justify-end mt-4 gap-2 flex-wrap">
-              
-              
-                <a href="https://github.com/username/ngs-pipeline" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-github mr-1"></i>Code
-                </a>
-              
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-md bg-base-100 text-base-content hover:shadow-lg transition-all duration-300">
-          <div class="card-body p-4">
-            <h3 class="card-title text-lg font-semibold flex items-center gap-2">
-              <span class="title">Multimodal AI for Medical Imaging</span>
-              
-                <div class="badge badge-primary text-xs">current</div>
-              
-            </h3>
-            <div class="opacity-80 text-sm mt-1">
-              
-                <p class="flex items-center text-sm mb-1">
-                  <i class="far fa-calendar-alt mr-2"></i>2024 - Present
-                </p>
-              
-              
-            </div>
-            
-              <p class="mt-3 text-base-content opacity-90 text-sm">Developing AI systems that can analyze medical images alongside patient data for improved diagnosis accuracy.</p>
-            
-            <div class="card-actions justify-end mt-4 gap-2 flex-wrap">
-              
-                <a href="https://medai.stanford.edu" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="fas fa-external-link-alt mr-1"></i>Website
-                </a>
-              
-              
-                <a href="https://github.com/stanford-medai/multimodal-diagnosis" class="btn btn-primary btn-xs" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-github mr-1"></i>Code
-                </a>
-              
-            </div>
-          </div>
-        </div>
-      
-    </div>
-    <div class="text-center mt-8">
-      <a href="../projects" class="btn btn-primary">View All Projects</a>
-    </div>
-  </div>
+        
+      </div>
+    </section>
+    
 </div>
   </div>
 

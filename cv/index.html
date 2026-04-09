@@ -518,7 +518,7 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto px-4 py-8">
   <h1 class="text-4xl font-extrabold mb-8 text-base-content">Curriculum Vitae</h1>
 
   <!-- Jump to section -->
@@ -538,26 +538,24 @@ var _hmt = _hmt || [];
     
       <a href="#teaching" class="btn btn-outline btn-secondary">Teaching</a>
     
-
-
-
-
+    
+      <a href="#contact" class="btn btn-outline btn-secondary">Contact</a>
+    
   </nav>
 
   <!-- Download CV -->
   <div class="text-right mb-8 flex justify-end items-center space-x-2">
     
-      <a href="/files/cv-template.pdf" 
+      <a href="/files/cv-template.pdf"
          class="btn btn-primary glass-button inline-flex items-center space-x-2 px-4 py-2"
-         target="_blank" rel="noopener noreferrer" 
-         title="Download PDF" 
+         target="_blank" rel="noopener noreferrer"
+         title="Download PDF"
          download>
         <i class="fa-solid fa-file-arrow-down"></i>
         <span>Download PDF</span>
       </a>
     
   </div>
-  
 
   <!-- Education -->
   
@@ -573,7 +571,6 @@ var _hmt = _hmt || [];
               <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2015 - 2019</div>
             
             </h2>
-
             <div class="text-base-content opacity-80">
               <p class="font-medium">Stanford University</p>
               
@@ -591,7 +588,6 @@ var _hmt = _hmt || [];
               <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2013 - 2015</div>
             
             </h2>
-
             <div class="text-base-content opacity-80">
               <p class="font-medium">Massachusetts Institute of Technology</p>
               
@@ -609,7 +605,6 @@ var _hmt = _hmt || [];
               <div class="badge badge-primary badge-sm lg:badge-md whitespace-nowrap">2009 - 2013</div>
             
             </h2>
-
             <div class="text-base-content opacity-80">
               <p class="font-medium">University of California, Berkeley</p>
               
@@ -868,8 +863,44 @@ var _hmt = _hmt || [];
   </section>
   
 
-</div>
+    <!-- Contact (整合自 contact.ejs，格式与 CV 卡片统一) -->
+    
+    <section class="mb-8" id="contact">
+      <h2 class="text-2xl font-bold mb-4 text-base-content">Contact</h2>
+      <div class="grid gap-6">
+        
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+            <div class="card-body">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fas fa-envelope mr-2"></i>Email
+              </h2>
+              <a href="mailto:wangz@m.scnu.edu.cn" class="link text-lg font-medium mt-2 block">
+                wangz@m.scnu.edu.cn
+              </a>
+            </div>
+          </div>
+        
 
+        
+
+        
+          <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+            <div class="card-body">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fas fa-map-marker-alt mr-2"></i>Office Location
+              </h2>
+              
+                <p class="text-lg font-medium mt-2">Room 123, Department of Biology, University of Example, 12345 City, Country</p>
+              
+            </div>
+          </div>
+        
+
+        
+      </div>
+    </section>
+    
+</div>
   </div>
 
   <!-- Fixed top navbar for desktop -->
