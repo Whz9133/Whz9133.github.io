@@ -297,318 +297,10 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4 py-8 space-y-6">
-  <!-- Post Header Card -->
-  <div class="rounded-box card bg-base-100 shadow-lg text-base-content hover:shadow-xl transition-all duration-300 timeline-item">
-
-    <div class="card-body">
-      <h1 class="text-4xl font-bold text-primary mb-4">Database</h1>
-      
-      <div class="flex flex-wrap items-center gap-4 text-sm opacity-70 mb-4">
-        <div class="flex items-center gap-2">
-          <i class="fa-regular fa-calendar"></i>
-          <time datetime="2026-04-08T16:00:00.000Z">2026-04-09</time>
-        </div>
-
-        <div class="flex items-center gap-1">
-              <i class="fa-solid fa-clock"></i>
-              <span>12 min read</span>
-        </div>
-        <!-- Categories and Tags -->
-          <div class="flex flex-wrap gap-2">
-            
-            
-            
-          </div>
-      </div>
-    
-    </div>
-  </div>
-
-  <!-- Post Content Card -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body">
-      <!-- Post Content -->
-      <div class="prose prose-lg max-w-none post-content">
-        <style>
-          /* ========== 基础排版样式 ========== */
-          /* 主要内容容器：post-content 类 */
-          .post-content {
-            line-height: 1.8;                   /* 行高：1.8 */
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-          }
-          
-          /* 标题样式：h1-h6 元素 */
-          .post-content h1, .post-content h2, .post-content h3,
-          .post-content h4, .post-content h5, .post-content h6 {
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-            font-weight: 600;                   /* 字重：半粗体 */
-            margin-top: 2rem;                   /* 上边距 */
-            margin-bottom: 1rem;                /* 下边距 */
-            line-height: 1.3;                   /* 行高：紧密 */
-          }
-          
-          /* 段落样式：p 元素 */
-          .post-content p {
-            margin: 1.2rem 0;                  /* 上下边距 */
-            text-align: justify;                /* 两端对齐 */
-          }
-          
-          /* 强调文本：strong 和 b 元素 */
-          .post-content strong, .post-content b {
-            font-weight: 700;                   /* 字重：粗体 */
-            color: hsl(var(--bc));              /* 颜色：基础内容色 */
-          }
-          
-          /* 斜体文本：em 和 i 元素 */
-          .post-content em, .post-content i {
-            font-style: italic;                 /* 斜体 */
-            color: hsl(var(--bc) / 0.9);       /* 颜色：略透明的基础内容色 */
-          }
-
-          /* ========== 代码块样式 ========== */
-          /* DaisyUI mockup-code 组件：代码块容器 */
-          .post-content .mockup-code {
-            margin: 1.5rem 0;                  /* 上下边距 */
-            border-radius: 0.5rem;              /* 圆角 */
-            overflow-x: auto;                   /* 水平滚动 */
-            overflow-y: hidden;                 /* 隐藏垂直溢出 */
-          }
-          
-          /* mockup-code 内的 pre 元素：预格式化文本容器 */
-          .post-content .mockup-code pre {
-            white-space: pre-wrap;              /* 保持空白，允许换行 */
-            word-wrap: break-word;              /* 长单词换行 */
-            overflow-wrap: break-word;          /* 溢出换行 */
-            line-height: 0;                     /* 行高：0（行与行之间无间距） */
-            margin: 0;                          /* 上下边距：0 */
-          }
-          
-          /* mockup-code 内的 code 元素：代码文本 */
-          .post-content .mockup-code code {
-            white-space: pre-wrap;              /* 保持空白，允许换行 */
-            word-wrap: break-word;              /* 长单词换行 */
-            overflow-wrap: break-word;          /* 溢出换行 */
-            background: none;                   /* 移除背景 */
-            border: none;                       /* 移除边框 */
-            padding: 0;                         /* 移除内边距 */
-            font-size: inherit;                 /* 继承父元素字体大小 */
-            line-height: 1.2;                     /* 行高：0（行与行之间无间距） */
-            margin: 0;                          /* 上下边距：0 */
-          }
-          
-          /* 隐藏原始的语法高亮容器：避免样式冲突 */
-          .post-content .highlight {
-            display: none;                      /* 完全隐藏 */
-          }
-          
-          /* 行内代码样式：code 标签 */
-          .post-content code {
-            background-color: hsl(var(--n) / 0.08);  /* 半透明中性色背景 */
-            color: hsl(var(--bc));                    /* 基础内容颜色 */
-            padding: 0.2rem 0.4rem;                   /* 内边距 */
-            border-radius: 0.25rem;                   /* 圆角 */
-            font-size: 0.875rem;                      /* 字体大小 14px */
-            border: 1px solid hsl(var(--b3));        /* 边框 */
-          }
-
-          /* ========== 引用块样式 ========== */
-          /* blockquote 元素：引用文本块 */
-          .post-content blockquote {
-            border-left: 4px solid hsl(var(--p));    /* 左边框：主色调 */
-            background-color: hsl(var(bg-base-200));        /* 背景：base-200 */
-            margin: 1.5rem 0;                        /* 上下边距 */
-            padding: 1rem 1.5rem;                    /* 内边距 */
-            border-radius: 0 0.5rem 0.5rem 0;        /* 右侧圆角 */
-            position: relative;                       /* 相对定位 */
-            font-style: italic;                       /* 斜体 */
-            color: hsl(var(--bc) / 0.9);            /* 颜色：略透明 */
-          }
-          
-          /* 引用块内的段落：移除额外边距 */
-          .post-content blockquote p {
-            margin: 0.5rem 0;                  /* 减少上下边距 */
-          }
-          
-          /* 引用块最后一个段落：移除下边距 */
-          .post-content blockquote p:last-child {
-            margin-bottom: 0;                  /* 移除下边距 */
-          }
-
-          /* ========== 列表样式 ========== */
-          /* 无序列表：ul 元素 */
-          .post-content ul {
-            margin: 1rem 0;                    /* 上下边距 */
-            padding-left: 2rem;                /* 左内边距 */
-            list-style-type: disc;              /* 列表标记：实心圆点 */
-          }
-          
-          /* 有序列表：ol 元素 */
-          .post-content ol {
-            margin: 1rem 0;                    /* 上下边距 */
-            padding-left: 2rem;                /* 左内边距 */
-            list-style-type: decimal;           /* 列表标记：数字 */
-          }
-          
-          /* 列表项：li 元素 */
-          .post-content li {
-            margin: 0.5rem 0;                  /* 上下边距 */
-            line-height: 1.6;                  /* 行高 */
-          }
-          
-          /* 嵌套列表：缩进和不同标记 */
-          .post-content ul ul {
-            list-style-type: circle;            /* 二级：空心圆 */
-            margin: 0.5rem 0;                  /* 减少边距 */
-          }
-          
-          .post-content ul ul ul {
-            list-style-type: square;            /* 三级：方形 */
-          }
-
-          /* ========== 链接样式 ========== */
-          /* 链接元素：a 标签的默认状态 */
-          .post-content a {
-            color: hsl(var(--p));               /* 主色调 */
-            text-decoration: underline;         /* 下划线 */
-            text-decoration-thickness: 1px;     /* 下划线粗细 */
-            text-underline-offset: 2px;         /* 下划线偏移距离 */
-            transition: all 0.2s ease;          /* 平滑过渡效果 */
-          }
-          
-          /* 链接悬停状态：鼠标悬停时的样式 */
-          .post-content a:hover {
-            color: hsl(var(--pf));              /* 主色调焦点色 */
-            text-decoration-thickness: 2px;     /* 下划线变粗 */
-          }
-          
-          /* ========== 表格样式 ========== */
-          /* 表格外层滚动容器：支持水平滚动 */
-          .post-content .table-container {
-            overflow-x: auto;                   /* 水平滚动 */
-            margin: 1.5rem 0;                  /* 上下边距 */
-            border-radius: 0.5rem;              /* 圆角 */
-            border: 2px solid hsl(var(--b3));  /* 整体边框 */
-            border-left: 4px solid hsl(var(--p)); /* 左边框加粗：主色调 */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-          }
-          
-          /* 表格容器：table 元素 */
-          .post-content table {
-            width: 100%;                        /* 全宽 */
-            min-width: 600px;                  /* 最小宽度：确保有足够空间 */
-            margin: 0;                          /* 移除边距，由外层容器控制 */
-            border-collapse: collapse;          /* 边框合并 */
-            background-color: hsl(var(--b2) / 0.3); /* 背景：半透明基础色 */
-          }
-          
-          /* 表头单元格：th 元素 */
-          .post-content th {
-            background-color: hsl(var(--b2));   /* 基础色背景 */
-            font-weight: 600;                   /* 半粗体 */
-            padding: 0.75rem 1rem;              /* 内边距 */
-            text-align: left;                   /* 左对齐 */
-            color: hsl(var(--bc));              /* 基础内容颜色 */
-            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
-            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
-          }
-          
-          /* 表头最后一列：移除右边框 */
-          .post-content th:last-child {
-            border-right: none;                 /* 移除右边框 */
-          }
-          
-          /* 表格数据单元格：td 元素 */
-          .post-content td {
-            padding: 0.75rem 1rem;              /* 内边距 */
-            color: hsl(var(--bc));              /* 基础内容颜色 */
-            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
-            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
-          }
-          
-          /* 数据单元格最后一列：移除右边框 */
-          .post-content td:last-child {
-            border-right: none;                 /* 移除右边框 */
-          }
-          
-          /* 表格奇偶行样式：偶数行背景色 */
-          .post-content tbody tr:nth-child(even) {
-            background-color: hsl(var(--b2) / 0.5); /* 半透明基础色背景 */
-          }
-          
-          /* 表格行悬停效果：鼠标悬停时的背景色 */
-          .post-content tbody tr:hover {
-            background-color: hsl(var(--b2));   /* 基础色背景 */
-          }
-          
-          /* 表格最后一行：移除下边框 */
-          .post-content tbody tr:last-child td {
-            border-bottom: none;                /* 移除下边框 */
-          }
-
-          /* ========== 图片样式 ========== */
-          /* 图片元素：img 标签样式 */
-          .post-content img {
-            max-width: 100%;                    /* 最大宽度：响应式 */
-            height: auto;                       /* 自动高度：保持比例 */
-            border-radius: 0.5rem;              /* 圆角 */
-            margin: 1.5rem 0;                  /* 上下边距 */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-          }
-          
-          /* ========== 分割线样式 ========== */
-          /* 分割线元素：hr 标签 */
-          .post-content hr {
-            border: none;                       /* 移除默认边框 */
-            height: 1px;                        /* 高度 */
-            background-color: hsl(var(--b3));   /* 背景色：基础色 */
-            margin: 2rem 0;                     /* 上下边距 */
-          }
-          
-          /* ========== 数学公式样式 ========== */
-          /* MathJax 通用样式：数学公式容器（v2兼容） */
-          .post-content .MathJax {
-            font-size: 1.1em !important;       /* 字体大小：略大于正文 */
-          }
-          
-          /* MathJax v3 容器：行内数学公式 */
-          .post-content mjx-container {
-            margin: 0.5rem 0;                  /* 上下边距 */
-          }
-          
-          /* MathJax v3 块级容器：display="true" 属性的公式 */
-          .post-content mjx-container[display="true"] {
-            margin: 1.5rem 0;                  /* 上下边距 */
-            text-align: center;                /* 居中对齐 */
-          }
-          
-          /* 包含块级数学公式的段落：:has() 伪类选择器 */
-          .post-content p:has(mjx-container[display="true"]) {
-            text-align: center;                /* 居中对齐 */
-            line-height: 1;                    /* 行高：紧密排列 */
-          }
-          
-          /* 自定义数学显示容器：.math-display 类 */
-          .math-display {
-            text-align: center;                /* 居中对齐 */
-            margin: 1.5rem 0;                 /* 上下边距 */
-          }
-
-          /* ========== 特殊元素样式修复 ========== */
-          /* 标题中的行内代码：h1-h6 标题内的 code 元素 */
-          .post-content h1 code, .post-content h2 code, .post-content h3 code, 
-          .post-content h4 code, .post-content h5 code, .post-content h6 code {
-            font-size: 0.85em;                 /* 字体大小：相对于标题字体的85% */
-            background-color: hsl(var(--b2));  /* 背景色：基础色 */
-            padding: 0.2rem 0.4rem;            /* 内边距 */
-          }
-        </style>
-        
-      <!-- Content will be processed here -->
-      <div id="processed-content"><div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold mb-8 text-base-content">Woody Plant Multi-Omics Database (WP-MOD)</h1>
 
-  <!-- Tab 导航 -->
+  <!-- ========== Tab 导航 ========== -->
   <div class="tabs tabs-boxed mb-8">
     <a class="tab tab-active" data-tab="tab1">宏数据</a>
     <a class="tab" data-tab="tab2">培养菌株</a>
@@ -616,12 +308,12 @@ var _hmt = _hmt || [];
     <a class="tab" data-tab="tab4">在线工具</a>
   </div>
 
-  <!-- ==================== Tab 1: 宏数据 ==================== -->
+  <!-- ========== Tab 1: 宏数据 ========== -->
   <div id="tab1" class="tab-content active">
     <div class="glass-card p-4 mb-6">
       <div class="flex flex-wrap gap-4 items-end">
         <div class="form-control flex-1">
-          <label class="label">疾病/组织筛选</label>
+          <label class="label">疾病 / 组织 筛选</label>
           <input type="text" id="metaSearch" placeholder="例如: COPD, Sputum, Health..." class="input input-bordered">
         </div>
       </div>
@@ -634,25 +326,15 @@ var _hmt = _hmt || [];
           </tr>
         </thead>
         <tbody id="metaTableBody">
-          <% site.data.database.metagenomes.forEach(item => { %>
-            <tr class="meta-row"
-                data-disease="<%= (item.disease || '').toLowerCase() %>"
-                data-tissue="<%= (item.tissue || '').toLowerCase() %>">
-              <td><%= item.sequencing_type %></td>
-              <td><%= item.bioproject %></td>
-              <td><%= item.run %></td>
-              <td><%= item.country %></td>
-              <td><%= item.tissue %></td>
-              <td><%= item.disease %></td>
-              <td><a href="<%= item.link %>" target="_blank" class="link link-primary">NCBI</a></td>
-            </tr>
-          <% }); %>
+          
+            <tr><td colspan="7" class="text-center">暂无数据</td></tr>
+          
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- ==================== Tab 2: 培养菌株 ==================== -->
+  <!-- ========== Tab 2: 培养菌株 ========== -->
   <div id="tab2" class="tab-content hidden">
     <div class="glass-card p-4 mb-6">
       <div class="flex flex-wrap gap-4">
@@ -665,37 +347,24 @@ var _hmt = _hmt || [];
           </select>
         </div>
         <div class="form-control flex-1">
-          <label class="label">疾病/来源筛选</label>
-          <input type="text" id="cultureSearch" placeholder="COPD, Asthma, Healthy..." class="input input-bordered">
+          <label class="label">疾病 / 来源 筛选</label>
+          <input type="text" id="cultureSearch" placeholder="COPD, Asthma, sputum..." class="input input-bordered">
         </div>
       </div>
     </div>
     <div id="cultureList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <% site.data.database.cultures.forEach(culture => { %>
-        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition cursor-pointer culture-card"
-             data-kingdom="<%= culture.kingdom %>"
-             data-disease="<%= (culture.disease || '').toLowerCase() %>"
-             data-source="<%= (culture.source || '').toLowerCase() %>">
-          <div class="card-body">
-            <h3 class="card-title"><%= culture.genome_id %></h3>
-            <p><strong>Kingdom:</strong> <%= culture.kingdom %></p>
-            <p><strong>Disease:</strong> <%= culture.disease %></p>
-            <p><strong>Location:</strong> <%= culture.location %></p>
-            <p><strong>Source:</strong> <%= culture.source %></p>
-            <div class="card-actions justify-end">
-              <button class="btn btn-sm btn-outline btn-info view-details" data-id="<%= culture.genome_id %>">Details</button>
-            </div>
-          </div>
-        </div>
-      <% }); %>
+      
+        <div class="col-span-full text-center py-8">暂无数据</div>
+      
     </div>
   </div>
 
-  <!-- ==================== Tab 3: 分类信息 ==================== -->
+  <!-- ========== Tab 3: 分类信息 ========== -->
   <div id="tab3" class="tab-content hidden">
     <div class="glass-card p-4 mb-6">
       <div class="flex flex-wrap gap-4">
         <div class="form-control">
+          <label class="label">分类层级</label>
           <select id="genomeKingdomFilter" class="select select-bordered">
             <option value="">全部</option>
             <option value="Bacteria">细菌</option>
@@ -704,7 +373,8 @@ var _hmt = _hmt || [];
           </select>
         </div>
         <div class="form-control flex-1">
-          <input type="text" id="genomeSearch" placeholder="搜索基因组名称、属、种..." class="input input-bordered">
+          <label class="label">基因组 / 属 / 种 搜索</label>
+          <input type="text" id="genomeSearch" placeholder="例如: Streptococcus, neoformans..." class="input input-bordered">
         </div>
       </div>
     </div>
@@ -716,52 +386,30 @@ var _hmt = _hmt || [];
           </tr>
         </thead>
         <tbody id="genomeTableBody">
-          <% site.data.database.genomes.forEach(genome => { %>
-            <tr class="genome-row"
-                data-kingdom="<%= genome.kingdom %>"
-                data-name="<%= (genome.genome + ' ' + (genome.genus||'') + ' ' + (genome.species||'')).toLowerCase() %>">
-              <td><%= genome.genome %></td>
-              <td><%= genome.group %></td>
-              <td><%= genome.genome_size %></td>
-              <td><%= genome.gc_content %></td>
-              <td><%= genome.completeness %>%</td>
-              <td><%= genome.phylum %></td>
-              <td><%= genome.genus %></td>
-              <td><%= genome.species %></td>
-            </tr>
-          <% }); %>
+          
+            <tr><td colspan="8" class="text-center">暂无数据</td></tr>
+          
         </tbody>
       </table>
     </div>
   </div>
 
-  <!-- ==================== Tab 4: 在线工具 ==================== -->
+  <!-- ========== Tab 4: 在线工具 ========== -->
   <div id="tab4" class="tab-content hidden">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <% site.data.database.tools.forEach(tool => { %>
-        <div class="card bg-base-100 shadow-xl">
-          <div class="card-body">
-            <h3 class="card-title"><%= tool.name %></h3>
-            <p><%= tool.description %></p>
-            <div class="card-actions justify-end">
-              <a href="<%= tool.url %>" target="_blank" class="btn btn-primary">访问工具</a>
-            </div>
-          </div>
-        </div>
-      <% }); %>
+      
+        <div class="col-span-full text-center py-8">暂无工具</div>
+      
     </div>
-    <!-- 如果你需要嵌入自定义工具表单，可以在此添加 -->
     <div class="mt-8 alert alert-info">
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        <span>更多工具正在开发中，敬请期待。</span>
-      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>更多工具正在开发中，敬请期待。</span>
     </div>
   </div>
 </div>
 
 <script>
-  // Tab 切换逻辑
+  // -------------------- Tab 切换 --------------------
   const tabs = document.querySelectorAll('.tab');
   const contents = document.querySelectorAll('.tab-content');
   tabs.forEach(tab => {
@@ -775,27 +423,28 @@ var _hmt = _hmt || [];
     });
   });
 
-  // 宏数据表格筛选
+  // -------------------- 宏数据表格筛选 --------------------
   const metaSearch = document.getElementById('metaSearch');
   const metaRows = document.querySelectorAll('#metaTableBody .meta-row');
-  function filterMeta() {
-    const term = metaSearch.value.toLowerCase();
-    metaRows.forEach(row => {
-      const disease = row.dataset.disease;
-      const tissue = row.dataset.tissue;
-      const match = !term || disease.includes(term) || tissue.includes(term);
-      row.style.display = match ? '' : 'none';
+  if (metaSearch) {
+    metaSearch.addEventListener('input', () => {
+      const term = metaSearch.value.toLowerCase();
+      metaRows.forEach(row => {
+        const disease = row.dataset.disease;
+        const tissue = row.dataset.tissue;
+        const match = !term || disease.includes(term) || tissue.includes(term);
+        row.style.display = match ? '' : 'none';
+      });
     });
   }
-  if (metaSearch) metaSearch.addEventListener('input', filterMeta);
 
-  // 培养菌株筛选（王国 + 搜索）
+  // -------------------- 培养菌株筛选 --------------------
   const kingdomFilter = document.getElementById('kingdomFilter');
   const cultureSearch = document.getElementById('cultureSearch');
   const cultureCards = document.querySelectorAll('.culture-card');
   function filterCultures() {
-    const kingdom = kingdomFilter.value;
-    const term = cultureSearch.value.toLowerCase();
+    const kingdom = kingdomFilter ? kingdomFilter.value : '';
+    const term = cultureSearch ? cultureSearch.value.toLowerCase() : '';
     cultureCards.forEach(card => {
       const cardKingdom = card.dataset.kingdom;
       const disease = card.dataset.disease;
@@ -808,13 +457,13 @@ var _hmt = _hmt || [];
   if (kingdomFilter) kingdomFilter.addEventListener('change', filterCultures);
   if (cultureSearch) cultureSearch.addEventListener('input', filterCultures);
 
-  // 分类信息表格筛选
+  // -------------------- 分类信息表格筛选 --------------------
   const genomeKingdomFilter = document.getElementById('genomeKingdomFilter');
   const genomeSearch = document.getElementById('genomeSearch');
   const genomeRows = document.querySelectorAll('#genomeTableBody .genome-row');
   function filterGenomes() {
-    const kingdom = genomeKingdomFilter.value;
-    const term = genomeSearch.value.toLowerCase();
+    const kingdom = genomeKingdomFilter ? genomeKingdomFilter.value : '';
+    const term = genomeSearch ? genomeSearch.value.toLowerCase() : '';
     genomeRows.forEach(row => {
       const rowKingdom = row.dataset.kingdom;
       const name = row.dataset.name;
@@ -826,410 +475,16 @@ var _hmt = _hmt || [];
   if (genomeKingdomFilter) genomeKingdomFilter.addEventListener('change', filterGenomes);
   if (genomeSearch) genomeSearch.addEventListener('input', filterGenomes);
 
-  // 菌株详情模态框（简化版，可自行扩展）
+  // -------------------- 菌株详情模态框（简单示例） --------------------
   const detailBtns = document.querySelectorAll('.view-details');
   detailBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const id = btn.dataset.id;
-      // 根据 id 查找对应的 culture 数据（可以预先将完整数据存到全局变量，或通过 fetch 获取）
-      // 这里简单弹窗提示
-      alert(`显示 ${id} 的详细信息：\n培养条件、基因组下载链接等。\n实际开发中可以展示模态框。`);
+      // 这里可以扩展为真正的模态框，显示培养条件、下载链接等
+      alert(`显示 ${id} 的详细信息：\n培养条件、16S序列、基因组下载链接等。\n实际开发中可替换为模态框。`);
     });
   });
-</script></div>
-
-
-      <!-- Tags Footer -->
-        
-    </div>
-  </div>
-
-  
-   
-  </div>
-
-  <!-- Post Footer -->
-<div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-  <div class="card bg-base-100 hover:shadow-xl">
-    
-<div class="card-body p-6">
-  <h3 class="card-title mb-4">Post Actions</h3>
-  <div class="flex flex-wrap gap-3" id="share-buttons-container">
-    <!-- 分享按钮将由 JS 动态生成 -->
-  </div>
-</div>
-
-<script>
-function copyToClipboard() {
-  navigator.clipboard.writeText(window.location.href).then(() => {
-    alert('Link copied!');
-  });
-}
-
-// 动态生成分享按钮
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('share-buttons-container');
-  const pageUrl = encodeURIComponent(window.location.href);
-  const pageTitle = encodeURIComponent(document.title);
-
-  const platforms = {"twitter":false,"linkedin":false,"facebook":false,"reddit":false,"weibo":true,"qq":true,"wechat":true};
-
-  // 按钮生成函数
-  const createButton = (href, classes, iconClass, text, isButton = false, clickHandler = null) => {
-    let el;
-    if (isButton) {
-      el = document.createElement('button');
-      el.type = 'button';
-      el.className = classes;
-      if (clickHandler) el.addEventListener('click', clickHandler);
-    } else {
-      el = document.createElement('a');
-      el.href = href;
-      el.target = "_blank";
-      el.rel = "noopener";
-      el.className = classes;
-    }
-    el.innerHTML = `<i class="${iconClass}"></i> ${text}`;
-    container.appendChild(el);
-  };
-
-  // 国际平台
-  if (platforms.twitter) {
-    createButton(
-      `https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`,
-      'btn btn-sm btn-outline',
-      'fa-brands fa-twitter',
-      'X (Twitter)'
-    );
-  }
-
-  if (platforms.linkedin) {
-    createButton(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`,
-      'btn btn-sm btn-outline',
-      'fa-brands fa-linkedin',
-      'LinkedIn'
-    );
-  }
-
-  if (platforms.facebook) {
-    createButton(
-      `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
-      'btn btn-sm btn-outline',
-      'fa-brands fa-facebook',
-      'Facebook'
-    );
-  }
-
-  if (platforms.reddit) {
-    createButton(
-      `https://www.reddit.com/submit?url=${pageUrl}&title=${pageTitle}`,
-      'btn btn-sm btn-outline',
-      'fa-brands fa-reddit',
-      'Reddit'
-    );
-  }
-
-  // 国内平台
-  if (platforms.weibo) {
-    createButton(
-      `https://service.weibo.com/share/share.php?title=${pageTitle}&url=${pageUrl}`,
-      'btn btn-sm btn-outline',
-      'fa-brands fa-weibo',
-      'Weibo'
-    );
-  }
-
-  if (platforms.qq) {
-    createButton(
-      `http://connect.qq.com/widget/shareqq/index.html?title=${pageTitle}&url=${pageUrl}`,
-      'btn btn-sm btn-outline',
-      'fa-brands fa-qq',
-      'QQ'
-    );
-  }
-
-  if (platforms.wechat) {
-    createButton(
-      '#',
-      'btn btn-sm btn-outline',
-      'fa-brands fa-weixin',
-      'WeChat',
-      true,
-      () => {
-        const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${pageUrl}`;
-        const qrWindow = window.open('', 'WeChat Share', 'width=200,height=200');
-        qrWindow.document.write(`<img src="${qrUrl}" alt="Scan QR to share on WeChat">`);
-      }
-    );
-  }
-
-  // 复制链接按钮
-  createButton(
-    '#',
-    'btn btn-sm btn-outline',
-    'fa-solid fa-copy',
-    'Copy Link',
-    true,
-    copyToClipboard
-  );
-});
-</script>
-
-
-  </div>
-  
-  <!-- Navigation Section -->
-  <div class="card bg-base-100 hover:shadow-xl">
-    <div class="card-body p-6">
-      <h3 class="card-title mb-4">Navigation</h3>
-      <div class="space-y-3">
-        <a href="/notes/" class="btn btn-sm btn btn-outline w-full justify-start">
-          <i class="fa-solid fa-folder-tree"></i>
-          All Notes
-        </a>
-        
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-  <!-- Previous/Next Navigation Card -->
-  
-
-</div>
-
-
-
-
-
-<!-- Math Processing and Code Block Transformation -->
-<script>
-// Copy to clipboard function
-function copyToClipboard() {
-  const url = window.location.href;
-  navigator.clipboard.writeText(url).then(function() {
-    // Show success feedback
-    const button = event.target.closest('button');
-    const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-    button.classList.remove('btn-outline');
-    button.classList.add('btn-success');
-    
-    setTimeout(function() {
-      button.innerHTML = originalText;
-      button.classList.remove('btn-success');
-      button.classList.add('btn-outline');
-    }, 2000);
-  }).catch(function(err) {
-    console.error('Failed to copy: ', err);
-    // Fallback for older browsers
-    const textArea = document.createElement('textarea');
-    textArea.value = url;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    
-    // Show success feedback
-    const button = event.target.closest('button');
-    const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-    button.classList.remove('btn-outline');
-    button.classList.add('btn-success');
-    
-    setTimeout(function() {
-      button.innerHTML = originalText;
-      button.classList.remove('btn-success');
-      button.classList.add('btn-outline');
-    }, 2000);
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  const processedContent = document.getElementById('processed-content');
-  let content = processedContent.innerHTML;
-
-  // ========== 数学公式处理 ==========
-  console.log('开始处理数学公式...');
-  
-  // 1. 处理单行公式：<p>$$formula$$</p>
-  content = content.replace(/<p>\s*\$\$([\s\S]*?)\$\$\s*<\/p>/g, function(match, formula) {
-    console.log('找到单行公式:', formula.trim());
-    return '<div class="math-display">$$' + formula.trim() + '$$</div>';
-  });
-
-  // 2. 处理多行公式：<p>$$</p>...content...<p>$$</p>
-  content = content.replace(/<p>\s*\$\$\s*<\/p>([\s\S]*?)<p>\s*\$\$\s*<\/p>/g, function(match, mathContent) {
-    console.log('找到多行公式:', mathContent);
-    // 提取数学内容，移除HTML标签
-    const cleanContent = mathContent
-      .replace(/<p>/g, '\n')
-      .replace(/<\/p>/g, '')
-      .replace(/\n+/g, '\n')
-      .trim();
-    console.log('清理后的数学内容:', cleanContent);
-    return '<div class="math-display">$$\n' + cleanContent + '\n$$</div>';
-  });
-
-  // 3. 清理任何剩余的单独$$ 
-  content = content.replace(/<p>\s*\$\$\s*<\/p>/g, '');
-  
-  console.log('数学公式处理完成');
-
-  // 更新内容
-  processedContent.innerHTML = content;
-
-  // ========== 表格滚动容器处理 ==========
-  // 为所有表格添加滚动容器
-  const tables = processedContent.querySelectorAll('table');
-  tables.forEach(function(table) {
-    if (!table.closest('.table-container')) {
-      const container = document.createElement('div');
-      container.className = 'table-container';
-      table.parentNode.insertBefore(container, table);
-      container.appendChild(table);
-    }
-  });
-
-  // ========== 代码块转换 ==========
-  setTimeout(function() {
-    console.log('开始处理代码块...');
-    
-    // 转换 Hexo highlight.js 代码块为 mockup-code 样式
-    const highlightFigures = processedContent.querySelectorAll('figure.highlight');
-    console.log('找到代码块数量:', highlightFigures.length);
-    
-    highlightFigures.forEach(function(figure) {
-      const codeLines = [];
-      const lineSpans = figure.querySelectorAll('td.code .line');
-      
-      lineSpans.forEach(function(lineSpan) {
-        let lineText = '';
-        for (let node of lineSpan.childNodes) {
-          if (node.nodeType === Node.TEXT_NODE) {
-            lineText += node.textContent;
-          } else if (node.nodeType === Node.ELEMENT_NODE) {
-            lineText += node.textContent;
-          }
-        }
-        codeLines.push(lineText);
-      });
-
-      // 如果没有从表格获取到行，尝试其他方法
-      if (codeLines.length === 0) {
-        const codeContent = figure.querySelector('td.code');
-        if (codeContent) {
-          const text = codeContent.textContent || codeContent.innerText;
-          codeLines.push(...text.split('\n').filter(line => line.trim() !== ''));
-        }
-      }
-
-      if (codeLines.length === 0) return;
-
-      // 创建新的 mockup-code 容器
-      const mockupCode = document.createElement('div');
-      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
-      
-      let htmlContent = '';
-      codeLines.forEach((line, index) => {
-        const lineNumber = index + 1;
-        const escapedLine = line
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-        
-        // 检测特殊行类型并添加相应样式
-        let className = '';
-        const lowerLine = line.toLowerCase().trim();
-        
-        if (lowerLine.includes('error') || lowerLine.includes('exception') || lowerLine.includes('failed')) {
-          className = ' class="bg-error text-error-content"';
-        } else if (lowerLine.includes('warning') || lowerLine.includes('warn')) {
-          className = ' class="bg-warning text-warning-content"';
-        } else if (lowerLine.includes('success') || lowerLine.includes('done') || lowerLine.includes('completed')) {
-          className = ' class="bg-success text-success-content"';
-        } else if (lowerLine.includes('info') || lowerLine.includes('installing') || lowerLine.includes('loading')) {
-          className = ' class="bg-info text-info-content"';
-        }
-        
-        htmlContent += `<pre data-prefix="${lineNumber}"${className}><code>${escapedLine}</code></pre>`;
-      });
-
-      mockupCode.innerHTML = htmlContent;
-      figure.parentNode.replaceChild(mockupCode, figure);
-    });
-
-    // 处理其他普通的 pre/code 块
-    const preBlocks = processedContent.querySelectorAll('pre:not(.mockup-code pre)');
-    preBlocks.forEach(function(pre) {
-      if (pre.closest('.mockup-code')) return;
-      
-      const codeElement = pre.querySelector('code') || pre;
-      const text = codeElement.textContent || codeElement.innerText || '';
-      const lines = text.split('\n').filter(line => line.trim() !== '');
-      
-      if (lines.length === 0) return;
-      
-      const mockupCode = document.createElement('div');
-      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
-      
-      let htmlContent = '';
-      lines.forEach((line, index) => {
-        const lineNumber = index + 1;
-        const escapedLine = line
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;');
-        
-        htmlContent += `<pre data-prefix="${lineNumber}"><code>${escapedLine}</code></pre>`;
-      });
-
-      mockupCode.innerHTML = htmlContent;
-      pre.parentNode.replaceChild(mockupCode, pre);
-    });
-
-    console.log('代码块处理完成');
-
-    // ========== MathJax 初始化 ==========
-    console.log('初始化 MathJax...');
-    if (window.MathJax) {
-      MathJax.typesetPromise([processedContent]).then(function() {
-        console.log('MathJax 渲染完成');
-      }).catch(function (err) {
-        console.log('MathJax typeset failed: ' + err.message);
-      });
-    }
-  }, 50); // 短暂延迟确保DOM更新完成
-});
-</script>
-
-<!-- MathJax Configuration -->
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true,
-    processEnvironments: true,
-    tags: 'ams'
-  },
-  options: {
-    ignoreHtmlClass: 'tex2jax_ignore',
-    processHtmlClass: 'tex2jax_process'
-  }
-};
-</script>
-
-<script type="text/javascript" id="MathJax-script" async
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
   </div>
 
