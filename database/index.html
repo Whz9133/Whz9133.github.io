@@ -101,6 +101,11 @@ var _hmt = _hmt || [];
         Projects
       </a>
     
+      <a href="/database/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
+        <i class="fa-solid fa-database mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        Database
+      </a>
+    
       <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
         <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
         Notes
@@ -235,6 +240,11 @@ var _hmt = _hmt || [];
         Projects
       </a>
     
+      <a href="/database/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
+        <i class="fa-solid fa-database mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        Database
+      </a>
+    
       <a href="/notes/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
         <i class="fa-solid fa-sticky-note mr-3 text-lg group-hover:scale-110 transition-transform"></i>
         Notes
@@ -287,1055 +297,940 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
-    <div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-8 text-base-content">Research Projects</h1>
+    <div class="container mx-auto px-4 py-8 space-y-6">
+  <!-- Post Header Card -->
+  <div class="rounded-box card bg-base-100 shadow-lg text-base-content hover:shadow-xl transition-all duration-300 timeline-item">
 
-  <!-- Filters -->
-  <div class="glass-card p-4 mb-8">
-    <div class="flex flex-wrap gap-4">
-      <!-- Status Filter -->
-      <div class="form-control">
-        <select class="select select-bordered" id="statusFilter">
-          <option value="">All Statuses</option>
-          
-            <option value="current">current</option>
-          
-            <option value="completed">completed</option>
-          
-        </select>
-      </div>
+    <div class="card-body">
+      <h1 class="text-4xl font-bold text-primary mb-4">Database</h1>
+      
+      <div class="flex flex-wrap items-center gap-4 text-sm opacity-70 mb-4">
+        <div class="flex items-center gap-2">
+          <i class="fa-regular fa-calendar"></i>
+          <time datetime="2026-04-08T16:00:00.000Z">2026-04-09</time>
+        </div>
 
-      <!-- Category Filter -->
-      <div class="form-control">
-        <select class="select select-bordered" id="categoryFilter">
-          <option value="">All Categories</option>
-          
-            <option value="Artificial Intelligence">Artificial Intelligence</option>
-          
-            <option value="Bioinformatics">Bioinformatics</option>
-          
-            <option value="Genomics">Genomics</option>
-          
-            <option value="Structural Biology">Structural Biology</option>
-          
-            <option value="Medical AI">Medical AI</option>
-          
-            <option value="Climate Science">Climate Science</option>
-          
-            <option value="Educational Technology">Educational Technology</option>
-          
-            <option value="Autonomous Systems">Autonomous Systems</option>
-          
-        </select>
+        <div class="flex items-center gap-1">
+              <i class="fa-solid fa-clock"></i>
+              <span>12 min read</span>
+        </div>
+        <!-- Categories and Tags -->
+          <div class="flex flex-wrap gap-2">
+            
+            
+            
+          </div>
       </div>
-
-      <!-- Search -->
-      <div class="form-control flex-1">
-        <input type="text" placeholder="Search projects..." class="input input-bordered" id="searchInput" />
-      </div>
+    
     </div>
   </div>
 
-  <!-- Projects List -->
-  <div id="projectsList" class="space-y-6">
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="current"
-        data-category="Artificial Intelligence"
-        data-title="ai-powered research assistant"
-        data-description="an ai system designed to help researchers conduct efficient literature reviews and synthesize scientific knowledge."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+  <!-- Post Content Card -->
+  <div class="card bg-base-100 hover:shadow-xl">
+    <div class="card-body">
+      <!-- Post Content -->
+      <div class="prose prose-lg max-w-none post-content">
+        <style>
+          /* ========== 基础排版样式 ========== */
+          /* 主要内容容器：post-content 类 */
+          .post-content {
+            line-height: 1.8;                   /* 行高：1.8 */
+            color: hsl(var(--bc));              /* 颜色：基础内容色 */
+          }
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
-            </div>
+          /* 标题样式：h1-h6 元素 */
+          .post-content h1, .post-content h2, .post-content h3,
+          .post-content h4, .post-content h5, .post-content h6 {
+            color: hsl(var(--bc));              /* 颜色：基础内容色 */
+            font-weight: 600;                   /* 字重：半粗体 */
+            margin-top: 2rem;                   /* 上边距 */
+            margin-bottom: 1rem;                /* 下边距 */
+            line-height: 1.3;                   /* 行高：紧密 */
+          }
           
+          /* 段落样式：p 元素 */
+          .post-content p {
+            margin: 1.2rem 0;                  /* 上下边距 */
+            text-align: justify;                /* 两端对齐 */
+          }
           
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            AI-Powered Research Assistant
-          </h2>
+          /* 强调文本：strong 和 b 元素 */
+          .post-content strong, .post-content b {
+            font-weight: 700;                   /* 字重：粗体 */
+            color: hsl(var(--bc));              /* 颜色：基础内容色 */
+          }
+          
+          /* 斜体文本：em 和 i 元素 */
+          .post-content em, .post-content i {
+            font-style: italic;                 /* 斜体 */
+            color: hsl(var(--bc) / 0.9);       /* 颜色：略透明的基础内容色 */
+          }
 
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2023 - Present</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Artificial Intelligence</span>
-              </div>
-            
-          </div>
+          /* ========== 代码块样式 ========== */
+          /* DaisyUI mockup-code 组件：代码块容器 */
+          .post-content .mockup-code {
+            margin: 1.5rem 0;                  /* 上下边距 */
+            border-radius: 0.5rem;              /* 圆角 */
+            overflow-x: auto;                   /* 水平滚动 */
+            overflow-y: hidden;                 /* 隐藏垂直溢出 */
+          }
+          
+          /* mockup-code 内的 pre 元素：预格式化文本容器 */
+          .post-content .mockup-code pre {
+            white-space: pre-wrap;              /* 保持空白，允许换行 */
+            word-wrap: break-word;              /* 长单词换行 */
+            overflow-wrap: break-word;          /* 溢出换行 */
+            line-height: 0;                     /* 行高：0（行与行之间无间距） */
+            margin: 0;                          /* 上下边距：0 */
+          }
+          
+          /* mockup-code 内的 code 元素：代码文本 */
+          .post-content .mockup-code code {
+            white-space: pre-wrap;              /* 保持空白，允许换行 */
+            word-wrap: break-word;              /* 长单词换行 */
+            overflow-wrap: break-word;          /* 溢出换行 */
+            background: none;                   /* 移除背景 */
+            border: none;                       /* 移除边框 */
+            padding: 0;                         /* 移除内边距 */
+            font-size: inherit;                 /* 继承父元素字体大小 */
+            line-height: 1.2;                     /* 行高：0（行与行之间无间距） */
+            margin: 0;                          /* 上下边距：0 */
+          }
+          
+          /* 隐藏原始的语法高亮容器：避免样式冲突 */
+          .post-content .highlight {
+            display: none;                      /* 完全隐藏 */
+          }
+          
+          /* 行内代码样式：code 标签 */
+          .post-content code {
+            background-color: hsl(var(--n) / 0.08);  /* 半透明中性色背景 */
+            color: hsl(var(--bc));                    /* 基础内容颜色 */
+            padding: 0.2rem 0.4rem;                   /* 内边距 */
+            border-radius: 0.25rem;                   /* 圆角 */
+            font-size: 0.875rem;                      /* 字体大小 14px */
+            border: 1px solid hsl(var(--b3));        /* 边框 */
+          }
 
-          <!-- Tags -->
+          /* ========== 引用块样式 ========== */
+          /* blockquote 元素：引用文本块 */
+          .post-content blockquote {
+            border-left: 4px solid hsl(var(--p));    /* 左边框：主色调 */
+            background-color: hsl(var(bg-base-200));        /* 背景：base-200 */
+            margin: 1.5rem 0;                        /* 上下边距 */
+            padding: 1rem 1.5rem;                    /* 内边距 */
+            border-radius: 0 0.5rem 0.5rem 0;        /* 右侧圆角 */
+            position: relative;                       /* 相对定位 */
+            font-style: italic;                       /* 斜体 */
+            color: hsl(var(--bc) / 0.9);            /* 颜色：略透明 */
+          }
           
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">AI</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Knowledge Graph</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Literature Mining</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Research Tools</div>
-              
-            </div>
+          /* 引用块内的段落：移除额外边距 */
+          .post-content blockquote p {
+            margin: 0.5rem 0;                  /* 减少上下边距 */
+          }
           
+          /* 引用块最后一个段落：移除下边距 */
+          .post-content blockquote p:last-child {
+            margin-bottom: 0;                  /* 移除下边距 */
+          }
 
+          /* ========== 列表样式 ========== */
+          /* 无序列表：ul 元素 */
+          .post-content ul {
+            margin: 1rem 0;                    /* 上下边距 */
+            padding-left: 2rem;                /* 左内边距 */
+            list-style-type: disc;              /* 列表标记：实心圆点 */
+          }
           
-            <p class="text-base-content opacity-90 mb-4">An AI system designed to help researchers conduct efficient literature reviews and synthesize scientific knowledge.</p>
+          /* 有序列表：ol 元素 */
+          .post-content ol {
+            margin: 1rem 0;                    /* 上下边距 */
+            padding-left: 2rem;                /* 左内边距 */
+            list-style-type: decimal;           /* 列表标记：数字 */
+          }
           
+          /* 列表项：li 元素 */
+          .post-content li {
+            margin: 0.5rem 0;                  /* 上下边距 */
+            line-height: 1.6;                  /* 行高 */
+          }
+          
+          /* 嵌套列表：缩进和不同标记 */
+          .post-content ul ul {
+            list-style-type: circle;            /* 二级：空心圆 */
+            margin: 0.5rem 0;                  /* 减少边距 */
+          }
+          
+          .post-content ul ul ul {
+            list-style-type: square;            /* 三级：方形 */
+          }
 
+          /* ========== 链接样式 ========== */
+          /* 链接元素：a 标签的默认状态 */
+          .post-content a {
+            color: hsl(var(--p));               /* 主色调 */
+            text-decoration: underline;         /* 下划线 */
+            text-decoration-thickness: 1px;     /* 下划线粗细 */
+            text-underline-offset: 2px;         /* 下划线偏移距离 */
+            transition: all 0.2s ease;          /* 平滑过渡效果 */
+          }
           
+          /* 链接悬停状态：鼠标悬停时的样式 */
+          .post-content a:hover {
+            color: hsl(var(--pf));              /* 主色调焦点色 */
+            text-decoration-thickness: 2px;     /* 下划线变粗 */
+          }
           
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://university.edu/alice-smith" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Alice Smith (PI)
-                </a>, 
-              
-                <a 
-                  href="https://university.edu/john-doe" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. John Doe (Co-PI)
-                </a>, 
-              
-                <a 
-                  href="https://university.edu/emily-zhang" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Emily Zhang (PhD Student)
-                </a>
-              
-            </div>
+          /* ========== 表格样式 ========== */
+          /* 表格外层滚动容器：支持水平滚动 */
+          .post-content .table-container {
+            overflow-x: auto;                   /* 水平滚动 */
+            margin: 1.5rem 0;                  /* 上下边距 */
+            border-radius: 0.5rem;              /* 圆角 */
+            border: 2px solid hsl(var(--b3));  /* 整体边框 */
+            border-left: 4px solid hsl(var(--p)); /* 左边框加粗：主色调 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+          }
           
+          /* 表格容器：table 元素 */
+          .post-content table {
+            width: 100%;                        /* 全宽 */
+            min-width: 600px;                  /* 最小宽度：确保有足够空间 */
+            margin: 0;                          /* 移除边距，由外层容器控制 */
+            border-collapse: collapse;          /* 边框合并 */
+            background-color: hsl(var(--b2) / 0.3); /* 背景：半透明基础色 */
+          }
           
+          /* 表头单元格：th 元素 */
+          .post-content th {
+            background-color: hsl(var(--b2));   /* 基础色背景 */
+            font-weight: 600;                   /* 半粗体 */
+            padding: 0.75rem 1rem;              /* 内边距 */
+            text-align: left;                   /* 左对齐 */
+            color: hsl(var(--bc));              /* 基础内容颜色 */
+            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
+            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
+          }
+          
+          /* 表头最后一列：移除右边框 */
+          .post-content th:last-child {
+            border-right: none;                 /* 移除右边框 */
+          }
+          
+          /* 表格数据单元格：td 元素 */
+          .post-content td {
+            padding: 0.75rem 1rem;              /* 内边距 */
+            color: hsl(var(--bc));              /* 基础内容颜色 */
+            border-bottom: 1px solid hsl(var(--bc)); /* 下边框 */
+            border-right: 1px solid hsl(var(--bc));  /* 右边框 */
+          }
+          
+          /* 数据单元格最后一列：移除右边框 */
+          .post-content td:last-child {
+            border-right: none;                 /* 移除右边框 */
+          }
+          
+          /* 表格奇偶行样式：偶数行背景色 */
+          .post-content tbody tr:nth-child(even) {
+            background-color: hsl(var(--b2) / 0.5); /* 半透明基础色背景 */
+          }
+          
+          /* 表格行悬停效果：鼠标悬停时的背景色 */
+          .post-content tbody tr:hover {
+            background-color: hsl(var(--b2));   /* 基础色背景 */
+          }
+          
+          /* 表格最后一行：移除下边框 */
+          .post-content tbody tr:last-child td {
+            border-bottom: none;                /* 移除下边框 */
+          }
 
+          /* ========== 图片样式 ========== */
+          /* 图片元素：img 标签样式 */
+          .post-content img {
+            max-width: 100%;                    /* 最大宽度：响应式 */
+            height: auto;                       /* 自动高度：保持比例 */
+            border-radius: 0.5rem;              /* 圆角 */
+            margin: 1.5rem 0;                  /* 上下边距 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+          }
           
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://www.nature.com/articles/ai-research-synthesis" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Smith et al. (2024), AI-Driven Research Synthesis, Nature
-                </a>
-              
-            </div>
+          /* ========== 分割线样式 ========== */
+          /* 分割线元素：hr 标签 */
+          .post-content hr {
+            border: none;                       /* 移除默认边框 */
+            height: 1px;                        /* 高度 */
+            background-color: hsl(var(--b3));   /* 背景色：基础色 */
+            margin: 2rem 0;                     /* 上下边距 */
+          }
           
+          /* ========== 数学公式样式 ========== */
+          /* MathJax 通用样式：数学公式容器（v2兼容） */
+          .post-content .MathJax {
+            font-size: 1.1em !important;       /* 字体大小：略大于正文 */
+          }
+          
+          /* MathJax v3 容器：行内数学公式 */
+          .post-content mjx-container {
+            margin: 0.5rem 0;                  /* 上下边距 */
+          }
+          
+          /* MathJax v3 块级容器：display="true" 属性的公式 */
+          .post-content mjx-container[display="true"] {
+            margin: 1.5rem 0;                  /* 上下边距 */
+            text-align: center;                /* 居中对齐 */
+          }
+          
+          /* 包含块级数学公式的段落：:has() 伪类选择器 */
+          .post-content p:has(mjx-container[display="true"]) {
+            text-align: center;                /* 居中对齐 */
+            line-height: 1;                    /* 行高：紧密排列 */
+          }
+          
+          /* 自定义数学显示容器：.math-display 类 */
+          .math-display {
+            text-align: center;                /* 居中对齐 */
+            margin: 1.5rem 0;                 /* 上下边距 */
+          }
 
-          <!-- Project Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-                <a 
-                  href="https://research-assistant.ai" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-link mr-0"></i>
-                  Link
-                </a>
-              
-              
-                <a 
-                  href="https://github.com/username/ai-research-assistant" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
-                  GitHub
-                </a>
-              
-            </div>
-          
-          
+          /* ========== 特殊元素样式修复 ========== */
+          /* 标题中的行内代码：h1-h6 标题内的 code 元素 */
+          .post-content h1 code, .post-content h2 code, .post-content h3 code, 
+          .post-content h4 code, .post-content h5 code, .post-content h6 code {
+            font-size: 0.85em;                 /* 字体大小：相对于标题字体的85% */
+            background-color: hsl(var(--b2));  /* 背景色：基础色 */
+            padding: 0.2rem 0.4rem;            /* 内边距 */
+          }
+        </style>
+        
+      <!-- Content will be processed here -->
+      <div id="processed-content"><div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-8 text-base-content">Woody Plant Multi-Omics Database (WP-MOD)</h1>
+
+  <!-- Tab 导航 -->
+  <div class="tabs tabs-boxed mb-8">
+    <a class="tab tab-active" data-tab="tab1">宏数据</a>
+    <a class="tab" data-tab="tab2">培养菌株</a>
+    <a class="tab" data-tab="tab3">分类信息</a>
+    <a class="tab" data-tab="tab4">在线工具</a>
+  </div>
+
+  <!-- ==================== Tab 1: 宏数据 ==================== -->
+  <div id="tab1" class="tab-content active">
+    <div class="glass-card p-4 mb-6">
+      <div class="flex flex-wrap gap-4 items-end">
+        <div class="form-control flex-1">
+          <label class="label">疾病/组织筛选</label>
+          <input type="text" id="metaSearch" placeholder="例如: COPD, Sputum, Health..." class="input input-bordered">
         </div>
       </div>
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="completed"
-        data-category="Bioinformatics"
-        data-title="bioinformatics data platform"
-        data-description="a platform for integration and analysis of multi-omics data with user-friendly visualization."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
-          
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Bioinformatics Data Platform
-          </h2>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full">
+        <thead>
+          <tr>
+            <th>测序类型</th><th>BioProject</th><th>Run</th><th>国家</th><th>组织</th><th>疾病</th><th>链接</th>
+          </tr>
+        </thead>
+        <tbody id="metaTableBody">
+          <% site.data.database.metagenomes.forEach(item => { %>
+            <tr class="meta-row"
+                data-disease="<%= (item.disease || '').toLowerCase() %>"
+                data-tissue="<%= (item.tissue || '').toLowerCase() %>">
+              <td><%= item.sequencing_type %></td>
+              <td><%= item.bioproject %></td>
+              <td><%= item.run %></td>
+              <td><%= item.country %></td>
+              <td><%= item.tissue %></td>
+              <td><%= item.disease %></td>
+              <td><a href="<%= item.link %>" target="_blank" class="link link-primary">NCBI</a></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2021 - 2023</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Bioinformatics</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Bioinformatics</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Data Integration</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Visualization</div>
-              
-            </div>
-          
-
-          
-            <p class="text-base-content opacity-90 mb-4">A platform for integration and analysis of multi-omics data with user-friendly visualization.</p>
-          
-
-          
-          
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://university.edu/linda-wang" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Linda Wang (PI)
-                </a>, 
-              
-                <a 
-                  href="https://university.edu/mark-lee" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Mark Lee (Researcher)
-                </a>
-              
-            </div>
-          
-          
-
-          
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://bioinformaticsjournal.org/articles/integrative-omics" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Wang et al. (2023), Integrative Omics Analysis, Bioinformatics Journal
-                </a>
-              
-            </div>
-          
-
-          <!-- Project Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-                <a 
-                  href="https://bioinfo-platform.org" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-link mr-0"></i>
-                  Link
-                </a>
-              
-              
-            </div>
-          
-          
+  <!-- ==================== Tab 2: 培养菌株 ==================== -->
+  <div id="tab2" class="tab-content hidden">
+    <div class="glass-card p-4 mb-6">
+      <div class="flex flex-wrap gap-4">
+        <div class="form-control">
+          <label class="label">菌群类型</label>
+          <select id="kingdomFilter" class="select select-bordered">
+            <option value="">全部</option>
+            <option value="Bacteria">细菌</option>
+            <option value="Fungi">真菌</option>
+          </select>
+        </div>
+        <div class="form-control flex-1">
+          <label class="label">疾病/来源筛选</label>
+          <input type="text" id="cultureSearch" placeholder="COPD, Asthma, Healthy..." class="input input-bordered">
         </div>
       </div>
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="current"
-        data-category="Genomics"
-        data-title="next-gen sequencing analysis pipeline"
-        data-description="an automated pipeline for ngs data processing and variant calling optimized for large datasets."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
+    </div>
+    <div id="cultureList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% site.data.database.cultures.forEach(culture => { %>
+        <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition cursor-pointer culture-card"
+             data-kingdom="<%= culture.kingdom %>"
+             data-disease="<%= (culture.disease || '').toLowerCase() %>"
+             data-source="<%= (culture.source || '').toLowerCase() %>">
+          <div class="card-body">
+            <h3 class="card-title"><%= culture.genome_id %></h3>
+            <p><strong>Kingdom:</strong> <%= culture.kingdom %></p>
+            <p><strong>Disease:</strong> <%= culture.disease %></p>
+            <p><strong>Location:</strong> <%= culture.location %></p>
+            <p><strong>Source:</strong> <%= culture.source %></p>
+            <div class="card-actions justify-end">
+              <button class="btn btn-sm btn-outline btn-info view-details" data-id="<%= culture.genome_id %>">Details</button>
             </div>
-          
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Next-Gen Sequencing Analysis Pipeline
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2022 - Present</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Genomics</span>
-              </div>
-            
           </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
 
-          <!-- Tags -->
-          
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Genomics</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">NGS</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Pipeline</div>
-              
-            </div>
-          
-
-          
-            <p class="text-base-content opacity-90 mb-4">An automated pipeline for NGS data processing and variant calling optimized for large datasets.</p>
-          
-
-          
-          
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://university.edu/sarah-chen" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Sarah Chen (Lead Scientist)
-                </a>
-              
-            </div>
-          
-          
-
-          
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://genomeresearch.org/articles/efficient-ngs" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Chen et al. (2024), Efficient NGS Data Analysis, Genome Research
-                </a>
-              
-            </div>
-          
-
-          <!-- Project Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-              
-                <a 
-                  href="https://github.com/username/ngs-pipeline" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
-                  GitHub
-                </a>
-              
-            </div>
-          
-          
+  <!-- ==================== Tab 3: 分类信息 ==================== -->
+  <div id="tab3" class="tab-content hidden">
+    <div class="glass-card p-4 mb-6">
+      <div class="flex flex-wrap gap-4">
+        <div class="form-control">
+          <select id="genomeKingdomFilter" class="select select-bordered">
+            <option value="">全部</option>
+            <option value="Bacteria">细菌</option>
+            <option value="Fungi">真菌</option>
+            <option value="Viruses">病毒</option>
+          </select>
+        </div>
+        <div class="form-control flex-1">
+          <input type="text" id="genomeSearch" placeholder="搜索基因组名称、属、种..." class="input input-bordered">
         </div>
       </div>
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="completed"
-        data-category="Structural Biology"
-        data-title="protein structure prediction tool"
-        data-description="a computational tool for predicting protein 3d structures using deep learning methods."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
-          
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Protein Structure Prediction Tool
-          </h2>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full">
+        <thead>
+          <tr>
+            <th>基因组</th><th>组别</th><th>大小(bp)</th><th>GC%</th><th>完整度</th><th>门</th><th>属</th><th>种</th>
+          </tr>
+        </thead>
+        <tbody id="genomeTableBody">
+          <% site.data.database.genomes.forEach(genome => { %>
+            <tr class="genome-row"
+                data-kingdom="<%= genome.kingdom %>"
+                data-name="<%= (genome.genome + ' ' + (genome.genus||'') + ' ' + (genome.species||'')).toLowerCase() %>">
+              <td><%= genome.genome %></td>
+              <td><%= genome.group %></td>
+              <td><%= genome.genome_size %></td>
+              <td><%= genome.gc_content %></td>
+              <td><%= genome.completeness %>%</td>
+              <td><%= genome.phylum %></td>
+              <td><%= genome.genus %></td>
+              <td><%= genome.species %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2020 - 2022</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Structural Biology</span>
-              </div>
-            
+  <!-- ==================== Tab 4: 在线工具 ==================== -->
+  <div id="tab4" class="tab-content hidden">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <% site.data.database.tools.forEach(tool => { %>
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h3 class="card-title"><%= tool.name %></h3>
+            <p><%= tool.description %></p>
+            <div class="card-actions justify-end">
+              <a href="<%= tool.url %>" target="_blank" class="btn btn-primary">访问工具</a>
+            </div>
           </div>
-
-          <!-- Tags -->
-          
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Protein</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Deep Learning</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Structural Biology</div>
-              
-            </div>
-          
-
-          
-            <p class="text-base-content opacity-90 mb-4">A computational tool for predicting protein 3D structures using deep learning methods.</p>
-          
-
-          
-          
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://university.edu/kevin-brown" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Kevin Brown (PI)
-                </a>
-              
-            </div>
-          
-          
-
-          
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://jmb.org/articles/deep-learning-protein" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Brown et al. (2022), Deep Learning for Protein Folding, Journal of Molecular Biology
-                </a>
-              
-            </div>
-          
-
-          <!-- Project Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-                <a 
-                  href="https://proteinpredictor.org" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-link mr-0"></i>
-                  Link
-                </a>
-              
-              
-            </div>
-          
-          
         </div>
+      <% }); %>
+    </div>
+    <!-- 如果你需要嵌入自定义工具表单，可以在此添加 -->
+    <div class="mt-8 alert alert-info">
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>更多工具正在开发中，敬请期待。</span>
       </div>
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="current"
-        data-category="Medical AI"
-        data-title="multimodal ai for medical imaging"
-        data-description="developing ai systems that can analyze medical images alongside patient data for improved diagnosis accuracy."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
-            </div>
-          
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Multimodal AI for Medical Imaging
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2024 - Present</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Medical AI</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Medical Imaging</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Multimodal AI</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Healthcare</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Computer Vision</div>
-              
-            </div>
-          
-
-          
-            <p class="text-base-content opacity-90 mb-4">Developing AI systems that can analyze medical images alongside patient data for improved diagnosis accuracy.</p>
-          
-
-          
-          
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://hospital.edu/maria-rodriguez" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Maria Rodriguez (Clinical Lead)
-                </a>, 
-              
-                <a 
-                  href="https://university.edu/james-wilson" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. James Wilson (AI Researcher)
-                </a>, 
-              
-                <a 
-                  href="https://university.edu/lisa-park" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Lisa Park (PhD Student)
-                </a>
-              
-            </div>
-          
-          
-
-          
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://nature.com/articles/multimodal-medical-ai" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Rodriguez et al. (2024), Multimodal Medical AI, Nature Medicine
-                </a>
-              
-            </div>
-          
-
-          <!-- Project Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-                <a 
-                  href="https://medai.stanford.edu" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-link mr-0"></i>
-                  Link
-                </a>
-              
-              
-                <a 
-                  href="https://github.com/stanford-medai/multimodal-diagnosis" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
-                  GitHub
-                </a>
-              
-            </div>
-          
-          
-        </div>
-      </div>
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="current"
-        data-category="Climate Science"
-        data-title="climate change prediction models"
-        data-description="using machine learning to improve climate change predictions and understand environmental impacts."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
-            </div>
-          
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Climate Change Prediction Models
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2023 - Present</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Climate Science</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Climate Science</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Environmental AI</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Predictive Modeling</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Sustainability</div>
-              
-            </div>
-          
-
-          
-            <p class="text-base-content opacity-90 mb-4">Using machine learning to improve climate change predictions and understand environmental impacts.</p>
-          
-
-          
-          
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://climatelab.edu/robert-green" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Robert Green (Climate Scientist)
-                </a>, 
-              
-                <a 
-                  href="https://university.edu/anna-thompson" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Anna Thompson (Data Scientist)
-                </a>
-              
-            </div>
-          
-          
-
-          
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://nature.com/articles/ai-climate-prediction" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Green et al. (2024), AI for Climate Prediction, Nature Climate Change
-                </a>
-              
-            </div>
-          
-
-          <!-- Project Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-                <a 
-                  href="https://climate-ai.org" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-link mr-0"></i>
-                  Link
-                </a>
-              
-              
-            </div>
-          
-          
-        </div>
-      </div>
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="completed"
-        data-category="Educational Technology"
-        data-title="educational ai platform"
-        data-description="an adaptive learning platform that personalizes educational content based on student performance and learning styles."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
-          
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Educational AI Platform
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2021 - 2023</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Educational Technology</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">EdTech</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Personalized Learning</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">AI in Education</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Learning Analytics</div>
-              
-            </div>
-          
-
-          
-            <p class="text-base-content opacity-90 mb-4">An adaptive learning platform that personalizes educational content based on student performance and learning styles.</p>
-          
-
-          
-          
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://education.edu/patricia-lee" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. Patricia Lee (Education Researcher)
-                </a>, 
-              
-                <a 
-                  href="https://linkedin.com/in/michael-chang" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Michael Chang (Software Engineer)
-                </a>
-              
-            </div>
-          
-          
-
-          
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://sciencedirect.com/adaptive-learning-systems" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Lee et al. (2023), Adaptive Learning Systems, Computers &amp; Education
-                </a>
-              
-            </div>
-          
-
-          <!-- Project Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-                <a 
-                  href="https://eduai-platform.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-link mr-0"></i>
-                  Link
-                </a>
-              
-              
-                <a 
-                  href="https://github.com/eduai/adaptive-platform" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
-                  GitHub
-                </a>
-              
-            </div>
-          
-          
-        </div>
-      </div>
-    
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-status="completed"
-        data-category="Autonomous Systems"
-        data-title="autonomous vehicle safety system"
-        data-description="developing safety-critical ai systems for autonomous vehicles with focus on edge case detection and handling."
-      >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
-          
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Autonomous Vehicle Safety System
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span>2020 - 2022</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-layer-group"></i>
-                <span class="font-medium">Autonomous Systems</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-            <div class="flex flex-wrap gap-2 mb-4">
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Autonomous Vehicles</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Safety Systems</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Computer Vision</div>
-              
-                <div class="badge badge-outline badge-sm hover:badge-primary transition-colors">Edge Cases</div>
-              
-            </div>
-          
-
-          
-            <p class="text-base-content opacity-90 mb-4">Developing safety-critical AI systems for autonomous vehicles with focus on edge case detection and handling.</p>
-          
-
-          
-          
-            <div class="mb-4 text-sm flex-wrap">
-              <span class="font-semibold">Collaborators: </span>
-              
-                <a 
-                  href="https://robotics.edu/david-kim" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Dr. David Kim (Robotics Expert)
-                </a>, 
-              
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="link link-info no-underline"
-                >
-                  Tesla Research Team (Industry Partner)
-                </a>
-              
-            </div>
-          
-          
-
-          
-            <div class="flex flex-wrap gap-2 max-w-full">
-              
-                <a 
-                  href="https://ieee.org/safety-autonomous-systems" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
-                >
-                  <i class="fa-solid fa-newspaper"></i>
-                   Kim et al. (2022), Safety in Autonomous Systems, IEEE Transactions on Robotics
-                </a>
-              
-            </div>
-          
-
-          <!-- Project Links -->
-          
-          
-        </div>
-      </div>
-    
+    </div>
   </div>
 </div>
 
 <script>
-  const statusFilter = document.getElementById('statusFilter');
-  const categoryFilter = document.getElementById('categoryFilter');
-  const searchInput = document.getElementById('searchInput');
-  const projectsList = document.getElementById('projectsList');
+  // Tab 切换逻辑
+  const tabs = document.querySelectorAll('.tab');
+  const contents = document.querySelectorAll('.tab-content');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = tab.dataset.tab;
+      tabs.forEach(t => t.classList.remove('tab-active'));
+      tab.classList.add('tab-active');
+      contents.forEach(c => c.classList.add('hidden'));
+      document.getElementById(targetId).classList.remove('hidden');
+    });
+  });
 
-  function filterProjects() {
-    const status = statusFilter.value;
-    const category = categoryFilter.value;
-    const search = searchInput.value.toLowerCase();
-
-    const items = projectsList.getElementsByClassName('timeline-item');
-    Array.from(items).forEach(item => {
-      const itemStatus = item.dataset.status;
-      const itemCategory = item.dataset.category;
-      const itemTitle = item.dataset.title;
-      const itemDescription = item.dataset.description;
-
-      const statusMatch = !status || itemStatus === status;
-      const categoryMatch = !category || itemCategory === category;
-      const searchMatch = !search || 
-        itemTitle.includes(search) || 
-        itemDescription.includes(search);
-
-      item.style.display = statusMatch && categoryMatch && searchMatch ? 'block' : 'none';
+  // 宏数据表格筛选
+  const metaSearch = document.getElementById('metaSearch');
+  const metaRows = document.querySelectorAll('#metaTableBody .meta-row');
+  function filterMeta() {
+    const term = metaSearch.value.toLowerCase();
+    metaRows.forEach(row => {
+      const disease = row.dataset.disease;
+      const tissue = row.dataset.tissue;
+      const match = !term || disease.includes(term) || tissue.includes(term);
+      row.style.display = match ? '' : 'none';
     });
   }
+  if (metaSearch) metaSearch.addEventListener('input', filterMeta);
 
-  statusFilter.addEventListener('change', filterProjects);
-  categoryFilter.addEventListener('change', filterProjects);
-  searchInput.addEventListener('input', filterProjects);
+  // 培养菌株筛选（王国 + 搜索）
+  const kingdomFilter = document.getElementById('kingdomFilter');
+  const cultureSearch = document.getElementById('cultureSearch');
+  const cultureCards = document.querySelectorAll('.culture-card');
+  function filterCultures() {
+    const kingdom = kingdomFilter.value;
+    const term = cultureSearch.value.toLowerCase();
+    cultureCards.forEach(card => {
+      const cardKingdom = card.dataset.kingdom;
+      const disease = card.dataset.disease;
+      const source = card.dataset.source;
+      const kingdomMatch = !kingdom || cardKingdom === kingdom;
+      const textMatch = !term || disease.includes(term) || source.includes(term);
+      card.style.display = kingdomMatch && textMatch ? 'block' : 'none';
+    });
+  }
+  if (kingdomFilter) kingdomFilter.addEventListener('change', filterCultures);
+  if (cultureSearch) cultureSearch.addEventListener('input', filterCultures);
+
+  // 分类信息表格筛选
+  const genomeKingdomFilter = document.getElementById('genomeKingdomFilter');
+  const genomeSearch = document.getElementById('genomeSearch');
+  const genomeRows = document.querySelectorAll('#genomeTableBody .genome-row');
+  function filterGenomes() {
+    const kingdom = genomeKingdomFilter.value;
+    const term = genomeSearch.value.toLowerCase();
+    genomeRows.forEach(row => {
+      const rowKingdom = row.dataset.kingdom;
+      const name = row.dataset.name;
+      const kingdomMatch = !kingdom || rowKingdom === kingdom;
+      const textMatch = !term || name.includes(term);
+      row.style.display = kingdomMatch && textMatch ? '' : 'none';
+    });
+  }
+  if (genomeKingdomFilter) genomeKingdomFilter.addEventListener('change', filterGenomes);
+  if (genomeSearch) genomeSearch.addEventListener('input', filterGenomes);
+
+  // 菌株详情模态框（简化版，可自行扩展）
+  const detailBtns = document.querySelectorAll('.view-details');
+  detailBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = btn.dataset.id;
+      // 根据 id 查找对应的 culture 数据（可以预先将完整数据存到全局变量，或通过 fetch 获取）
+      // 这里简单弹窗提示
+      alert(`显示 ${id} 的详细信息：\n培养条件、基因组下载链接等。\n实际开发中可以展示模态框。`);
+    });
+  });
+</script></div>
+
+
+      <!-- Tags Footer -->
+        
+    </div>
+  </div>
+
+  
+   
+  </div>
+
+  <!-- Post Footer -->
+<div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+  <div class="card bg-base-100 hover:shadow-xl">
+    
+<div class="card-body p-6">
+  <h3 class="card-title mb-4">Post Actions</h3>
+  <div class="flex flex-wrap gap-3" id="share-buttons-container">
+    <!-- 分享按钮将由 JS 动态生成 -->
+  </div>
+</div>
+
+<script>
+function copyToClipboard() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    alert('Link copied!');
+  });
+}
+
+// 动态生成分享按钮
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('share-buttons-container');
+  const pageUrl = encodeURIComponent(window.location.href);
+  const pageTitle = encodeURIComponent(document.title);
+
+  const platforms = {"twitter":false,"linkedin":false,"facebook":false,"reddit":false,"weibo":true,"qq":true,"wechat":true};
+
+  // 按钮生成函数
+  const createButton = (href, classes, iconClass, text, isButton = false, clickHandler = null) => {
+    let el;
+    if (isButton) {
+      el = document.createElement('button');
+      el.type = 'button';
+      el.className = classes;
+      if (clickHandler) el.addEventListener('click', clickHandler);
+    } else {
+      el = document.createElement('a');
+      el.href = href;
+      el.target = "_blank";
+      el.rel = "noopener";
+      el.className = classes;
+    }
+    el.innerHTML = `<i class="${iconClass}"></i> ${text}`;
+    container.appendChild(el);
+  };
+
+  // 国际平台
+  if (platforms.twitter) {
+    createButton(
+      `https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`,
+      'btn btn-sm btn-outline',
+      'fa-brands fa-twitter',
+      'X (Twitter)'
+    );
+  }
+
+  if (platforms.linkedin) {
+    createButton(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`,
+      'btn btn-sm btn-outline',
+      'fa-brands fa-linkedin',
+      'LinkedIn'
+    );
+  }
+
+  if (platforms.facebook) {
+    createButton(
+      `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
+      'btn btn-sm btn-outline',
+      'fa-brands fa-facebook',
+      'Facebook'
+    );
+  }
+
+  if (platforms.reddit) {
+    createButton(
+      `https://www.reddit.com/submit?url=${pageUrl}&title=${pageTitle}`,
+      'btn btn-sm btn-outline',
+      'fa-brands fa-reddit',
+      'Reddit'
+    );
+  }
+
+  // 国内平台
+  if (platforms.weibo) {
+    createButton(
+      `https://service.weibo.com/share/share.php?title=${pageTitle}&url=${pageUrl}`,
+      'btn btn-sm btn-outline',
+      'fa-brands fa-weibo',
+      'Weibo'
+    );
+  }
+
+  if (platforms.qq) {
+    createButton(
+      `http://connect.qq.com/widget/shareqq/index.html?title=${pageTitle}&url=${pageUrl}`,
+      'btn btn-sm btn-outline',
+      'fa-brands fa-qq',
+      'QQ'
+    );
+  }
+
+  if (platforms.wechat) {
+    createButton(
+      '#',
+      'btn btn-sm btn-outline',
+      'fa-brands fa-weixin',
+      'WeChat',
+      true,
+      () => {
+        const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${pageUrl}`;
+        const qrWindow = window.open('', 'WeChat Share', 'width=200,height=200');
+        qrWindow.document.write(`<img src="${qrUrl}" alt="Scan QR to share on WeChat">`);
+      }
+    );
+  }
+
+  // 复制链接按钮
+  createButton(
+    '#',
+    'btn btn-sm btn-outline',
+    'fa-solid fa-copy',
+    'Copy Link',
+    true,
+    copyToClipboard
+  );
+});
 </script>
 
+
+  </div>
+  
+  <!-- Navigation Section -->
+  <div class="card bg-base-100 hover:shadow-xl">
+    <div class="card-body p-6">
+      <h3 class="card-title mb-4">Navigation</h3>
+      <div class="space-y-3">
+        <a href="/notes/" class="btn btn-sm btn btn-outline w-full justify-start">
+          <i class="fa-solid fa-folder-tree"></i>
+          All Notes
+        </a>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+  <!-- Previous/Next Navigation Card -->
+  
+
+</div>
+
+
+
+
+
+<!-- Math Processing and Code Block Transformation -->
+<script>
+// Copy to clipboard function
+function copyToClipboard() {
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    // Show success feedback
+    const button = event.target.closest('button');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+    button.classList.remove('btn-outline');
+    button.classList.add('btn-success');
+    
+    setTimeout(function() {
+      button.innerHTML = originalText;
+      button.classList.remove('btn-success');
+      button.classList.add('btn-outline');
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy: ', err);
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = url;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    
+    // Show success feedback
+    const button = event.target.closest('button');
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+    button.classList.remove('btn-outline');
+    button.classList.add('btn-success');
+    
+    setTimeout(function() {
+      button.innerHTML = originalText;
+      button.classList.remove('btn-success');
+      button.classList.add('btn-outline');
+    }, 2000);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const processedContent = document.getElementById('processed-content');
+  let content = processedContent.innerHTML;
+
+  // ========== 数学公式处理 ==========
+  console.log('开始处理数学公式...');
+  
+  // 1. 处理单行公式：<p>$$formula$$</p>
+  content = content.replace(/<p>\s*\$\$([\s\S]*?)\$\$\s*<\/p>/g, function(match, formula) {
+    console.log('找到单行公式:', formula.trim());
+    return '<div class="math-display">$$' + formula.trim() + '$$</div>';
+  });
+
+  // 2. 处理多行公式：<p>$$</p>...content...<p>$$</p>
+  content = content.replace(/<p>\s*\$\$\s*<\/p>([\s\S]*?)<p>\s*\$\$\s*<\/p>/g, function(match, mathContent) {
+    console.log('找到多行公式:', mathContent);
+    // 提取数学内容，移除HTML标签
+    const cleanContent = mathContent
+      .replace(/<p>/g, '\n')
+      .replace(/<\/p>/g, '')
+      .replace(/\n+/g, '\n')
+      .trim();
+    console.log('清理后的数学内容:', cleanContent);
+    return '<div class="math-display">$$\n' + cleanContent + '\n$$</div>';
+  });
+
+  // 3. 清理任何剩余的单独$$ 
+  content = content.replace(/<p>\s*\$\$\s*<\/p>/g, '');
+  
+  console.log('数学公式处理完成');
+
+  // 更新内容
+  processedContent.innerHTML = content;
+
+  // ========== 表格滚动容器处理 ==========
+  // 为所有表格添加滚动容器
+  const tables = processedContent.querySelectorAll('table');
+  tables.forEach(function(table) {
+    if (!table.closest('.table-container')) {
+      const container = document.createElement('div');
+      container.className = 'table-container';
+      table.parentNode.insertBefore(container, table);
+      container.appendChild(table);
+    }
+  });
+
+  // ========== 代码块转换 ==========
+  setTimeout(function() {
+    console.log('开始处理代码块...');
+    
+    // 转换 Hexo highlight.js 代码块为 mockup-code 样式
+    const highlightFigures = processedContent.querySelectorAll('figure.highlight');
+    console.log('找到代码块数量:', highlightFigures.length);
+    
+    highlightFigures.forEach(function(figure) {
+      const codeLines = [];
+      const lineSpans = figure.querySelectorAll('td.code .line');
+      
+      lineSpans.forEach(function(lineSpan) {
+        let lineText = '';
+        for (let node of lineSpan.childNodes) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            lineText += node.textContent;
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            lineText += node.textContent;
+          }
+        }
+        codeLines.push(lineText);
+      });
+
+      // 如果没有从表格获取到行，尝试其他方法
+      if (codeLines.length === 0) {
+        const codeContent = figure.querySelector('td.code');
+        if (codeContent) {
+          const text = codeContent.textContent || codeContent.innerText;
+          codeLines.push(...text.split('\n').filter(line => line.trim() !== ''));
+        }
+      }
+
+      if (codeLines.length === 0) return;
+
+      // 创建新的 mockup-code 容器
+      const mockupCode = document.createElement('div');
+      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
+      
+      let htmlContent = '';
+      codeLines.forEach((line, index) => {
+        const lineNumber = index + 1;
+        const escapedLine = line
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+        
+        // 检测特殊行类型并添加相应样式
+        let className = '';
+        const lowerLine = line.toLowerCase().trim();
+        
+        if (lowerLine.includes('error') || lowerLine.includes('exception') || lowerLine.includes('failed')) {
+          className = ' class="bg-error text-error-content"';
+        } else if (lowerLine.includes('warning') || lowerLine.includes('warn')) {
+          className = ' class="bg-warning text-warning-content"';
+        } else if (lowerLine.includes('success') || lowerLine.includes('done') || lowerLine.includes('completed')) {
+          className = ' class="bg-success text-success-content"';
+        } else if (lowerLine.includes('info') || lowerLine.includes('installing') || lowerLine.includes('loading')) {
+          className = ' class="bg-info text-info-content"';
+        }
+        
+        htmlContent += `<pre data-prefix="${lineNumber}"${className}><code>${escapedLine}</code></pre>`;
+      });
+
+      mockupCode.innerHTML = htmlContent;
+      figure.parentNode.replaceChild(mockupCode, figure);
+    });
+
+    // 处理其他普通的 pre/code 块
+    const preBlocks = processedContent.querySelectorAll('pre:not(.mockup-code pre)');
+    preBlocks.forEach(function(pre) {
+      if (pre.closest('.mockup-code')) return;
+      
+      const codeElement = pre.querySelector('code') || pre;
+      const text = codeElement.textContent || codeElement.innerText || '';
+      const lines = text.split('\n').filter(line => line.trim() !== '');
+      
+      if (lines.length === 0) return;
+      
+      const mockupCode = document.createElement('div');
+      mockupCode.className = 'mockup-code bg-base-200 text-base-content w-full';
+      
+      let htmlContent = '';
+      lines.forEach((line, index) => {
+        const lineNumber = index + 1;
+        const escapedLine = line
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+        
+        htmlContent += `<pre data-prefix="${lineNumber}"><code>${escapedLine}</code></pre>`;
+      });
+
+      mockupCode.innerHTML = htmlContent;
+      pre.parentNode.replaceChild(mockupCode, pre);
+    });
+
+    console.log('代码块处理完成');
+
+    // ========== MathJax 初始化 ==========
+    console.log('初始化 MathJax...');
+    if (window.MathJax) {
+      MathJax.typesetPromise([processedContent]).then(function() {
+        console.log('MathJax 渲染完成');
+      }).catch(function (err) {
+        console.log('MathJax typeset failed: ' + err.message);
+      });
+    }
+  }, 50); // 短暂延迟确保DOM更新完成
+});
+</script>
+
+<!-- MathJax Configuration -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
   </div>
 
   <!-- Fixed top navbar for desktop -->
