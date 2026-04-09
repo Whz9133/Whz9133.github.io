@@ -519,98 +519,596 @@ var _hmt = _hmt || [];
   <!-- Content area for Desktop -->
   <div class="lg:ml-80 pt-20 px-4 py-8">
     <div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6 text-base-content">Culture Collection</h1>
 
-  <!-- 返回按钮 -->
-  <div class="mb-6">
-    <a href="/database/" class="btn btn-sm btn-outline btn-neutral gap-2">
-      <i class="fa-solid fa-arrow-left"></i>
-      Back to Database Home
-    </a>
+  <!-- 自定义标签页（带下划线） -->
+  <div class="custom-tabs mb-8 border-b border-base-300">
+    <button class="custom-tab-btn text-lg font-semibold py-2 px-4 mr-4 transition-all duration-200" data-tab="bacteria">
+      Bacteria
+    </button>
+    <button class="custom-tab-btn text-lg font-semibold py-2 px-4 transition-all duration-200" data-tab="fungi">
+      </i>Fungi
+    </button>
   </div>
 
-  <h1 class="text-3xl font-bold mb-8 text-base-content">Cultivated Bacterial Strains</h1>
+  <!-- 细菌培养面板 -->
+  <div id="bacteriaPanel" class="tab-panel">
+    <!-- 描述文字 -->
+    <div class="glass-card p-6 mb-8 prose max-w-none">
+      <p class="text-lg leading-relaxed">
+        The human Gut Microbial Biobank (hGMB) comprises bacterial isolates from healthy volunteers' feces.
+        Currently, the bacterial culture collection includes <strong>205 species</strong>, <strong>73 genera</strong>,
+        <strong>42 families</strong>, and <strong>6 phyla</strong>. All strains are deposited in CGMCC for public use.
+      </p>
+    </div>
 
-  <!-- Filters -->
-  <div class="glass-card p-4 mb-8">
-    <div class="flex flex-wrap gap-4">
-      <div class="form-control flex-1">
-        <input type="text" placeholder="Search strains..." class="input input-bordered" id="searchInput" />
+    <!-- 统计卡片（强制横向排列） -->
+    <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-primary">205</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Species</div>
       </div>
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-secondary">73</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Genera</div>
+      </div>
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-accent">42</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Families</div>
+      </div>
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-info">6</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Phyla</div>
+      </div>
+    </div>
+
+    <!-- 筛选器 -->
+    <div class="glass-card p-4 mb-8">
+      <div class="flex flex-wrap gap-4 items-center">
+        <div class="form-control w-44">
+          <select class="select select-bordered" id="bacteriaDiseaseFilter">
+            <option value="">All Diseases</option>
+            
+              <option value="Asthma">Asthma</option>
+            
+              <option value="Bronchiectasis">Bronchiectasis</option>
+            
+              <option value="COPD">COPD</option>
+            
+              <option value="Healthy">Healthy</option>
+            
+          </select>
+        </div>
+        <div class="form-control w-40">
+          <select class="select select-bordered" id="bacteriaLocationFilter">
+            <option value="">All Locations</option>
+            
+              <option value="China">China</option>
+            
+          </select>
+        </div>
+        <div class="form-control w-44">
+          <select class="select select-bordered" id="bacteriaSourceFilter">
+            <option value="">All Sources</option>
+            
+              <option value="sputum">sputum</option>
+            
+          </select>
+        </div>
+        <div class="form-control flex-grow min-w-[200px]">
+          <input type="text" placeholder="Search by Genome ID, disease, location, source..." class="input input-bordered" id="bacteriaSearchInput" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 细菌数据列表 -->
+    <div id="bacteriaList" class="space-y-6">
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item bacteria-item"
+             data-disease="COPD"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="b4070 copd china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-dna text-primary mr-2"></i>
+                B4070
+              </h2>
+              
+                <div class="badge badge-outline badge-md">COPD</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item bacteria-item"
+             data-disease="Bronchiectasis"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="b4996 bronchiectasis china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-dna text-primary mr-2"></i>
+                B4996
+              </h2>
+              
+                <div class="badge badge-outline badge-md">Bronchiectasis</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item bacteria-item"
+             data-disease="Healthy"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="b2301 healthy china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-dna text-primary mr-2"></i>
+                B2301
+              </h2>
+              
+                <div class="badge badge-outline badge-md">Healthy</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item bacteria-item"
+             data-disease="Asthma"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="b5852 asthma china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-dna text-primary mr-2"></i>
+                B5852
+              </h2>
+              
+                <div class="badge badge-outline badge-md">Asthma</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
     </div>
   </div>
 
-  <!-- List -->
-  <div id="cultureList" class="space-y-6">
-    
-    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-         data-title="b4070"
-         data-species="streptococcus xiaochunlingii">
-      <div class="card-body relative">
-        <div class="absolute top-4 right-4">
-          <div class="badge badge-secondary badge-lg">Strain</div>
-        </div>
+  <!-- 真菌培养面板 -->
+  <div id="fungiPanel" class="tab-panel hidden">
+    <div class="glass-card p-6 mb-8 prose max-w-none">
+      <p class="text-lg leading-relaxed">
+        The fungal culture collection includes isolates from respiratory samples of patients with COPD, asthma, and healthy individuals.
+        Currently, the collection comprises <strong>100 species</strong>, <strong>45 genera</strong>,
+        <strong>35 families</strong>, and <strong>2 phyla</strong>. All strains are available upon request.
+      </p>
+    </div>
 
-        <h2 class="card-title text-xl font-bold mb-3 pr-20">B4070</h2>
-
-        
-        <div class="text-info font-medium mb-3">Streptococcus xiaochunlingii</div>
-        
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
-          <div class="p-2 bg-base-300/30 rounded">Size: 4.72 Mb</div>
-          <div class="p-2 bg-base-300/30 rounded">GC: 51%</div>
-          <div class="p-2 bg-base-300/30 rounded">Completeness: 99.09%</div>
-        </div>
-
-        
-        <a href="/data/B4070_genome.fasta" class="btn btn-sm btn-outline">
-          <i class="fa-solid fa-download"></i> Download
-        </a>
-        
+    <!-- 统计卡片（横向排列） -->
+    <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-primary">100</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Species</div>
+      </div>
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-secondary">45</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Genera</div>
+      </div>
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-accent">35</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Families</div>
+      </div>
+      <div class="stat bg-base-100 rounded-box shadow-md p-4 text-center">
+        <div class="stat-value text-3xl md:text-4xl text-info">2</div>
+        <div class="stat-title text-sm uppercase tracking-wide">Phyla</div>
       </div>
     </div>
-    
-    <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-         data-title="b5102"
-         data-species="moraxella catarrhalis">
-      <div class="card-body relative">
-        <div class="absolute top-4 right-4">
-          <div class="badge badge-secondary badge-lg">Strain</div>
+
+    <!-- 筛选器 -->
+    <div class="glass-card p-4 mb-8">
+      <div class="flex flex-wrap gap-4 items-center">
+        <div class="form-control w-44">
+          <select class="select select-bordered" id="fungiDiseaseFilter">
+            <option value="">All Diseases</option>
+            
+              <option value="Asthma">Asthma</option>
+            
+              <option value="COPD">COPD</option>
+            
+              <option value="Healthy">Healthy</option>
+            
+          </select>
         </div>
-
-        <h2 class="card-title text-xl font-bold mb-3 pr-20">B5102</h2>
-
-        
-        <div class="text-info font-medium mb-3">Moraxella catarrhalis</div>
-        
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-sm mb-4">
-          <div class="p-2 bg-base-300/30 rounded">Size: 3.21 Mb</div>
-          <div class="p-2 bg-base-300/30 rounded">GC: 47.5%</div>
-          <div class="p-2 bg-base-300/30 rounded">Completeness: 98.76%</div>
+        <div class="form-control w-40">
+          <select class="select select-bordered" id="fungiLocationFilter">
+            <option value="">All Locations</option>
+            
+              <option value="China">China</option>
+            
+          </select>
         </div>
-
-        
-        <a href="/data/B5102_genome.fasta" class="btn btn-sm btn-outline">
-          <i class="fa-solid fa-download"></i> Download
-        </a>
-        
+        <div class="form-control w-44">
+          <select class="select select-bordered" id="fungiSourceFilter">
+            <option value="">All Sources</option>
+            
+              <option value="sputum">sputum</option>
+            
+          </select>
+        </div>
+        <div class="form-control flex-grow min-w-[200px]">
+          <input type="text" placeholder="Search by Genome ID, disease, location, source..." class="input input-bordered" id="fungiSearchInput" />
+        </div>
       </div>
     </div>
-    
+
+    <!-- 真菌数据列表 -->
+    <div id="fungiList" class="space-y-6">
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item fungi-item"
+             data-disease="COPD"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="f7100.scaffolds copd china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-seedling text-primary mr-2"></i>
+                F7100.scaffolds
+              </h2>
+              
+                <div class="badge badge-outline badge-md">COPD</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item fungi-item"
+             data-disease="Asthma"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="f7011.scaffolds asthma china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-seedling text-primary mr-2"></i>
+                F7011.scaffolds
+              </h2>
+              
+                <div class="badge badge-outline badge-md">Asthma</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item fungi-item"
+             data-disease="COPD"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="f7158.scaffolds copd china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-seedling text-primary mr-2"></i>
+                F7158.scaffolds
+              </h2>
+              
+                <div class="badge badge-outline badge-md">COPD</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+        <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 culture-item fungi-item"
+             data-disease="Healthy"
+             data-location="China"
+             data-source="sputum"
+             data-search-text="f8051.scaffolds healthy china sputum">
+          <div class="card-body">
+            <div class="flex justify-between items-start">
+              <h2 class="card-title text-xl font-bold">
+                <i class="fa-solid fa-seedling text-primary mr-2"></i>
+                F8051.scaffolds
+              </h2>
+              
+                <div class="badge badge-outline badge-md">Healthy</div>
+              
+            </div>
+            <div class="flex flex-wrap gap-4 mt-2 text-sm text-base-content/70">
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>China</span>
+                </div>
+              
+              
+                <div class="flex items-center gap-1">
+                  <i class="fa-solid fa-flask"></i>
+                  <span>sputum</span>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      
+    </div>
   </div>
 </div>
 
+<style>
+  /* 自定义标签页下划线效果 */
+  .custom-tabs {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .custom-tab-btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    position: relative;
+    transition: color 0.2s;
+  }
+  .custom-tab-btn.active {
+    color: #2563eb;  /* 主色调，可自行调整 */
+    font-weight: 600;
+  }
+  .custom-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #2563eb;
+    border-radius: 2px;
+  }
+  .custom-tab-btn:hover {
+    color: #1e40af;
+  }
+  /* 确保统计卡片横向排列不被覆盖 */
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(4, 1fr) !important;
+    }
+  }
+  /* 卡片内容区域保证宽度 */
+  .stat {
+    width: 100%;
+  }
+</style>
+
 <script>
-  const search = document.getElementById('searchInput');
-  const list = document.getElementById('cultureList');
-  search.addEventListener('input', () => {
-    const val = search.value.toLowerCase();
-    document.querySelectorAll('.timeline-item').forEach(item => {
-      const match = item.dataset.title.includes(val) || item.dataset.species.includes(val);
-      item.style.display = match ? 'block' : 'none';
+  (function() {
+    // 获取标签按钮和面板
+    const tabBtns = document.querySelectorAll('.custom-tab-btn');
+    const bacteriaPanel = document.getElementById('bacteriaPanel');
+    const fungiPanel = document.getElementById('fungiPanel');
+
+    // 切换标签函数
+    function switchTab(tabId) {
+      // 更新按钮 active 类
+      tabBtns.forEach(btn => {
+        if (btn.getAttribute('data-tab') === tabId) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      // 显示/隐藏面板
+      if (tabId === 'bacteria') {
+        bacteriaPanel.classList.remove('hidden');
+        fungiPanel.classList.add('hidden');
+        filterBacteria(); // 刷新细菌列表显示
+      } else {
+        bacteriaPanel.classList.add('hidden');
+        fungiPanel.classList.remove('hidden');
+        filterFungi();    // 刷新真菌列表显示
+      }
+    }
+
+    // 绑定点击事件
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const tabId = btn.getAttribute('data-tab');
+        switchTab(tabId);
+      });
     });
-  });
+
+    // 细菌筛选逻辑
+    const bacteriaDisease = document.getElementById('bacteriaDiseaseFilter');
+    const bacteriaLocation = document.getElementById('bacteriaLocationFilter');
+    const bacteriaSource = document.getElementById('bacteriaSourceFilter');
+    const bacteriaSearch = document.getElementById('bacteriaSearchInput');
+    const bacteriaItems = document.querySelectorAll('#bacteriaList .bacteria-item');
+
+    function filterBacteria() {
+      if (!bacteriaItems.length) return;
+      const diseaseVal = bacteriaDisease ? bacteriaDisease.value : '';
+      const locationVal = bacteriaLocation ? bacteriaLocation.value : '';
+      const sourceVal = bacteriaSource ? bacteriaSource.value : '';
+      const searchVal = bacteriaSearch ? bacteriaSearch.value.trim().toLowerCase() : '';
+
+      let visible = 0;
+      bacteriaItems.forEach(item => {
+        const itemDisease = item.dataset.disease || '';
+        const itemLocation = item.dataset.location || '';
+        const itemSource = item.dataset.source || '';
+        const searchText = item.dataset.searchText || '';
+
+        const matchDisease = !diseaseVal || itemDisease === diseaseVal;
+        const matchLocation = !locationVal || itemLocation === locationVal;
+        const matchSource = !sourceVal || itemSource === sourceVal;
+        const matchSearch = !searchVal || searchText.includes(searchVal);
+
+        if (matchDisease && matchLocation && matchSource && matchSearch) {
+          item.style.display = 'block';
+          visible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      console.log(`Bacteria: ${visible} of ${bacteriaItems.length} shown`);
+    }
+
+    // 真菌筛选逻辑
+    const fungiDisease = document.getElementById('fungiDiseaseFilter');
+    const fungiLocation = document.getElementById('fungiLocationFilter');
+    const fungiSource = document.getElementById('fungiSourceFilter');
+    const fungiSearch = document.getElementById('fungiSearchInput');
+    const fungiItems = document.querySelectorAll('#fungiList .fungi-item');
+
+    function filterFungi() {
+      if (!fungiItems.length) return;
+      const diseaseVal = fungiDisease ? fungiDisease.value : '';
+      const locationVal = fungiLocation ? fungiLocation.value : '';
+      const sourceVal = fungiSource ? fungiSource.value : '';
+      const searchVal = fungiSearch ? fungiSearch.value.trim().toLowerCase() : '';
+
+      let visible = 0;
+      fungiItems.forEach(item => {
+        const itemDisease = item.dataset.disease || '';
+        const itemLocation = item.dataset.location || '';
+        const itemSource = item.dataset.source || '';
+        const searchText = item.dataset.searchText || '';
+
+        const matchDisease = !diseaseVal || itemDisease === diseaseVal;
+        const matchLocation = !locationVal || itemLocation === locationVal;
+        const matchSource = !sourceVal || itemSource === sourceVal;
+        const matchSearch = !searchVal || searchText.includes(searchVal);
+
+        if (matchDisease && matchLocation && matchSource && matchSearch) {
+          item.style.display = 'block';
+          visible++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      console.log(`Fungi: ${visible} of ${fungiItems.length} shown`);
+    }
+
+    // 绑定事件
+    if (bacteriaDisease) bacteriaDisease.addEventListener('change', filterBacteria);
+    if (bacteriaLocation) bacteriaLocation.addEventListener('change', filterBacteria);
+    if (bacteriaSource) bacteriaSource.addEventListener('change', filterBacteria);
+    if (bacteriaSearch) bacteriaSearch.addEventListener('input', filterBacteria);
+
+    if (fungiDisease) fungiDisease.addEventListener('change', filterFungi);
+    if (fungiLocation) fungiLocation.addEventListener('change', filterFungi);
+    if (fungiSource) fungiSource.addEventListener('change', filterFungi);
+    if (fungiSearch) fungiSearch.addEventListener('input', filterFungi);
+
+    // 初始化：激活细菌标签，显示细菌面板
+    switchTab('bacteria');
+    filterBacteria();
+  })();
 </script>
   </div>
 
