@@ -300,372 +300,44 @@ var _hmt = _hmt || [];
     <div class="container mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold mb-8 text-base-content">Microbiome Multi-Omics Database</h1>
 
-  <!-- Filters -->
-  <div class="glass-card p-4 mb-8">
-    <div class="flex flex-wrap gap-4">
-      <!-- Type Filter (Browse / Culture / Taxonomy / Data) -->
-      <div class="form-control">
-        <select class="select select-bordered" id="typeFilter">
-          <option value="">All Types</option>
-          
-            <option value="Browse">Browse</option>
-          
-            <option value="Culture">Culture</option>
-          
-            <option value="Taxonomy">Taxonomy</option>
-          
-            <option value="Data">Data</option>
-          
-        </select>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Browse -->
+    <a href="/database/browse/" class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+      <div class="card-body">
+        <div class="badge badge-primary badge-lg mb-4">Browse</div>
+        <h2 class="card-title text-2xl">Metagenome Samples & Projects</h2>
+        <p>Browse all metagenomic samples, projects and sample sources</p>
       </div>
+    </a>
 
-      <!-- Group Filter (Bacteria / Fungi / Virus / Metagenome) -->
-      <div class="form-control">
-        <select class="select select-bordered" id="groupFilter">
-          <option value="">All Groups</option>
-          
-            <option value="Metagenome">Metagenome</option>
-          
-            <option value="Bacteria">Bacteria</option>
-          
-            <option value="Fungi">Fungi</option>
-          
-            <option value="Virus">Virus</option>
-          
-        </select>
+    <!-- Culture -->
+    <a href="/database/culture/" class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+      <div class="card-body">
+        <div class="badge badge-secondary badge-lg mb-4">Culture</div>
+        <h2 class="card-title text-2xl">Cultivated Strains</h2>
+        <p>Isolated bacterial strains with complete genome information</p>
       </div>
+    </a>
 
-      <!-- Search -->
-      <div class="form-control flex-1">
-        <input type="text" placeholder="Search database..." class="input input-bordered" id="searchInput" />
+    <!-- Taxonomy -->
+    <a href="/database/taxonomy/" class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+      <div class="card-body">
+        <div class="badge badge-accent badge-lg mb-4">Taxonomy</div>
+        <h2 class="card-title text-2xl">Fungi & Taxonomy</h2>
+        <p>Mycobiome and fungal taxonomic reference data</p>
       </div>
-    </div>
-  </div>
+    </a>
 
-  <!-- Database List -->
-  <div id="databaseList" class="space-y-6">
-    
-      <div
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-type="Browse"
-        data-group="Metagenome"
-        data-title="prjna609351"
-        data-description=""
-      >
-        <div class="card-body relative">
-          <!-- Type Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">Browse</div>
-            </div>
-          
-
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            PRJNA609351
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Metagenome</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Health</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-vial"></i>
-                <span>Sputum</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-
-          
-
-          
-
-          
-
-          <!-- Database Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-              
-                <a
-                  href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA609351"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-database mr-0"></i>
-                  NCBI
-                </a>
-              
-              
-            </div>
-          
-
-        </div>
+    <!-- Data -->
+    <a href="/database/data/" class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300">
+      <div class="card-body">
+        <div class="badge badge-neutral badge-lg mb-4">Data</div>
+        <h2 class="card-title text-2xl">Raw Data & Contigs</h2>
+        <p>Virus contigs, assembled sequences and omics data</p>
       </div>
-    
-      <div
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-type="Culture"
-        data-group="Bacteria"
-        data-title="b4070"
-        data-description=""
-      >
-        <div class="card-body relative">
-          <!-- Type Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">Culture</div>
-            </div>
-          
-
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            B4070
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Bacteria</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>COPD</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-vial"></i>
-                <span>Sputum</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-
-          
-
-          
-          <div class="mb-4 text-sm flex-wrap">
-            <span class="font-semibold">Species: </span>
-            <span class="text-info">Streptococcus xiaochunlingii</span>
-          </div>
-          
-
-          
-
-          <!-- Database Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-              
-              
-                <a
-                  href="/data/B4070.fasta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-download mr-0"></i>
-                  Download
-                </a>
-              
-            </div>
-          
-
-        </div>
-      </div>
-    
-      <div
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-type="Taxonomy"
-        data-group="Fungi"
-        data-title="f7100"
-        data-description=""
-      >
-        <div class="card-body relative">
-          <!-- Type Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-accent badge-lg font-semibold">Taxonomy</div>
-            </div>
-          
-
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            F7100
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Fungi</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>COPD</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-vial"></i>
-                <span>Sputum</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-
-          
-
-          
-          <div class="mb-4 text-sm flex-wrap">
-            <span class="font-semibold">Species: </span>
-            <span class="text-info">Aspergillus aculeatinus</span>
-          </div>
-          
-
-          
-
-          <!-- Database Links -->
-          
-
-        </div>
-      </div>
-    
-      <div
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
-        data-type="Data"
-        data-group="Virus"
-        data-title="rna virus contig 002"
-        data-description=""
-      >
-        <div class="card-body relative">
-          <!-- Type Badge - Right Top Corner -->
-          
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-neutral badge-lg font-semibold">Data</div>
-            </div>
-          
-
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            RNA Virus Contig 002
-          </h2>
-
-          <!-- Metadata Row -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Virus</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>LRTI</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-vial"></i>
-                <span>BALF</span>
-              </div>
-            
-          </div>
-
-          <!-- Tags -->
-          
-
-          
-
-          
-
-          
-
-          <!-- Database Links -->
-          
-            <div class="flex flex-wrap gap-2 mt-4">
-              
-              
-              
-                <a
-                  href="/data/virus_contig_002.fasta"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-sm btn-outline"
-                >
-                  <i class="fa-solid fa-download mr-0"></i>
-                  Download
-                </a>
-              
-            </div>
-          
-
-        </div>
-      </div>
-    
+    </a>
   </div>
 </div>
-
-<script>
-  const typeFilter = document.getElementById('typeFilter');
-  const groupFilter = document.getElementById('groupFilter');
-  const searchInput = document.getElementById('searchInput');
-  const databaseList = document.getElementById('databaseList');
-
-  function filterDatabase() {
-    const type = typeFilter.value;
-    const group = groupFilter.value;
-    const search = searchInput.value.toLowerCase();
-
-    const items = databaseList.getElementsByClassName('timeline-item');
-    Array.from(items).forEach(item => {
-      const itemType = item.dataset.type;
-      const itemGroup = item.dataset.group;
-      const itemTitle = item.dataset.title;
-      const itemDescription = item.dataset.description;
-
-      const typeMatch = !type || itemType === type;
-      const groupMatch = !group || itemGroup === group;
-      const searchMatch = !search ||
-        itemTitle.includes(search) ||
-        itemDescription.includes(search);
-
-      item.style.display = typeMatch && groupMatch && searchMatch ? 'block' : 'none';
-    });
-  }
-
-  typeFilter.addEventListener('change', filterDatabase);
-  groupFilter.addEventListener('change', filterDatabase);
-  searchInput.addEventListener('input', filterDatabase);
-</script>
   </div>
 
   <!-- Fixed top navbar for desktop -->
