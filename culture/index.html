@@ -433,7 +433,7 @@ var _hmt = _hmt || [];
       Bacteria
     </button>
     <button class="custom-tab-btn text-lg font-semibold py-2 px-4 transition-all duration-200" data-tab="fungi">
-      </i>Fungi
+      Fungi
     </button>
   </div>
 
@@ -504,6 +504,10 @@ var _hmt = _hmt || [];
         <div class="form-control flex-grow min-w-[200px]">
           <input type="text" placeholder="Search by Genome ID, disease, location, source..." class="input input-bordered" id="bacteriaSearchInput" />
         </div>
+      </div>
+      <!-- 细菌结果计数 -->
+      <div class="mt-2 text-sm opacity-70">
+        <span id="bacteriaResultsCount">Showing all 4 bacteria</span>
       </div>
     </div>
 
@@ -706,6 +710,10 @@ var _hmt = _hmt || [];
           <input type="text" placeholder="Search by Genome ID, disease, location, source..." class="input input-bordered" id="fungiSearchInput" />
         </div>
       </div>
+      <!-- 真菌结果计数 -->
+      <div class="mt-2 text-sm opacity-70">
+        <span id="fungiResultsCount">Showing all 4 fungi</span>
+      </div>
     </div>
 
     <!-- 真菌数据列表 -->
@@ -898,9 +906,16 @@ var _hmt = _hmt || [];
     const bacteriaPanel = document.getElementById('bacteriaPanel');
     const fungiPanel = document.getElementById('fungiPanel');
 
+    // 获取细菌和真菌的总数量（用于初始计数）
+    const bacteriaTotal = 4;
+    const fungiTotal = 4;
+
+    // 获取计数显示元素
+    const bacteriaResultsSpan = document.getElementById('bacteriaResultsCount');
+    const fungiResultsSpan = document.getElementById('fungiResultsCount');
+
     // 切换标签函数
     function switchTab(tabId) {
-      // 更新按钮 active 类
       tabBtns.forEach(btn => {
         if (btn.getAttribute('data-tab') === tabId) {
           btn.classList.add('active');
@@ -908,15 +923,14 @@ var _hmt = _hmt || [];
           btn.classList.remove('active');
         }
       });
-      // 显示/隐藏面板
       if (tabId === 'bacteria') {
         bacteriaPanel.classList.remove('hidden');
         fungiPanel.classList.add('hidden');
-        filterBacteria(); // 刷新细菌列表显示
+        filterBacteria(); // 刷新细菌列表显示并更新计数
       } else {
         bacteriaPanel.classList.add('hidden');
         fungiPanel.classList.remove('hidden');
-        filterFungi();    // 刷新真菌列表显示
+        filterFungi();    // 刷新真菌列表显示并更新计数
       }
     }
 
@@ -928,7 +942,7 @@ var _hmt = _hmt || [];
       });
     });
 
-    // 细菌筛选逻辑
+    // ---------- 细菌筛选逻辑 ----------
     const bacteriaDisease = document.getElementById('bacteriaDiseaseFilter');
     const bacteriaLocation = document.getElementById('bacteriaLocationFilter');
     const bacteriaSource = document.getElementById('bacteriaSourceFilter');
@@ -936,7 +950,10 @@ var _hmt = _hmt || [];
     const bacteriaItems = document.querySelectorAll('#bacteriaList .bacteria-item');
 
     function filterBacteria() {
-      if (!bacteriaItems.length) return;
+      if (!bacteriaItems.length) {
+        if (bacteriaResultsSpan) bacteriaResultsSpan.textContent = `Showing 0 bacteria`;
+        return;
+      }
       const diseaseVal = bacteriaDisease ? bacteriaDisease.value : '';
       const locationVal = bacteriaLocation ? bacteriaLocation.value : '';
       const sourceVal = bacteriaSource ? bacteriaSource.value : '';
@@ -961,10 +978,16 @@ var _hmt = _hmt || [];
           item.style.display = 'none';
         }
       });
-      console.log(`Bacteria: ${visible} of ${bacteriaItems.length} shown`);
+      // 更新细菌结果计数
+      const hasFilter = diseaseVal || locationVal || sourceVal || searchVal;
+      if (hasFilter) {
+        bacteriaResultsSpan.textContent = `Found ${visible} result${visible !== 1 ? 's' : ''}`;
+      } else {
+        bacteriaResultsSpan.textContent = `Showing all ${bacteriaTotal} bacteria`;
+      }
     }
 
-    // 真菌筛选逻辑
+    // ---------- 真菌筛选逻辑 ----------
     const fungiDisease = document.getElementById('fungiDiseaseFilter');
     const fungiLocation = document.getElementById('fungiLocationFilter');
     const fungiSource = document.getElementById('fungiSourceFilter');
@@ -972,7 +995,10 @@ var _hmt = _hmt || [];
     const fungiItems = document.querySelectorAll('#fungiList .fungi-item');
 
     function filterFungi() {
-      if (!fungiItems.length) return;
+      if (!fungiItems.length) {
+        if (fungiResultsSpan) fungiResultsSpan.textContent = `Showing 0 fungi`;
+        return;
+      }
       const diseaseVal = fungiDisease ? fungiDisease.value : '';
       const locationVal = fungiLocation ? fungiLocation.value : '';
       const sourceVal = fungiSource ? fungiSource.value : '';
@@ -997,7 +1023,13 @@ var _hmt = _hmt || [];
           item.style.display = 'none';
         }
       });
-      console.log(`Fungi: ${visible} of ${fungiItems.length} shown`);
+      // 更新真菌结果计数
+      const hasFilter = diseaseVal || locationVal || sourceVal || searchVal;
+      if (hasFilter) {
+        fungiResultsSpan.textContent = `Found ${visible} result${visible !== 1 ? 's' : ''}`;
+      } else {
+        fungiResultsSpan.textContent = `Showing all ${fungiTotal} fungi`;
+      }
     }
 
     // 绑定事件
@@ -1011,9 +1043,8 @@ var _hmt = _hmt || [];
     if (fungiSource) fungiSource.addEventListener('change', filterFungi);
     if (fungiSearch) fungiSearch.addEventListener('input', filterFungi);
 
-    // 初始化：激活细菌标签，显示细菌面板
+    // 初始化：激活细菌标签，显示细菌面板并执行筛选（显示初始计数）
     switchTab('bacteria');
-    filterBacteria();
   })();
 </script>
   </div>

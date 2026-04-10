@@ -426,7 +426,7 @@ var _hmt = _hmt || [];
   <div class="lg:ml-0 pt-20 px-4 py-8">
     <div class="container mx-auto px-4 py-8">
 
-        <!-- 返回按钮 -->
+  <!-- 返回按钮 -->
   <div class="mb-4">
     <button onclick="history.back();" class="btn btn-outline btn-sm gap-2">
       <i class="fa-solid fa-arrow-left"></i> Back
@@ -475,6 +475,11 @@ var _hmt = _hmt || [];
         <input type="text" placeholder="Search publications..." class="input input-bordered" id="searchInput" />
       </div>
     </div>
+
+    <!-- Results Count -->
+    <div class="mt-2 text-sm opacity-70">
+      <span id="resultsCount">Showing all 4 publications</span>
+    </div>
   </div>
 
   <!-- Publications List -->
@@ -499,13 +504,13 @@ var _hmt = _hmt || [];
               
             </div>
           </div>
-  
+
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
               <p class="text-base font-medium text-base-content/90 mb-3">Smith A., Zhang E., Doe J.</p>
             
-            
+
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
                 <span class="flex items-center">
@@ -526,7 +531,7 @@ var _hmt = _hmt || [];
                 </span>
               
             </div>
-            
+
             <!-- Tags -->
             
               <div class="flex flex-wrap gap-2 mt-3">
@@ -540,14 +545,14 @@ var _hmt = _hmt || [];
               </div>
             
           </div>
-  
+
           <!-- Abstract -->
           
             <div class="prose max-w-none mb-4">
               <p class="text-base-content/80 text-sm leading-relaxed">We propose an AI-driven framework for automating literature reviews using knowledge graphs and language models.</p>
             </div>
           
-  
+
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
@@ -597,13 +602,13 @@ var _hmt = _hmt || [];
               
             </div>
           </div>
-  
+
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
               <p class="text-base font-medium text-base-content/90 mb-3">Lee B., Park S., Vega C.</p>
             
-            
+
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
                 <span class="flex items-center">
@@ -624,7 +629,7 @@ var _hmt = _hmt || [];
                 </span>
               
             </div>
-            
+
             <!-- Tags -->
             
               <div class="flex flex-wrap gap-2 mt-3">
@@ -638,14 +643,14 @@ var _hmt = _hmt || [];
               </div>
             
           </div>
-  
+
           <!-- Abstract -->
           
             <div class="prose max-w-none mb-4">
               <p class="text-base-content/80 text-sm leading-relaxed">We introduce a new U-Net variant that significantly improves segmentation performance on histopathology datasets.</p>
             </div>
           
-  
+
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
@@ -695,13 +700,13 @@ var _hmt = _hmt || [];
               
             </div>
           </div>
-  
+
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
               <p class="text-base font-medium text-base-content/90 mb-3">Kim R., Wu D.</p>
             
-            
+
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
                 <span class="flex items-center">
@@ -722,7 +727,7 @@ var _hmt = _hmt || [];
                 </span>
               
             </div>
-            
+
             <!-- Tags -->
             
               <div class="flex flex-wrap gap-2 mt-3">
@@ -736,14 +741,14 @@ var _hmt = _hmt || [];
               </div>
             
           </div>
-  
+
           <!-- Abstract -->
           
             <div class="prose max-w-none mb-4">
               <p class="text-base-content/80 text-sm leading-relaxed">We present NLPKit, an open-source toolkit with modular APIs for entity recognition, classification, and QA.</p>
             </div>
           
-  
+
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
@@ -793,13 +798,13 @@ var _hmt = _hmt || [];
               
             </div>
           </div>
-  
+
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
               <p class="text-base font-medium text-base-content/90 mb-3">Chen L., Lin D.</p>
             
-            
+
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
                 <span class="flex items-center">
@@ -820,7 +825,7 @@ var _hmt = _hmt || [];
                 </span>
               
             </div>
-            
+
             <!-- Tags -->
             
               <div class="flex flex-wrap gap-2 mt-3">
@@ -834,14 +839,14 @@ var _hmt = _hmt || [];
               </div>
             
           </div>
-  
+
           <!-- Abstract -->
           
             <div class="prose max-w-none mb-4">
               <p class="text-base-content/80 text-sm leading-relaxed">This paper explores reinforcement learning strategies for real-time adaptive control in robotic manipulation tasks.</p>
             </div>
           
-  
+
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
@@ -873,7 +878,7 @@ var _hmt = _hmt || [];
       </div>
     
   </div>
-  
+
 </div>
 
 <script>
@@ -881,12 +886,13 @@ var _hmt = _hmt || [];
   const categoryFilter = document.getElementById('categoryFilter');
   const searchInput = document.getElementById('searchInput');
   const publications = document.querySelectorAll('.publication-item');
+  const resultsCountSpan = document.getElementById('resultsCount');
 
   function filterPublications() {
     const yearVal = yearFilter.value;
     const categoryVal = categoryFilter.value.toLowerCase();
     const searchVal = searchInput.value.toLowerCase();
-    
+
     let visibleCount = 0;
 
     publications.forEach(pub => {
@@ -894,7 +900,7 @@ var _hmt = _hmt || [];
       const pubCategory = pub.getAttribute('data-category') || '';
       const titleElement = pub.querySelector('.card-title');
       const authorsElement = pub.querySelector('p.text-base');
-      
+
       const title = titleElement ? titleElement.textContent.toLowerCase() : '';
       const authors = authorsElement ? authorsElement.textContent.toLowerCase() : '';
       const venue = pub.querySelector('em') ? pub.querySelector('em').textContent.toLowerCase() : '';
@@ -902,8 +908,8 @@ var _hmt = _hmt || [];
 
       const matchesYear = !yearVal || pubYear === yearVal;
       const matchesCategory = !categoryVal || pubCategory.toLowerCase().includes(categoryVal);
-      const matchesSearch = !searchVal || 
-                           title.includes(searchVal) || 
+      const matchesSearch = !searchVal ||
+                           title.includes(searchVal) ||
                            authors.includes(searchVal) ||
                            venue.includes(searchVal) ||
                            abstract.includes(searchVal);
@@ -915,15 +921,18 @@ var _hmt = _hmt || [];
         pub.style.display = 'none';
       }
     });
-    
-    // Update results count (if you want to add this)
+
+    // 更新结果计数显示
     updateResultsCount(visibleCount, searchVal, yearVal, categoryVal);
   }
-  
+
   function updateResultsCount(count, search, year, category) {
-    // You can add a results counter element if needed
-    const filters = [search, year, category].filter(Boolean);
-    console.log(`Showing ${count} publications${filters.length ? ' (filtered)' : ''}`);
+    const hasFilter = search || year || category;
+    if (hasFilter) {
+      resultsCountSpan.textContent = `Found ${count} result${count !== 1 ? 's' : ''}`;
+    } else {
+      resultsCountSpan.textContent = `Showing all ${publications.length} publications`;
+    }
   }
 
   yearFilter.addEventListener('change', filterPublications);
@@ -933,7 +942,6 @@ var _hmt = _hmt || [];
   // 初始化显示全部
   filterPublications();
 </script>
-
   </div>
 
   <!-- Fixed top navbar for desktop - 修改为左中右布局 -->

@@ -490,6 +490,10 @@ var _hmt = _hmt || [];
           <input type="text" placeholder="Search by Genome, Species, Genus..." class="input input-bordered" id="bacteriaSearchInput" />
         </div>
       </div>
+      <!-- 细菌结果计数 -->
+      <div class="mt-2 text-sm opacity-70">
+        <span id="bacteriaResultsCount">Showing all 2 bacteria</span>
+      </div>
     </div>
 
     <!-- 细菌数据列表 -->
@@ -592,6 +596,10 @@ var _hmt = _hmt || [];
           <input type="text" placeholder="Search by Genome, Species, Genus..." class="input input-bordered" id="fungiSearchInput" />
         </div>
       </div>
+      <!-- 真菌结果计数 -->
+      <div class="mt-2 text-sm opacity-70">
+        <span id="fungiResultsCount">Showing all 1 fungi</span>
+      </div>
     </div>
 
     <div id="fungiList" class="space-y-6">
@@ -660,6 +668,10 @@ var _hmt = _hmt || [];
         <div class="form-control flex-grow min-w-[200px]">
           <input type="text" placeholder="Search by contig ID, species, genus..." class="input input-bordered" id="virusSearchInput" />
         </div>
+      </div>
+      <!-- 病毒结果计数 -->
+      <div class="mt-2 text-sm opacity-70">
+        <span id="virusResultsCount">Showing all 1 viruses</span>
       </div>
     </div>
 
@@ -737,6 +749,16 @@ var _hmt = _hmt || [];
 
 <script>
   (function() {
+    // 获取各数据总数量（用于初始计数）
+    const bacteriaTotal = 2;
+    const fungiTotal = 1;
+    const virusTotal = 1;
+
+    // 获取计数显示元素
+    const bacteriaResultsSpan = document.getElementById('bacteriaResultsCount');
+    const fungiResultsSpan = document.getElementById('fungiResultsCount');
+    const virusResultsSpan = document.getElementById('virusResultsCount');
+
     // 标签切换
     const tabBtns = document.querySelectorAll('.custom-tab-btn');
     const bacteriaPanel = document.getElementById('bacteriaPanel');
@@ -773,7 +795,7 @@ var _hmt = _hmt || [];
       });
     });
 
-    // 细菌筛选
+    // ---------- 细菌筛选 ----------
     const bacteriaGroup = document.getElementById('bacteriaGroupFilter');
     const bacteriaKingdom = document.getElementById('bacteriaKingdomFilter');
     const bacteriaPhylum = document.getElementById('bacteriaPhylumFilter');
@@ -782,7 +804,10 @@ var _hmt = _hmt || [];
     const bacteriaItems = document.querySelectorAll('#bacteriaList .bacteria-item');
 
     function filterBacteria() {
-      if (!bacteriaItems.length) return;
+      if (!bacteriaItems.length) {
+        if (bacteriaResultsSpan) bacteriaResultsSpan.textContent = `Showing 0 bacteria`;
+        return;
+      }
       const groupVal = bacteriaGroup ? bacteriaGroup.value : '';
       const kingdomVal = bacteriaKingdom ? bacteriaKingdom.value : '';
       const phylumVal = bacteriaPhylum ? bacteriaPhylum.value : '';
@@ -807,7 +832,13 @@ var _hmt = _hmt || [];
           item.style.display = 'none';
         }
       });
-      console.log(`Bacteria: ${visible} of ${bacteriaItems.length} shown`);
+      // 更新细菌计数
+      const hasFilter = groupVal || kingdomVal || phylumVal || familyVal || searchVal;
+      if (hasFilter) {
+        bacteriaResultsSpan.textContent = `Found ${visible} result${visible !== 1 ? 's' : ''}`;
+      } else {
+        bacteriaResultsSpan.textContent = `Showing all ${bacteriaTotal} bacteria`;
+      }
     }
 
     if (bacteriaGroup) bacteriaGroup.addEventListener('change', filterBacteria);
@@ -816,7 +847,7 @@ var _hmt = _hmt || [];
     if (bacteriaFamily) bacteriaFamily.addEventListener('change', filterBacteria);
     if (bacteriaSearch) bacteriaSearch.addEventListener('input', filterBacteria);
 
-    // 真菌筛选
+    // ---------- 真菌筛选 ----------
     const fungiGroup = document.getElementById('fungiGroupFilter');
     const fungiPhylum = document.getElementById('fungiPhylumFilter');
     const fungiFamily = document.getElementById('fungiFamilyFilter');
@@ -824,7 +855,10 @@ var _hmt = _hmt || [];
     const fungiItems = document.querySelectorAll('#fungiList .fungi-item');
 
     function filterFungi() {
-      if (!fungiItems.length) return;
+      if (!fungiItems.length) {
+        if (fungiResultsSpan) fungiResultsSpan.textContent = `Showing 0 fungi`;
+        return;
+      }
       const groupVal = fungiGroup ? fungiGroup.value : '';
       const phylumVal = fungiPhylum ? fungiPhylum.value : '';
       const familyVal = fungiFamily ? fungiFamily.value : '';
@@ -846,7 +880,12 @@ var _hmt = _hmt || [];
           item.style.display = 'none';
         }
       });
-      console.log(`Fungi: ${visible} of ${fungiItems.length} shown`);
+      const hasFilter = groupVal || phylumVal || familyVal || searchVal;
+      if (hasFilter) {
+        fungiResultsSpan.textContent = `Found ${visible} result${visible !== 1 ? 's' : ''}`;
+      } else {
+        fungiResultsSpan.textContent = `Showing all ${fungiTotal} fungi`;
+      }
     }
 
     if (fungiGroup) fungiGroup.addEventListener('change', filterFungi);
@@ -854,7 +893,7 @@ var _hmt = _hmt || [];
     if (fungiFamily) fungiFamily.addEventListener('change', filterFungi);
     if (fungiSearch) fungiSearch.addEventListener('input', filterFungi);
 
-    // 病毒筛选
+    // ---------- 病毒筛选 ----------
     const virusGenomeType = document.getElementById('virusGenomeTypeFilter');
     const virusLifestyle = document.getElementById('virusLifestyleFilter');
     const virusFamily = document.getElementById('virusFamilyFilter');
@@ -862,7 +901,10 @@ var _hmt = _hmt || [];
     const virusItems = document.querySelectorAll('#virusList .virus-item');
 
     function filterVirus() {
-      if (!virusItems.length) return;
+      if (!virusItems.length) {
+        if (virusResultsSpan) virusResultsSpan.textContent = `Showing 0 viruses`;
+        return;
+      }
       const genomeTypeVal = virusGenomeType ? virusGenomeType.value : '';
       const lifestyleVal = virusLifestyle ? virusLifestyle.value : '';
       const familyVal = virusFamily ? virusFamily.value : '';
@@ -884,7 +926,12 @@ var _hmt = _hmt || [];
           item.style.display = 'none';
         }
       });
-      console.log(`Virus: ${visible} of ${virusItems.length} shown`);
+      const hasFilter = genomeTypeVal || lifestyleVal || familyVal || searchVal;
+      if (hasFilter) {
+        virusResultsSpan.textContent = `Found ${visible} result${visible !== 1 ? 's' : ''}`;
+      } else {
+        virusResultsSpan.textContent = `Showing all ${virusTotal} viruses`;
+      }
     }
 
     if (virusGenomeType) virusGenomeType.addEventListener('change', filterVirus);

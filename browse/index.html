@@ -427,7 +427,7 @@ var _hmt = _hmt || [];
     <div class="container mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold mb-8 text-base-content">Metagenome Samples & Projects</h1>
 
-  <!-- Filters (与之前相同，略) -->
+  <!-- Filters -->
   <div class="glass-card p-4 mb-8">
     <div class="flex flex-wrap gap-4 items-center">
       <!-- Sequencing Type Filter -->
@@ -484,6 +484,11 @@ var _hmt = _hmt || [];
       <div class="form-control flex-grow min-w-[200px]">
         <input type="text" placeholder="Search BioProject, Run, country, tissue, disease..." class="input input-bordered" id="searchInput" />
       </div>
+    </div>
+
+    <!-- Results Count -->
+    <div class="mt-2 text-sm opacity-70">
+      <span id="resultsCount">Showing all 8 samples</span>
     </div>
   </div>
 
@@ -1013,6 +1018,7 @@ var _hmt = _hmt || [];
     const diseaseFilter = document.getElementById('diseaseFilter');
     const searchInput = document.getElementById('searchInput');
     const sampleItems = document.querySelectorAll('.sample-item');
+    const resultsCountSpan = document.getElementById('resultsCount');
 
     function filterSamples() {
       const seqTypeVal = seqTypeFilter.value;
@@ -1044,7 +1050,13 @@ var _hmt = _hmt || [];
         }
       });
 
-      console.log(`Showing ${visibleCount} of ${sampleItems.length} samples`);
+      // 更新结果计数显示
+      const hasFilter = seqTypeVal || countryVal || tissueVal || diseaseVal || searchVal;
+      if (hasFilter) {
+        resultsCountSpan.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''}`;
+      } else {
+        resultsCountSpan.textContent = `Showing all ${sampleItems.length} samples`;
+      }
     }
 
     seqTypeFilter.addEventListener('change', filterSamples);
