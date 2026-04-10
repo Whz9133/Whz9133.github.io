@@ -4,39 +4,87 @@
   
     
     <entry>
-      <title>test2</title>
-      <link href="/2026/04/10/test2/"/>
-      <url>/2026/04/10/test2/</url>
+      <title>Bioinformatics Tools for Metagenomic Analysis</title>
+      <link href="/2024/03/10/test2/"/>
+      <url>/2024/03/10/test2/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>A comprehensive review of computational tools for analyzing metagenomic sequencing data.</p><h2 id="Featured-Tools"><a href="#Featured-Tools" class="headerlink" title="Featured Tools"></a>Featured Tools</h2><table><thead><tr><th>Tool</th><th>Function</th><th>Platform</th></tr></thead><tbody><tr><td>Kraken2</td><td>Taxonomic classification</td><td>Linux</td></tr><tr><td>MetaSPAdes</td><td>Assembly</td><td>Linux</td></tr><tr><td>HUMAnN3</td><td>Functional profiling</td><td>Linux&#x2F;Mac</td></tr></tbody></table><h2 id="Custom-Pipelines"><a href="#Custom-Pipelines" class="headerlink" title="Custom Pipelines"></a>Custom Pipelines</h2><p>We developed several custom workflows…</p>]]></content>
       
       
+      <categories>
+          
+          <category> Tools </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> bioinformatics </tag>
+            
+            <tag> metagenomics </tag>
+            
+            <tag> software </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>page</title>
-      <link href="/2026/04/09/about/"/>
-      <url>/2026/04/09/about/</url>
+      <title>Optimized Culture Methods for Gut Anaerobes</title>
+      <link href="/2024/02/20/test/"/>
+      <url>/2024/02/20/test/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>We developed an optimized workflow for isolating and cultivating anaerobic bacteria from human fecal samples.</p><h2 id="Key-Improvements"><a href="#Key-Improvements" class="headerlink" title="Key Improvements"></a>Key Improvements</h2><ul><li>Modified YCFA medium composition</li><li>Anaerobic chamber optimization</li><li>High-throughput screening pipeline</li></ul><h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>Over 400 bacterial species successfully isolated…</p>]]></content>
       
       
+      <categories>
+          
+          <category> Methodology </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> culture </tag>
+            
+            <tag> anaerobe </tag>
+            
+            <tag> protocol </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2026/04/07/test/"/>
-      <url>/2026/04/07/test/</url>
+      <title>Project Introduction: Human Gut Microbiome Database</title>
+      <link href="/2024/01/15/about/"/>
+      <url>/2024/01/15/about/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<p>This project aims to establish a comprehensive database for human gut microbiome research, integrating metagenomic and metatranscriptomic data.</p><h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>The human gut microbiome plays a crucial role in health and disease…</p><h2 id="Objectives"><a href="#Objectives" class="headerlink" title="Objectives"></a>Objectives</h2><ol><li>Collect and curate public datasets</li><li>Develop analysis pipelines</li><li>Provide user-friendly web interface</li></ol>]]></content>
       
       
+      <categories>
+          
+          <category> Research </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> microbiome </tag>
+            
+            <tag> database </tag>
+            
+            <tag> project </tag>
+            
+        </tags>
       
     </entry>
     
