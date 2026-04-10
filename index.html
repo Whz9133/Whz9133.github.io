@@ -520,10 +520,12 @@ var _hmt = _hmt || [];
   <div class="lg:ml-80 pt-20 px-4 py-8">
     <!-- ========== 全屏封面 Hero Section（类似 Mic_Theme）========== -->
 
-<div class="hero min-h-screen relative flex items-center justify-center"
-     style="background-image: url('/images/cover.jpg');
-            background-size: cover;
-            background-position: center;">
+<div class="hero min-h-screen relative flex items-center justify-center overflow-hidden">
+  <picture class="absolute inset-0 w-full h-full -z-10">
+    <source media="(max-width: 768px)" srcset="/images/cover.png">
+    <source media="(max-width: 1024px)" srcset="/images/cover.png">
+    <img src="/images/cover.png" alt="Hero Background" class="object-cover w-full h-full">
+  </picture>
 
   <!-- 遮罩层 -->
   <div class="hero-overlay bg-opacity-60 bg-black absolute inset-0"></div>
