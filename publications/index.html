@@ -66,7 +66,6 @@ var _hmt = _hmt || [];
 
 <meta name="generator" content="Hexo 8.1.1"></head>
 <body class="min-h-screen bg-base-200">
-
   <!-- Sidebar for Desktop - 完全隐藏 -->
   <aside class="hidden">
     <div class="relative h-full">
@@ -443,13 +442,7 @@ var _hmt = _hmt || [];
         <select class="select select-bordered" id="yearFilter" name="yearFilter">
           <option value="">All Years</option>
           
-            <option value="2024">2024</option>
-          
-            <option value="2023">2023</option>
-          
-            <option value="2022">2022</option>
-          
-            <option value="2021">2021</option>
+            <option value=""></option>
           
         </select>
       </div>
@@ -461,11 +454,19 @@ var _hmt = _hmt || [];
           
             <option value="Artificial Intelligence">Artificial Intelligence</option>
           
-            <option value="Computer Vision">Computer Vision</option>
+            <option value="Autonomous Systems">Autonomous Systems</option>
           
-            <option value="Natural Language Processing">Natural Language Processing</option>
+            <option value="Bioinformatics">Bioinformatics</option>
           
-            <option value="Robotics">Robotics</option>
+            <option value="Climate Science">Climate Science</option>
+          
+            <option value="Educational Technology">Educational Technology</option>
+          
+            <option value="Genomics">Genomics</option>
+          
+            <option value="Medical AI">Medical AI</option>
+          
+            <option value="Structural Biology">Structural Biology</option>
           
         </select>
       </div>
@@ -478,29 +479,37 @@ var _hmt = _hmt || [];
 
     <!-- Results Count -->
     <div class="mt-2 text-sm opacity-70">
-      <span id="resultsCount">Showing all 4 publications</span>
+      <span id="resultsCount">Showing all 8 publications</span>
     </div>
   </div>
 
-  <!-- Publications List -->
-  <div id="publicationsList" class="space-y-6">
+  <!-- Publications List 容器 -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="publicationsContainer">
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300 publication-item"
-           data-year="2024"
-           data-category="artificial intelligence">
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="artificial intelligence"
+           data-title="ai-powered research assistant"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="AI-Powered Research Assistant"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
         <div class="card-body p-6">
           <!-- Title and Type Badge -->
           <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
             <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
-              AI-Driven Literature Synthesis
+              AI-Powered Research Assistant
             </h2>
             <div class="flex items-center gap-2 mt-1 md:mt-0">
               
-                <div class="badge badge-secondary badge-lg z-50">Journal</div>
-              
-              
-                <div class='altmetric-embed z-50 relative' data-badge-type='donut' data-doi='10.1001/jama.2016.9797' data-badge-popover="bottom" data-hide-no-mentions="true"></div>
-                <span class="__dimensions_badge_embed__ z-50 relative" data-doi='10.1001/jama.2016.9797' data-style="small_circle" data-hide-zero-citations="true"></span>
               
             </div>
           </div>
@@ -508,21 +517,9 @@ var _hmt = _hmt || [];
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
-              <p class="text-base font-medium text-base-content/90 mb-3">Smith A., Zhang E., Doe J.</p>
-            
 
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
-                <span class="flex items-center">
-                  <i class="fa-solid fa-building w-4 h-4 mr-1"></i>
-                  Nature Machine Intelligence
-                </span>
-              
-              
-                <span class="flex items-center">
-                  <i class="fa-solid fa-calendar-week w-4 h-4 mr-1"></i>
-                  2024
-                </span>
               
               
                 <span class="flex items-center">
@@ -536,11 +533,13 @@ var _hmt = _hmt || [];
             
               <div class="flex flex-wrap gap-2 mt-3">
                 
+                  <span class="badge badge-outline badge-sm">AI</span>
+                
                   <span class="badge badge-outline badge-sm">Knowledge Graph</span>
                 
-                  <span class="badge badge-outline badge-sm">NLP</span>
+                  <span class="badge badge-outline badge-sm">Literature Mining</span>
                 
-                  <span class="badge badge-outline badge-sm">Meta-analysis</span>
+                  <span class="badge badge-outline badge-sm">Research Tools</span>
                 
               </div>
             
@@ -548,33 +547,14 @@ var _hmt = _hmt || [];
 
           <!-- Abstract -->
           
-            <div class="prose max-w-none mb-4">
-              <p class="text-base-content/80 text-sm leading-relaxed">We propose an AI-driven framework for automating literature reviews using knowledge graphs and language models.</p>
-            </div>
-          
 
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
-              <a href="https://doi.org/10.1001/jama.2016.9797" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" title="DOI">
-                <i class="fa-solid fa-link w-4 h-4 mr-1"></i>
-                DOI
-              </a>
             
             
-              <a href="https://example.com/papers/ai-synthesis.pdf" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer" title="PDF">
-                <i class="fa-solid fa-file-pdf"></i>
-                PDF
-              </a>
             
-            
-              <a href="https://github.com/example/ai-synthesis" class="btn btn-accent btn-sm" target="_blank" rel="noopener noreferrer" title="Code">
-                <i class="fa-solid fa-code"></i>
-                Code
-              </a>
-            
-            
-              <a href="https://ai-synthesis.org" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
+              <a href="https://research-assistant.ai" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
                 <i class="fa-solid fa-globe"></i>
                 Website
               </a>
@@ -583,22 +563,30 @@ var _hmt = _hmt || [];
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300 publication-item"
-           data-year="2023"
-           data-category="computer vision">
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="bioinformatics"
+           data-title="bioinformatics data platform"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="Bioinformatics Data Platform"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
         <div class="card-body p-6">
           <!-- Title and Type Badge -->
           <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
             <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
-              Deep Learning for Pathology Image Segmentation
+              Bioinformatics Data Platform
             </h2>
             <div class="flex items-center gap-2 mt-1 md:mt-0">
               
-                <div class="badge badge-secondary badge-lg z-50">Conference</div>
-              
-              
-                <div class='altmetric-embed z-50 relative' data-badge-type='donut' data-doi='10.1016/j.molp.2017.12.003' data-badge-popover="bottom" data-hide-no-mentions="true"></div>
-                <span class="__dimensions_badge_embed__ z-50 relative" data-doi='10.1016/j.molp.2017.12.003' data-style="small_circle" data-hide-zero-citations="true"></span>
               
             </div>
           </div>
@@ -606,26 +594,234 @@ var _hmt = _hmt || [];
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
-              <p class="text-base font-medium text-base-content/90 mb-3">Lee B., Park S., Vega C.</p>
-            
 
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
-                <span class="flex items-center">
-                  <i class="fa-solid fa-building w-4 h-4 mr-1"></i>
-                  CVPR
-                </span>
-              
-              
-                <span class="flex items-center">
-                  <i class="fa-solid fa-calendar-week w-4 h-4 mr-1"></i>
-                  2023
-                </span>
               
               
                 <span class="flex items-center">
                   <i class="fa-solid fa-layer-group w-4 h-4 mr-1"></i>
-                  Computer Vision
+                  Bioinformatics
+                </span>
+              
+            </div>
+
+            <!-- Tags -->
+            
+              <div class="flex flex-wrap gap-2 mt-3">
+                
+                  <span class="badge badge-outline badge-sm">Bioinformatics</span>
+                
+                  <span class="badge badge-outline badge-sm">Data Integration</span>
+                
+                  <span class="badge badge-outline badge-sm">Visualization</span>
+                
+              </div>
+            
+          </div>
+
+          <!-- Abstract -->
+          
+
+          <!-- Action Buttons -->
+          <div class="card-actions justify-start">
+            
+            
+            
+            
+              <a href="https://bioinfo-platform.org" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
+                <i class="fa-solid fa-globe"></i>
+                Website
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="genomics"
+           data-title="next-gen sequencing analysis pipeline"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="Next-Gen Sequencing Analysis Pipeline"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
+        <div class="card-body p-6">
+          <!-- Title and Type Badge -->
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+            <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
+              Next-Gen Sequencing Analysis Pipeline
+            </h2>
+            <div class="flex items-center gap-2 mt-1 md:mt-0">
+              
+              
+            </div>
+          </div>
+
+          <!-- Authors and Metadata -->
+          <div class="mb-4">
+            
+
+            <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
+              
+              
+              
+                <span class="flex items-center">
+                  <i class="fa-solid fa-layer-group w-4 h-4 mr-1"></i>
+                  Genomics
+                </span>
+              
+            </div>
+
+            <!-- Tags -->
+            
+              <div class="flex flex-wrap gap-2 mt-3">
+                
+                  <span class="badge badge-outline badge-sm">Genomics</span>
+                
+                  <span class="badge badge-outline badge-sm">NGS</span>
+                
+                  <span class="badge badge-outline badge-sm">Pipeline</span>
+                
+              </div>
+            
+          </div>
+
+          <!-- Abstract -->
+          
+
+          <!-- Action Buttons -->
+          <div class="card-actions justify-start">
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="structural biology"
+           data-title="protein structure prediction tool"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="Protein Structure Prediction Tool"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
+        <div class="card-body p-6">
+          <!-- Title and Type Badge -->
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+            <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
+              Protein Structure Prediction Tool
+            </h2>
+            <div class="flex items-center gap-2 mt-1 md:mt-0">
+              
+              
+            </div>
+          </div>
+
+          <!-- Authors and Metadata -->
+          <div class="mb-4">
+            
+
+            <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
+              
+              
+              
+                <span class="flex items-center">
+                  <i class="fa-solid fa-layer-group w-4 h-4 mr-1"></i>
+                  Structural Biology
+                </span>
+              
+            </div>
+
+            <!-- Tags -->
+            
+              <div class="flex flex-wrap gap-2 mt-3">
+                
+                  <span class="badge badge-outline badge-sm">Protein</span>
+                
+                  <span class="badge badge-outline badge-sm">Deep Learning</span>
+                
+                  <span class="badge badge-outline badge-sm">Structural Biology</span>
+                
+              </div>
+            
+          </div>
+
+          <!-- Abstract -->
+          
+
+          <!-- Action Buttons -->
+          <div class="card-actions justify-start">
+            
+            
+            
+            
+              <a href="https://proteinpredictor.org" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
+                <i class="fa-solid fa-globe"></i>
+                Website
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="medical ai"
+           data-title="multimodal ai for medical imaging"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="Multimodal AI for Medical Imaging"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
+        <div class="card-body p-6">
+          <!-- Title and Type Badge -->
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+            <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
+              Multimodal AI for Medical Imaging
+            </h2>
+            <div class="flex items-center gap-2 mt-1 md:mt-0">
+              
+              
+            </div>
+          </div>
+
+          <!-- Authors and Metadata -->
+          <div class="mb-4">
+            
+
+            <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
+              
+              
+              
+                <span class="flex items-center">
+                  <i class="fa-solid fa-layer-group w-4 h-4 mr-1"></i>
+                  Medical AI
                 </span>
               
             </div>
@@ -636,9 +832,11 @@ var _hmt = _hmt || [];
                 
                   <span class="badge badge-outline badge-sm">Medical Imaging</span>
                 
-                  <span class="badge badge-outline badge-sm">Deep Learning</span>
+                  <span class="badge badge-outline badge-sm">Multimodal AI</span>
                 
-                  <span class="badge badge-outline badge-sm">Segmentation</span>
+                  <span class="badge badge-outline badge-sm">Healthcare</span>
+                
+                  <span class="badge badge-outline badge-sm">Computer Vision</span>
                 
               </div>
             
@@ -646,33 +844,14 @@ var _hmt = _hmt || [];
 
           <!-- Abstract -->
           
-            <div class="prose max-w-none mb-4">
-              <p class="text-base-content/80 text-sm leading-relaxed">We introduce a new U-Net variant that significantly improves segmentation performance on histopathology datasets.</p>
-            </div>
-          
 
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
-              <a href="https://doi.org/10.1016/j.molp.2017.12.003" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" title="DOI">
-                <i class="fa-solid fa-link w-4 h-4 mr-1"></i>
-                DOI
-              </a>
             
             
-              <a href="https://example.com/papers/pathology-segmentation.pdf" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer" title="PDF">
-                <i class="fa-solid fa-file-pdf"></i>
-                PDF
-              </a>
             
-            
-              <a href="https://github.com/example/med-seg-net" class="btn btn-accent btn-sm" target="_blank" rel="noopener noreferrer" title="Code">
-                <i class="fa-solid fa-code"></i>
-                Code
-              </a>
-            
-            
-              <a href="https://med-seg.org" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
+              <a href="https://medai.stanford.edu" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
                 <i class="fa-solid fa-globe"></i>
                 Website
               </a>
@@ -681,22 +860,30 @@ var _hmt = _hmt || [];
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300 publication-item"
-           data-year="2022"
-           data-category="natural language processing">
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="climate science"
+           data-title="climate change prediction models"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="Climate Change Prediction Models"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
         <div class="card-body p-6">
           <!-- Title and Type Badge -->
           <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
             <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
-              An Open Toolkit for Natural Language Processing
+              Climate Change Prediction Models
             </h2>
             <div class="flex items-center gap-2 mt-1 md:mt-0">
               
-                <div class="badge badge-secondary badge-lg z-50">Workshop</div>
-              
-              
-                <div class='altmetric-embed z-50 relative' data-badge-type='donut' data-doi='10.18653/v1/2022.nlposs-1.10' data-badge-popover="bottom" data-hide-no-mentions="true"></div>
-                <span class="__dimensions_badge_embed__ z-50 relative" data-doi='10.18653/v1/2022.nlposs-1.10' data-style="small_circle" data-hide-zero-citations="true"></span>
               
             </div>
           </div>
@@ -704,26 +891,14 @@ var _hmt = _hmt || [];
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
-              <p class="text-base font-medium text-base-content/90 mb-3">Kim R., Wu D.</p>
-            
 
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
-                <span class="flex items-center">
-                  <i class="fa-solid fa-building w-4 h-4 mr-1"></i>
-                  ACL NLP-OSS Workshop
-                </span>
-              
-              
-                <span class="flex items-center">
-                  <i class="fa-solid fa-calendar-week w-4 h-4 mr-1"></i>
-                  2022
-                </span>
               
               
                 <span class="flex items-center">
                   <i class="fa-solid fa-layer-group w-4 h-4 mr-1"></i>
-                  Natural Language Processing
+                  Climate Science
                 </span>
               
             </div>
@@ -732,11 +907,13 @@ var _hmt = _hmt || [];
             
               <div class="flex flex-wrap gap-2 mt-3">
                 
-                  <span class="badge badge-outline badge-sm">Open Source</span>
+                  <span class="badge badge-outline badge-sm">Climate Science</span>
                 
-                  <span class="badge badge-outline badge-sm">NER</span>
+                  <span class="badge badge-outline badge-sm">Environmental AI</span>
                 
-                  <span class="badge badge-outline badge-sm">Text Classification</span>
+                  <span class="badge badge-outline badge-sm">Predictive Modeling</span>
+                
+                  <span class="badge badge-outline badge-sm">Sustainability</span>
                 
               </div>
             
@@ -744,33 +921,14 @@ var _hmt = _hmt || [];
 
           <!-- Abstract -->
           
-            <div class="prose max-w-none mb-4">
-              <p class="text-base-content/80 text-sm leading-relaxed">We present NLPKit, an open-source toolkit with modular APIs for entity recognition, classification, and QA.</p>
-            </div>
-          
 
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
-              <a href="https://doi.org/10.18653/v1/2022.nlposs-1.10" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" title="DOI">
-                <i class="fa-solid fa-link w-4 h-4 mr-1"></i>
-                DOI
-              </a>
             
             
-              <a href="https://example.com/papers/nlpkit.pdf" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer" title="PDF">
-                <i class="fa-solid fa-file-pdf"></i>
-                PDF
-              </a>
             
-            
-              <a href="https://github.com/example/nlpkit" class="btn btn-accent btn-sm" target="_blank" rel="noopener noreferrer" title="Code">
-                <i class="fa-solid fa-code"></i>
-                Code
-              </a>
-            
-            
-              <a href="https://nlpkit.org" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
+              <a href="https://climate-ai.org" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
                 <i class="fa-solid fa-globe"></i>
                 Website
               </a>
@@ -779,22 +937,30 @@ var _hmt = _hmt || [];
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl hover:scale-[1.01] transition-all duration-300 border border-base-300 publication-item"
-           data-year="2021"
-           data-category="robotics">
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="educational technology"
+           data-title="educational ai platform"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="Educational AI Platform"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
         <div class="card-body p-6">
           <!-- Title and Type Badge -->
           <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
             <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
-              Reinforcement Learning for Adaptive Robot Control
+              Educational AI Platform
             </h2>
             <div class="flex items-center gap-2 mt-1 md:mt-0">
               
-                <div class="badge badge-secondary badge-lg z-50">Journal</div>
-              
-              
-                <div class='altmetric-embed z-50 relative' data-badge-type='donut' data-doi='10.1109/TRO.2021.3056789' data-badge-popover="bottom" data-hide-no-mentions="true"></div>
-                <span class="__dimensions_badge_embed__ z-50 relative" data-doi='10.1109/TRO.2021.3056789' data-style="small_circle" data-hide-zero-citations="true"></span>
               
             </div>
           </div>
@@ -802,26 +968,14 @@ var _hmt = _hmt || [];
           <!-- Authors and Metadata -->
           <div class="mb-4">
             
-              <p class="text-base font-medium text-base-content/90 mb-3">Chen L., Lin D.</p>
-            
 
             <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
               
-                <span class="flex items-center">
-                  <i class="fa-solid fa-building w-4 h-4 mr-1"></i>
-                  IEEE Transactions on Robotics
-                </span>
-              
-              
-                <span class="flex items-center">
-                  <i class="fa-solid fa-calendar-week w-4 h-4 mr-1"></i>
-                  2021
-                </span>
               
               
                 <span class="flex items-center">
                   <i class="fa-solid fa-layer-group w-4 h-4 mr-1"></i>
-                  Robotics
+                  Educational Technology
                 </span>
               
             </div>
@@ -830,11 +984,13 @@ var _hmt = _hmt || [];
             
               <div class="flex flex-wrap gap-2 mt-3">
                 
-                  <span class="badge badge-outline badge-sm">Reinforcement Learning</span>
+                  <span class="badge badge-outline badge-sm">EdTech</span>
                 
-                  <span class="badge badge-outline badge-sm">Robotics</span>
+                  <span class="badge badge-outline badge-sm">Personalized Learning</span>
                 
-                  <span class="badge badge-outline badge-sm">Adaptive Control</span>
+                  <span class="badge badge-outline badge-sm">AI in Education</span>
+                
+                  <span class="badge badge-outline badge-sm">Learning Analytics</span>
                 
               </div>
             
@@ -842,36 +998,89 @@ var _hmt = _hmt || [];
 
           <!-- Abstract -->
           
-            <div class="prose max-w-none mb-4">
-              <p class="text-base-content/80 text-sm leading-relaxed">This paper explores reinforcement learning strategies for real-time adaptive control in robotic manipulation tasks.</p>
+
+          <!-- Action Buttons -->
+          <div class="card-actions justify-start">
+            
+            
+            
+            
+              <a href="https://eduai-platform.com" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
+                <i class="fa-solid fa-globe"></i>
+                Website
+              </a>
+            
+          </div>
+        </div>
+      </div>
+    
+      <div class="publication-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 border border-base-300"
+           data-year=""
+           data-category="autonomous systems"
+           data-title="autonomous vehicle safety system"
+           data-authors=""
+           data-venue=""
+           data-abstract="">
+
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden">
+          <img src="../images/test2.jpg"
+               class="w-full h-full object-cover"
+               alt="Autonomous Vehicle Safety System"
+               onerror="this.onerror=null;this.src='../images/pub-default.jpg';">
+        </div>
+
+        <div class="card-body p-6">
+          <!-- Title and Type Badge -->
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+            <h2 class="card-title text-xl font-bold text-primary leading-tight flex-1 mb-1 md:mb-0">
+              Autonomous Vehicle Safety System
+            </h2>
+            <div class="flex items-center gap-2 mt-1 md:mt-0">
+              
+              
             </div>
+          </div>
+
+          <!-- Authors and Metadata -->
+          <div class="mb-4">
+            
+
+            <div class="flex flex-wrap items-center gap-4 text-sm text-base-content/70">
+              
+              
+              
+                <span class="flex items-center">
+                  <i class="fa-solid fa-layer-group w-4 h-4 mr-1"></i>
+                  Autonomous Systems
+                </span>
+              
+            </div>
+
+            <!-- Tags -->
+            
+              <div class="flex flex-wrap gap-2 mt-3">
+                
+                  <span class="badge badge-outline badge-sm">Autonomous Vehicles</span>
+                
+                  <span class="badge badge-outline badge-sm">Safety Systems</span>
+                
+                  <span class="badge badge-outline badge-sm">Computer Vision</span>
+                
+                  <span class="badge badge-outline badge-sm">Edge Cases</span>
+                
+              </div>
+            
+          </div>
+
+          <!-- Abstract -->
           
 
           <!-- Action Buttons -->
           <div class="card-actions justify-start">
             
-              <a href="https://doi.org/10.1109/TRO.2021.3056789" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" title="DOI">
-                <i class="fa-solid fa-link w-4 h-4 mr-1"></i>
-                DOI
-              </a>
             
             
-              <a href="https://example.com/papers/rl-robotics.pdf" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer" title="PDF">
-                <i class="fa-solid fa-file-pdf"></i>
-                PDF
-              </a>
-            
-            
-              <a href="https://github.com/example/robot-rl" class="btn btn-accent btn-sm" target="_blank" rel="noopener noreferrer" title="Code">
-                <i class="fa-solid fa-code"></i>
-                Code
-              </a>
-            
-            
-              <a href="https://robot-rl.ai" class="btn btn-info btn-sm" target="_blank" rel="noopener noreferrer" title="Project Website">
-                <i class="fa-solid fa-globe"></i>
-                Website
-              </a>
             
           </div>
         </div>
@@ -879,73 +1088,167 @@ var _hmt = _hmt || [];
     
   </div>
 
+  <!-- 空状态 -->
+  <div id="emptyState" class="text-center py-16 hidden">
+    <div class="text-6xl opacity-20 mb-4">📄</div>
+    <h3 class="text-xl font-semibold mb-2">No publications found</h3>
+    <p class="opacity-70">Try adjusting your search criteria</p>
+  </div>
+
+  <!-- 分页控件 -->
+  <div class="flex justify-center mt-12">
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <button id="firstPageBtn" class="btn btn-sm btn-primary">« First</button>
+      <button id="prevPageBtn" class="btn btn-sm btn-primary">‹ Prev</button>
+      <span class="btn btn-sm btn-outline pointer-events-none">Page <span id="currentPageDisplay">1</span> / <span id="totalPagesDisplay">1</span></span>
+      <button id="nextPageBtn" class="btn btn-sm btn-primary">Next ›</button>
+      <button id="lastPageBtn" class="btn btn-sm btn-primary">Last »</button>
+
+      <div class="flex items-center gap-1 flex-shrink-0">
+        <input type="number" id="jumpPageInput" class="input input-bordered w-14 text-center" style="height: 2.25rem;" min="1" value="1">
+        <button id="jumpPageBtn" class="btn btn-sm btn-primary" style="height: 2.25rem;">GO</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
+  // ========== 分页配置 ==========
+  const pageSize = 12;  // 每页 9 条（3列×3行）
+  let currentPage = 1;
+  let totalPages = 1;
+  let matchedItems = [];
+  let allItems = [];
+
+  // DOM 引用
   const yearFilter = document.getElementById('yearFilter');
   const categoryFilter = document.getElementById('categoryFilter');
   const searchInput = document.getElementById('searchInput');
-  const publications = document.querySelectorAll('.publication-item');
   const resultsCountSpan = document.getElementById('resultsCount');
+  const publicationsContainer = document.getElementById('publicationsContainer');
+  const emptyState = document.getElementById('emptyState');
+  const firstPageBtn = document.getElementById('firstPageBtn');
+  const prevPageBtn = document.getElementById('prevPageBtn');
+  const nextPageBtn = document.getElementById('nextPageBtn');
+  const lastPageBtn = document.getElementById('lastPageBtn');
+  const jumpPageInput = document.getElementById('jumpPageInput');
+  const jumpPageBtn = document.getElementById('jumpPageBtn');
+  const currentPageSpan = document.getElementById('currentPageDisplay');
+  const totalPagesSpan = document.getElementById('totalPagesDisplay');
 
-  function filterPublications() {
-    const yearVal = yearFilter.value;
-    const categoryVal = categoryFilter.value.toLowerCase();
-    const searchVal = searchInput.value.toLowerCase();
-
-    let visibleCount = 0;
-
-    publications.forEach(pub => {
-      const pubYear = pub.getAttribute('data-year');
-      const pubCategory = pub.getAttribute('data-category') || '';
-      const titleElement = pub.querySelector('.card-title');
-      const authorsElement = pub.querySelector('p.text-base');
-
-      const title = titleElement ? titleElement.textContent.toLowerCase() : '';
-      const authors = authorsElement ? authorsElement.textContent.toLowerCase() : '';
-      const venue = pub.querySelector('em') ? pub.querySelector('em').textContent.toLowerCase() : '';
-      const abstract = pub.querySelector('.prose p') ? pub.querySelector('.prose p').textContent.toLowerCase() : '';
-
-      const matchesYear = !yearVal || pubYear === yearVal;
-      const matchesCategory = !categoryVal || pubCategory.toLowerCase().includes(categoryVal);
-      const matchesSearch = !searchVal ||
-                           title.includes(searchVal) ||
-                           authors.includes(searchVal) ||
-                           venue.includes(searchVal) ||
-                           abstract.includes(searchVal);
-
-      if (matchesYear && matchesCategory && matchesSearch) {
-        pub.style.display = 'block';
-        visibleCount++;
-      } else {
-        pub.style.display = 'none';
-      }
-    });
-
-    // 更新结果计数显示
-    updateResultsCount(visibleCount, searchVal, yearVal, categoryVal);
+  // 初始化所有卡片元素
+  function initItems() {
+    allItems = Array.from(document.querySelectorAll('.publication-item'));
   }
 
-  function updateResultsCount(count, search, year, category) {
-    const hasFilter = search || year || category;
+  // 根据筛选条件匹配
+  function updateMatchedItems() {
+    const yearVal = yearFilter.value;
+    const categoryVal = categoryFilter.value.toLowerCase();
+    const searchVal = searchInput.value.trim().toLowerCase();
+
+    matchedItems = allItems.filter(item => {
+      const pubYear = item.dataset.year;
+      const pubCategory = item.dataset.category || '';
+      const title = item.dataset.title || '';
+      const authors = item.dataset.authors || '';
+      const venue = item.dataset.venue || '';
+      const abstract = item.dataset.abstract || '';
+
+      const matchesYear = !yearVal || pubYear === yearVal;
+      const matchesCategory = !categoryVal || pubCategory.includes(categoryVal);
+      const matchesSearch = !searchVal ||
+        title.includes(searchVal) ||
+        authors.includes(searchVal) ||
+        venue.includes(searchVal) ||
+        abstract.includes(searchVal);
+
+      return matchesYear && matchesCategory && matchesSearch;
+    });
+
+    const totalMatched = matchedItems.length;
+    const hasFilter = yearVal || categoryVal || searchVal;
     if (hasFilter) {
-      resultsCountSpan.textContent = `Found ${count} result${count !== 1 ? 's' : ''}`;
+      resultsCountSpan.textContent = `Found ${totalMatched} result${totalMatched !== 1 ? 's' : ''}`;
     } else {
-      resultsCountSpan.textContent = `Showing all ${publications.length} publications`;
+      resultsCountSpan.textContent = `Showing all ${totalMatched} publications`;
+    }
+    return totalMatched;
+  }
+
+  // 渲染当前页
+  function renderPage() {
+    allItems.forEach(item => item.style.display = 'none');
+    const start = (currentPage - 1) * pageSize;
+    const end = start + pageSize;
+    const pageItems = matchedItems.slice(start, end);
+    pageItems.forEach(item => item.style.display = 'block');
+
+    totalPages = Math.max(1, Math.ceil(matchedItems.length / pageSize));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    currentPageSpan.textContent = currentPage;
+    totalPagesSpan.textContent = totalPages;
+    jumpPageInput.value = currentPage;
+    jumpPageInput.max = totalPages;
+
+    firstPageBtn.disabled = currentPage === 1;
+    prevPageBtn.disabled = currentPage === 1;
+    nextPageBtn.disabled = currentPage === totalPages;
+    lastPageBtn.disabled = currentPage === totalPages;
+
+    if (matchedItems.length === 0) {
+      publicationsContainer.classList.add('hidden');
+      emptyState.classList.remove('hidden');
+    } else {
+      publicationsContainer.classList.remove('hidden');
+      emptyState.classList.add('hidden');
     }
   }
 
-  yearFilter.addEventListener('change', filterPublications);
-  categoryFilter.addEventListener('change', filterPublications);
-  searchInput.addEventListener('input', filterPublications);
+  function goToPage(page) {
+    page = Math.max(1, Math.min(page, totalPages));
+    if (page === currentPage) return;
+    currentPage = page;
+    renderPage();
+  }
 
-  // 初始化显示全部
-  filterPublications();
+  function filterAndPaginate() {
+    updateMatchedItems();
+    currentPage = 1;
+    renderPage();
+  }
+
+  function bindEvents() {
+    yearFilter.addEventListener('change', filterAndPaginate);
+    categoryFilter.addEventListener('change', filterAndPaginate);
+    searchInput.addEventListener('input', filterAndPaginate);
+    firstPageBtn.addEventListener('click', () => goToPage(1));
+    prevPageBtn.addEventListener('click', () => goToPage(currentPage - 1));
+    nextPageBtn.addEventListener('click', () => goToPage(currentPage + 1));
+    lastPageBtn.addEventListener('click', () => goToPage(totalPages));
+    jumpPageBtn.addEventListener('click', () => {
+      let page = parseInt(jumpPageInput.value, 10);
+      if (isNaN(page)) page = 1;
+      goToPage(page);
+    });
+    jumpPageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        let page = parseInt(jumpPageInput.value, 10);
+        if (isNaN(page)) page = 1;
+        goToPage(page);
+      }
+    });
+  }
+
+  initItems();
+  bindEvents();
+  filterAndPaginate();
 </script>
   </div>
 
   <!-- Fixed top navbar for desktop - 修改为左中右布局 -->
-    <div class="hidden lg:flex fixed top-0 left-0 right-0 z-50 bg-base-300 h-16 items-center px-6 shadow-md">  <!-- 高度从 h-16 改为 h-20，内边距加大 -->
+    <div class="hidden lg:flex fixed top-0 left-0 right-0 z-50 bg-base-300 h-16 items-center px-6 shadow-md desktop-navbar">  <!-- 高度从 h-16 改为 h-20，内边距加大 -->
       <!-- 左侧：网站标题（可稍大） -->
       <div class="flex-none">
         <a href="../index.html" class="btn btn-ghost normal-case text-2xl">HRMGC</a>  <!-- 字体从 text-xl 改为 text-2xl -->

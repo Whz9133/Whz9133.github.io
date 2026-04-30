@@ -66,7 +66,6 @@ var _hmt = _hmt || [];
 
 <meta name="generator" content="Hexo 8.1.1"></head>
 <body class="min-h-screen bg-base-200">
-
   <!-- Sidebar for Desktop - 完全隐藏 -->
   <aside class="hidden">
     <div class="relative h-full">
@@ -425,15 +424,14 @@ var _hmt = _hmt || [];
   <!-- Content area for Desktop - 取消左边距 -->
   <div class="lg:ml-0 pt-20 px-4 py-8">
     <div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold mb-8 text-base-content">Metagenome Samples & Projects</h1>
+  <h1 class="text-3xl font-bold mb-8 text-base-content">Browse Samples</h1>
 
   <!-- Filters -->
   <div class="glass-card p-4 mb-8">
     <div class="flex flex-wrap gap-4 items-center">
-      <!-- Sequencing Type Filter -->
       <div class="form-control w-44">
-        <select class="select select-bordered" id="seqTypeFilter">
-          <option value="">All Sequencing Types</option>
+        <select class="select select-bordered" id="typeFilter">
+          <option value="">All Types</option>
           
             <option value="metagenome">metagenome</option>
           
@@ -441,771 +439,2177 @@ var _hmt = _hmt || [];
           
         </select>
       </div>
-
-      <!-- Country Filter -->
       <div class="form-control w-40">
         <select class="select select-bordered" id="countryFilter">
           <option value="">All Countries</option>
           
-            <option value="Country A">Country A</option>
+            <option value="Australia">Australia</option>
           
-            <option value="Country B">Country B</option>
+            <option value="Brazil">Brazil</option>
           
-            <option value="Country C">Country C</option>
+            <option value="Canada">Canada</option>
           
-            <option value="Country D">Country D</option>
+            <option value="China">China</option>
           
-            <option value="Country E">Country E</option>
+            <option value="Egypt">Egypt</option>
+          
+            <option value="Germany">Germany</option>
+          
+            <option value="India">India</option>
+          
+            <option value="Japan">Japan</option>
+          
+            <option value="Mexico">Mexico</option>
+          
+            <option value="South Africa">South Africa</option>
+          
+            <option value="UK">UK</option>
           
         </select>
       </div>
-
-      <!-- Tissue Filter -->
       <div class="form-control w-40">
         <select class="select select-bordered" id="tissueFilter">
           <option value="">All Tissues</option>
           
-            <option value="Sample Type">Sample Type</option>
+            <option value="Blood">Blood</option>
+          
+            <option value="Feces">Feces</option>
+          
+            <option value="Gut">Gut</option>
+          
+            <option value="Milk">Milk</option>
+          
+            <option value="Nasal_swab">Nasal_swab</option>
+          
+            <option value="Saliva">Saliva</option>
+          
+            <option value="Skin">Skin</option>
+          
+            <option value="Sputum">Sputum</option>
+          
+            <option value="Stool">Stool</option>
+          
+            <option value="Urine">Urine</option>
+          
+            <option value="Vaginal_swab">Vaginal_swab</option>
           
         </select>
       </div>
-
-      <!-- Disease Filter -->
       <div class="form-control w-44">
         <select class="select select-bordered" id="diseaseFilter">
           <option value="">All Diseases</option>
           
-            <option value="Disease X">Disease X</option>
+            <option value="Atopic_dermatitis">Atopic_dermatitis</option>
           
-            <option value="Disease Y">Disease Y</option>
+            <option value="BV">BV</option>
           
-            <option value="Disease Z">Disease Z</option>
+            <option value="COVID19">COVID19</option>
+          
+            <option value="Caries">Caries</option>
+          
+            <option value="Diabetes">Diabetes</option>
           
             <option value="Healthy">Healthy</option>
           
+            <option value="IBD">IBD</option>
+          
+            <option value="Mastitis">Mastitis</option>
+          
+            <option value="Sepsis">Sepsis</option>
+          
+            <option value="Tuberculosis">Tuberculosis</option>
+          
+            <option value="UTI">UTI</option>
+          
         </select>
       </div>
-
-      <!-- Search Input -->
       <div class="form-control flex-grow min-w-[200px]">
-        <input type="text" placeholder="Search BioProject, Run, country, tissue, disease..." class="input input-bordered" id="searchInput" />
+        <input type="text" placeholder="Search Run, BioProject, PMID..." class="input input-bordered" id="searchInput" />
       </div>
     </div>
-
-    <!-- Results Count -->
     <div class="mt-2 text-sm opacity-70">
-      <span id="resultsCount">Showing all 10 samples</span>
+      <span id="resultsCount">Showing all 30 samples</span>
     </div>
   </div>
 
-  <!-- Samples List -->
-  <div id="samplesList" class="space-y-6">
+  <!-- Sample Cards Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="samplesGrid">
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metagenome"
-           data-country="Country A"
-           data-tissue="Sample Type"
-           data-disease="Healthy"
-           data-search-text="prjna000001 srr0000001 country a sample type healthy metagenome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="China"
+        data-tissue="Feces"
+        data-disease="Healthy"
+        data-search="metagenome prjna123456 srr12345678 china feces healthy 30000001 li, wei_2023"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metagenome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000001" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000001
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR12345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR12345678
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000001</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000001" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country A</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Healthy</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA123456" target="_blank" class="link link-info">PRJNA123456</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>China</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Feces</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Healthy</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000001" target="_blank" class="link link-accent">30000001</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Li, Wei_2023
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metagenome"
-           data-country="Country A"
-           data-tissue="Sample Type"
-           data-disease="Healthy"
-           data-search-text="prjna000001 srr0000002 country a sample type healthy metagenome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="China"
+        data-tissue="Feces"
+        data-disease="Healthy"
+        data-search="metagenome prjna123456 srr12345679 china feces healthy 30000001 li, wei_2023"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metagenome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000001" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000001
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR12345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR12345679
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000002</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000002" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country A</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Healthy</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA123456" target="_blank" class="link link-info">PRJNA123456</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>China</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Feces</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Healthy</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000001" target="_blank" class="link link-accent">30000001</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Li, Wei_2023
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metagenome"
-           data-country="Country B"
-           data-tissue="Sample Type"
-           data-disease="Disease X"
-           data-search-text="prjna000002 srr0000003 country b sample type disease x metagenome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="China"
+        data-tissue="Feces"
+        data-disease="Healthy"
+        data-search="metagenome prjna123456 srr12345680 china feces healthy 30000001 li, wei_2023"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metagenome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000002" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000002
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR12345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR12345680
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000003</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000003" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country B</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Disease X</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA123456" target="_blank" class="link link-info">PRJNA123456</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>China</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Feces</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Healthy</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000001" target="_blank" class="link link-accent">30000001</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Li, Wei_2023
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metagenome"
-           data-country="Country B"
-           data-tissue="Sample Type"
-           data-disease="Disease X"
-           data-search-text="prjna000002 srr0000004 country b sample type disease x metagenome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="UK"
+        data-tissue="Saliva"
+        data-disease="Caries"
+        data-search="metagenome prjna789012 srr22345678 uk saliva caries 30000002 smith, john_2024"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metagenome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000002" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000002
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR22345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR22345678
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000004</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000004" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country B</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Disease X</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA789012" target="_blank" class="link link-info">PRJNA789012</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>UK</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Saliva</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Caries</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000002" target="_blank" class="link link-accent">30000002</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Smith, John_2024
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metatranscriptome"
-           data-country="Country C"
-           data-tissue="Sample Type"
-           data-disease="Disease Y"
-           data-search-text="prjna000003 srr0000005 country c sample type disease y metatranscriptome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="UK"
+        data-tissue="Saliva"
+        data-disease="Caries"
+        data-search="metagenome prjna789012 srr22345679 uk saliva caries 30000002 smith, john_2024"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metatranscriptome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000003" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000003
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR22345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR22345679
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000005</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000005" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country C</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Disease Y</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA789012" target="_blank" class="link link-info">PRJNA789012</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>UK</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Saliva</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Caries</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000002" target="_blank" class="link link-accent">30000002</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Smith, John_2024
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metatranscriptome"
-           data-country="Country C"
-           data-tissue="Sample Type"
-           data-disease="Disease Y"
-           data-search-text="prjna000003 srr0000006 country c sample type disease y metatranscriptome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="UK"
+        data-tissue="Saliva"
+        data-disease="Caries"
+        data-search="metagenome prjna789012 srr22345680 uk saliva caries 30000002 smith, john_2024"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metatranscriptome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000003" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000003
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR22345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR22345680
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000006</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000006" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country C</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Disease Y</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA789012" target="_blank" class="link link-info">PRJNA789012</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>UK</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Saliva</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Caries</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000002" target="_blank" class="link link-accent">30000002</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Smith, John_2024
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metatranscriptome"
-           data-country="Country D"
-           data-tissue="Sample Type"
-           data-disease="Disease Z"
-           data-search-text="prjna000004 srr0000007 country d sample type disease z metatranscriptome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="India"
+        data-tissue="Stool"
+        data-disease="IBD"
+        data-search="metagenome prjna345678 srr32345678 india stool ibd 30000003 kumar, raj_2023"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metatranscriptome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000004" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000004
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR32345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR32345678
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000007</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000007" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country D</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Disease Z</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA345678" target="_blank" class="link link-info">PRJNA345678</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>India</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Stool</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>IBD</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000003" target="_blank" class="link link-accent">30000003</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Kumar, Raj_2023
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metatranscriptome"
-           data-country="Country D"
-           data-tissue="Sample Type"
-           data-disease="Disease Z"
-           data-search-text="prjna000004 srr0000008 country d sample type disease z metatranscriptome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="India"
+        data-tissue="Stool"
+        data-disease="IBD"
+        data-search="metagenome prjna345678 srr32345679 india stool ibd 30000003 kumar, raj_2023"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metatranscriptome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000004" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000004
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR32345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR32345679
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000008</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000008" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country D</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Disease Z</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA345678" target="_blank" class="link link-info">PRJNA345678</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>India</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Stool</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>IBD</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000003" target="_blank" class="link link-accent">30000003</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Kumar, Raj_2023
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metagenome"
-           data-country="Country E"
-           data-tissue="Sample Type"
-           data-disease="Healthy"
-           data-search-text="prjna000005 srr0000009 country e sample type healthy metagenome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="India"
+        data-tissue="Stool"
+        data-disease="IBD"
+        data-search="metagenome prjna345678 srr32345680 india stool ibd 30000003 kumar, raj_2023"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metagenome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000005" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000005
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR32345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR32345680
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000009</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000009" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country E</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Healthy</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA345678" target="_blank" class="link link-info">PRJNA345678</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>India</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Stool</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>IBD</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000003" target="_blank" class="link link-accent">30000003</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Kumar, Raj_2023
+          </div>
+          
         </div>
       </div>
     
-      <div class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 sample-item"
-           data-seq-type="metagenome"
-           data-country="Country E"
-           data-tissue="Sample Type"
-           data-disease="Healthy"
-           data-search-text="prjna000005 srr0000010 country e sample type healthy metagenome">
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Germany"
+        data-tissue="Skin"
+        data-disease="Atopic_dermatitis"
+        data-search="metagenome prjna901234 srr42345678 germany skin atopic_dermatitis 30000004 schmidt, anna_2024"
+      >
         <div class="card-body relative">
-          <!-- 右侧徽章 -->
           <div class="absolute top-4 right-4">
             
-              <div class="badge badge-primary badge-lg">metagenome</div>
+              <div class="badge badge-primary badge-md">metagenome</div>
             
           </div>
 
-          <!-- BioProject 标题（可点击链接） -->
-          <h2 class="card-title text-xl font-bold mb-2 pr-28">
-            
-              <a href="https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA000005" target="_blank" rel="noopener noreferrer" class="link link-primary hover:link-secondary">
-                PRJNA000005
-              </a>
-            
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR42345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR42345678
+            </a>
           </h2>
 
-          <!-- Run 信息 -->
-          
-            <div class="flex items-center gap-2 text-sm text-base-content/70 mb-3">
-              <i class="fa-solid fa-dna"></i>
-              <span>Run: <strong>SRR0000010</strong></span>
-              <!-- 可选：为 Run 也添加 SRA 链接（保留方便用户） -->
-              <a href="https://www.ncbi.nlm.nih.gov/sra?term=SRR0000010" target="_blank" class="link link-primary link-hover text-xs ml-2">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> SRA
-              </a>
-            </div>
-          
-
-          <!-- 元数据行 -->
-          <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Country E</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-microscope"></i>
-                <span>Sample Type</span>
-              </div>
-            
-            
-              <div class="flex items-center gap-2 text-base-content/70">
-                <i class="fa-solid fa-stethoscope"></i>
-                <span>Healthy</span>
-              </div>
-            
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA901234" target="_blank" class="link link-info">PRJNA901234</a>
           </div>
 
-          <!-- 可选的 description -->
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Germany</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Skin</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Atopic_dermatitis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000004" target="_blank" class="link link-accent">30000004</a>
+          </div>
           
 
-          <!-- View 按钮已删除 -->
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Schmidt, Anna_2024
+          </div>
+          
         </div>
       </div>
     
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Germany"
+        data-tissue="Skin"
+        data-disease="Atopic_dermatitis"
+        data-search="metagenome prjna901234 srr42345679 germany skin atopic_dermatitis 30000004 schmidt, anna_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR42345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR42345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA901234" target="_blank" class="link link-info">PRJNA901234</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Germany</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Skin</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Atopic_dermatitis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000004" target="_blank" class="link link-accent">30000004</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Schmidt, Anna_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Brazil"
+        data-tissue="Blood"
+        data-disease="Sepsis"
+        data-search="metatranscriptome prjna567890 srr52345678 brazil blood sepsis 30000005 silva, carlos_2023"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR52345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR52345678
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA567890" target="_blank" class="link link-info">PRJNA567890</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Brazil</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Blood</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Sepsis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000005" target="_blank" class="link link-accent">30000005</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Silva, Carlos_2023
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Brazil"
+        data-tissue="Blood"
+        data-disease="Sepsis"
+        data-search="metatranscriptome prjna567890 srr52345679 brazil blood sepsis 30000005 silva, carlos_2023"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR52345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR52345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA567890" target="_blank" class="link link-info">PRJNA567890</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Brazil</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Blood</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Sepsis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000005" target="_blank" class="link link-accent">30000005</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Silva, Carlos_2023
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Brazil"
+        data-tissue="Blood"
+        data-disease="Sepsis"
+        data-search="metatranscriptome prjna567890 srr52345680 brazil blood sepsis 30000005 silva, carlos_2023"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR52345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR52345680
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA567890" target="_blank" class="link link-info">PRJNA567890</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Brazil</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Blood</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Sepsis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000005" target="_blank" class="link link-accent">30000005</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Silva, Carlos_2023
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="South Africa"
+        data-tissue="Sputum"
+        data-disease="Tuberculosis"
+        data-search="metatranscriptome prjna678901 srr62345678 south africa sputum tuberculosis 30000006 ndlovu, thabo_2025"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR62345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR62345678
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA678901" target="_blank" class="link link-info">PRJNA678901</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>South Africa</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Sputum</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Tuberculosis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000006" target="_blank" class="link link-accent">30000006</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Ndlovu, Thabo_2025
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="South Africa"
+        data-tissue="Sputum"
+        data-disease="Tuberculosis"
+        data-search="metatranscriptome prjna678901 srr62345679 south africa sputum tuberculosis 30000006 ndlovu, thabo_2025"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR62345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR62345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA678901" target="_blank" class="link link-info">PRJNA678901</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>South Africa</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Sputum</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Tuberculosis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000006" target="_blank" class="link link-accent">30000006</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Ndlovu, Thabo_2025
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="South Africa"
+        data-tissue="Sputum"
+        data-disease="Tuberculosis"
+        data-search="metatranscriptome prjna678901 srr62345680 south africa sputum tuberculosis 30000006 ndlovu, thabo_2025"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR62345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR62345680
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA678901" target="_blank" class="link link-info">PRJNA678901</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>South Africa</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Sputum</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Tuberculosis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000006" target="_blank" class="link link-accent">30000006</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Ndlovu, Thabo_2025
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Japan"
+        data-tissue="Gut"
+        data-disease="Diabetes"
+        data-search="metagenome prjna112233 srr72345678 japan gut diabetes 30000007 tanaka, yuki_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR72345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR72345678
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA112233" target="_blank" class="link link-info">PRJNA112233</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Japan</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Gut</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Diabetes</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000007" target="_blank" class="link link-accent">30000007</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Tanaka, Yuki_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Japan"
+        data-tissue="Gut"
+        data-disease="Diabetes"
+        data-search="metagenome prjna112233 srr72345679 japan gut diabetes 30000007 tanaka, yuki_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR72345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR72345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA112233" target="_blank" class="link link-info">PRJNA112233</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Japan</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Gut</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Diabetes</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000007" target="_blank" class="link link-accent">30000007</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Tanaka, Yuki_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Japan"
+        data-tissue="Gut"
+        data-disease="Diabetes"
+        data-search="metagenome prjna112233 srr72345680 japan gut diabetes 30000007 tanaka, yuki_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR72345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR72345680
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA112233" target="_blank" class="link link-info">PRJNA112233</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Japan</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Gut</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Diabetes</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000007" target="_blank" class="link link-accent">30000007</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Tanaka, Yuki_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Australia"
+        data-tissue="Nasal_swab"
+        data-disease="COVID19"
+        data-search="metatranscriptome prjna445566 srr82345678 australia nasal_swab covid19 30000008 williams, emma_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR82345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR82345678
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA445566" target="_blank" class="link link-info">PRJNA445566</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Australia</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Nasal_swab</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>COVID19</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000008" target="_blank" class="link link-accent">30000008</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Williams, Emma_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Australia"
+        data-tissue="Nasal_swab"
+        data-disease="COVID19"
+        data-search="metatranscriptome prjna445566 srr82345679 australia nasal_swab covid19 30000008 williams, emma_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR82345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR82345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA445566" target="_blank" class="link link-info">PRJNA445566</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Australia</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Nasal_swab</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>COVID19</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000008" target="_blank" class="link link-accent">30000008</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Williams, Emma_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Australia"
+        data-tissue="Nasal_swab"
+        data-disease="COVID19"
+        data-search="metatranscriptome prjna445566 srr82345680 australia nasal_swab covid19 30000008 williams, emma_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR82345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR82345680
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA445566" target="_blank" class="link link-info">PRJNA445566</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Australia</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Nasal_swab</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>COVID19</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000008" target="_blank" class="link link-accent">30000008</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Williams, Emma_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Canada"
+        data-tissue="Milk"
+        data-disease="Mastitis"
+        data-search="metagenome prjna998877 srr92345678 canada milk mastitis 30000009 tremblay, jean_2023"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR92345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR92345678
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA998877" target="_blank" class="link link-info">PRJNA998877</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Canada</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Milk</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Mastitis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000009" target="_blank" class="link link-accent">30000009</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Tremblay, Jean_2023
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Canada"
+        data-tissue="Milk"
+        data-disease="Mastitis"
+        data-search="metagenome prjna998877 srr92345679 canada milk mastitis 30000009 tremblay, jean_2023"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR92345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR92345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA998877" target="_blank" class="link link-info">PRJNA998877</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Canada</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Milk</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>Mastitis</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000009" target="_blank" class="link link-accent">30000009</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Tremblay, Jean_2023
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Egypt"
+        data-tissue="Urine"
+        data-disease="UTI"
+        data-search="metatranscriptome prjna665544 srr102345678 egypt urine uti 30000010 hassan, ahmed_2025"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR102345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR102345678
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA665544" target="_blank" class="link link-info">PRJNA665544</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Egypt</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Urine</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>UTI</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000010" target="_blank" class="link link-accent">30000010</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Hassan, Ahmed_2025
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Egypt"
+        data-tissue="Urine"
+        data-disease="UTI"
+        data-search="metatranscriptome prjna665544 srr102345679 egypt urine uti 30000010 hassan, ahmed_2025"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR102345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR102345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA665544" target="_blank" class="link link-info">PRJNA665544</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Egypt</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Urine</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>UTI</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000010" target="_blank" class="link link-accent">30000010</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Hassan, Ahmed_2025
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metatranscriptome"
+        data-country="Egypt"
+        data-tissue="Urine"
+        data-disease="UTI"
+        data-search="metatranscriptome prjna665544 srr102345680 egypt urine uti 30000010 hassan, ahmed_2025"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-secondary badge-md">metatranscriptome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR102345680"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR102345680
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA665544" target="_blank" class="link link-info">PRJNA665544</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Egypt</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Urine</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>UTI</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000010" target="_blank" class="link link-accent">30000010</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Hassan, Ahmed_2025
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Mexico"
+        data-tissue="Vaginal_swab"
+        data-disease="BV"
+        data-search="metagenome prjna334455 srr112345678 mexico vaginal_swab bv 30000011 garcia, maria_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR112345678"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR112345678
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA334455" target="_blank" class="link link-info">PRJNA334455</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Mexico</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Vaginal_swab</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>BV</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000011" target="_blank" class="link link-accent">30000011</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Garcia, Maria_2024
+          </div>
+          
+        </div>
+      </div>
+    
+      <div
+        class="sample-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
+        data-type="metagenome"
+        data-country="Mexico"
+        data-tissue="Vaginal_swab"
+        data-disease="BV"
+        data-search="metagenome prjna334455 srr112345679 mexico vaginal_swab bv 30000011 garcia, maria_2024"
+      >
+        <div class="card-body relative">
+          <div class="absolute top-4 right-4">
+            
+              <div class="badge badge-primary badge-md">metagenome</div>
+            
+          </div>
+
+          <h2 class="card-title text-xl font-bold mb-3 flex items-center">
+            <i class="fa-solid fa-dna text-primary mr-2"></i>
+            <a href="https://www.ncbi.nlm.nih.gov/sra/SRR112345679"
+               target="_blank"
+               class="hover:text-primary transition-colors no-underline">
+              SRR112345679
+            </a>
+          </h2>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-folder-tree text-base-content/60 w-4"></i>
+            <span class="font-semibold">BioProject:</span>
+            <a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA334455" target="_blank" class="link link-info">PRJNA334455</a>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-location-dot text-base-content/60 w-4"></i>
+            <span class="font-semibold">Country:</span>
+            <span>Mexico</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-flask text-base-content/60 w-4"></i>
+            <span class="font-semibold">Source:</span>
+            <span>Vaginal_swab</span>
+          </div>
+
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-stethoscope text-base-content/60 w-4"></i>
+            <span class="font-semibold">Disease:</span>
+            <span>BV</span>
+          </div>
+
+          
+          <div class="flex items-center gap-2 text-sm mb-2">
+            <i class="fa-solid fa-book text-base-content/60 w-4"></i>
+            <span class="font-semibold">PMID:</span>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/30000011" target="_blank" class="link link-accent">30000011</a>
+          </div>
+          
+
+          
+          <div class="text-xs text-base-content/60 mt-2">
+            Garcia, Maria_2024
+          </div>
+          
+        </div>
+      </div>
+    
+  </div>
+
+<!-- 分页控件：统一高度，水平排列输入框和GO按钮 -->
+<div class="flex justify-center mt-12">
+  <div class="flex flex-wrap items-center justify-center gap-2">
+    <button id="firstPageBtn" class="btn btn-sm btn-primary">« First</button>
+    <button id="prevPageBtn" class="btn btn-sm btn-primary">‹ Prev</button>
+    <span class="btn btn-sm btn-outline pointer-events-none">Page <span id="currentPageDisplay">1</span> / <span id="totalPagesDisplay">1</span></span>
+    <button id="nextPageBtn" class="btn btn-sm btn-primary">Next ›</button>
+    <button id="lastPageBtn" class="btn btn-sm btn-primary">Last »</button>
+
+    <!-- 输入框 + GO 按钮：强制水平排列，高度统一 -->
+    <div class="flex items-center gap-1 flex-shrink-0">
+      <input type="number" id="jumpPageInput" class="input input-bordered w-14 text-center" style="height: 2.25rem;" min="1" value="1">
+      <button id="jumpPageBtn" class="btn btn-sm btn-primary" style="height: 2.25rem;">GO</button>
+    </div>
   </div>
 </div>
 
 <script>
-  (function() {
-    const seqTypeFilter = document.getElementById('seqTypeFilter');
-    const countryFilter = document.getElementById('countryFilter');
-    const tissueFilter = document.getElementById('tissueFilter');
-    const diseaseFilter = document.getElementById('diseaseFilter');
-    const searchInput = document.getElementById('searchInput');
-    const sampleItems = document.querySelectorAll('.sample-item');
-    const resultsCountSpan = document.getElementById('resultsCount');
+// ========== Pagination Settings ==========
+const pageSize = 12;                // 9 cards per page (3 rows × 3 cols)
+let currentPage = 1;
+let totalPages = 1;
+let matchedItems = [];
+let allItems = [];
 
-    function filterSamples() {
-      const seqTypeVal = seqTypeFilter.value;
-      const countryVal = countryFilter.value;
-      const tissueVal = tissueFilter.value;
-      const diseaseVal = diseaseFilter.value;
-      const searchVal = searchInput.value.trim().toLowerCase();
+// DOM elements
+const typeFilter = document.getElementById('typeFilter');
+const countryFilter = document.getElementById('countryFilter');
+const tissueFilter = document.getElementById('tissueFilter');
+const diseaseFilter = document.getElementById('diseaseFilter');
+const searchInput = document.getElementById('searchInput');
+const resultsCountSpan = document.getElementById('resultsCount');
 
-      let visibleCount = 0;
+const firstPageBtn = document.getElementById('firstPageBtn');
+const prevPageBtn = document.getElementById('prevPageBtn');
+const nextPageBtn = document.getElementById('nextPageBtn');
+const lastPageBtn = document.getElementById('lastPageBtn');
+const jumpPageInput = document.getElementById('jumpPageInput');
+const jumpPageBtn = document.getElementById('jumpPageBtn');
+const currentPageSpan = document.getElementById('currentPageDisplay');
+const totalPagesSpan = document.getElementById('totalPagesDisplay');
 
-      sampleItems.forEach(item => {
-        const itemSeqType = item.dataset.seqType || '';
-        const itemCountry = item.dataset.country || '';
-        const itemTissue = item.dataset.tissue || '';
-        const itemDisease = item.dataset.disease || '';
-        const searchText = item.dataset.searchText || '';
+function initItems() {
+  allItems = Array.from(document.querySelectorAll('.sample-item'));
+}
 
-        const matchesSeqType = !seqTypeVal || itemSeqType === seqTypeVal;
-        const matchesCountry = !countryVal || itemCountry === countryVal;
-        const matchesTissue = !tissueVal || itemTissue === tissueVal;
-        const matchesDisease = !diseaseVal || itemDisease === diseaseVal;
-        const matchesSearch = !searchVal || searchText.includes(searchVal);
+function updateMatchedItems() {
+  const typeVal = typeFilter.value;
+  const countryVal = countryFilter.value;
+  const tissueVal = tissueFilter.value;
+  const diseaseVal = diseaseFilter.value;
+  const searchVal = searchInput.value.trim().toLowerCase();
 
-        if (matchesSeqType && matchesCountry && matchesTissue && matchesDisease && matchesSearch) {
-          item.style.display = 'block';
-          visibleCount++;
-        } else {
-          item.style.display = 'none';
-        }
-      });
+  matchedItems = allItems.filter(item => {
+    const itemType = item.dataset.type || '';
+    const itemCountry = item.dataset.country || '';
+    const itemTissue = item.dataset.tissue || '';
+    const itemDisease = item.dataset.disease || '';
+    const searchText = item.dataset.search || '';
 
-      // 更新结果计数显示
-      const hasFilter = seqTypeVal || countryVal || tissueVal || diseaseVal || searchVal;
-      if (hasFilter) {
-        resultsCountSpan.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''}`;
-      } else {
-        resultsCountSpan.textContent = `Showing all ${sampleItems.length} samples`;
-      }
+    const matchesType = !typeVal || itemType === typeVal;
+    const matchesCountry = !countryVal || itemCountry === countryVal;
+    const matchesTissue = !tissueVal || itemTissue === tissueVal;
+    const matchesDisease = !diseaseVal || itemDisease === diseaseVal;
+    const matchesSearch = !searchVal || searchText.includes(searchVal);
+
+    return matchesType && matchesCountry && matchesTissue && matchesDisease && matchesSearch;
+  });
+
+  const totalMatched = matchedItems.length;
+  const hasFilter = typeVal || countryVal || tissueVal || diseaseVal || searchVal;
+  if (hasFilter) {
+    resultsCountSpan.textContent = `Found ${totalMatched} result${totalMatched !== 1 ? 's' : ''}`;
+  } else {
+    resultsCountSpan.textContent = `Showing all ${totalMatched} samples`;
+  }
+}
+
+function renderPage() {
+  // Hide all cards
+  allItems.forEach(item => item.style.display = 'none');
+  // Show cards for current page
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  const pageItems = matchedItems.slice(start, end);
+  pageItems.forEach(item => item.style.display = 'block');
+
+  // Update total pages and adjust current if needed
+  totalPages = Math.max(1, Math.ceil(matchedItems.length / pageSize));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  // Update pagination controls
+  firstPageBtn.disabled = currentPage === 1;
+  prevPageBtn.disabled = currentPage === 1;
+  nextPageBtn.disabled = currentPage === totalPages;
+  lastPageBtn.disabled = currentPage === totalPages;
+
+  // Update page number display
+  currentPageSpan.textContent = currentPage;
+  totalPagesSpan.textContent = totalPages;
+  jumpPageInput.value = currentPage;
+  jumpPageInput.max = totalPages;
+}
+
+function goToPage(page) {
+  page = Math.max(1, Math.min(page, totalPages));
+  if (page === currentPage) return;
+  currentPage = page;
+  renderPage();
+}
+
+function filterAndPaginate() {
+  updateMatchedItems();
+  currentPage = 1;
+  renderPage();
+}
+
+// Event binding
+function bindEvents() {
+  typeFilter.addEventListener('change', filterAndPaginate);
+  countryFilter.addEventListener('change', filterAndPaginate);
+  tissueFilter.addEventListener('change', filterAndPaginate);
+  diseaseFilter.addEventListener('change', filterAndPaginate);
+  searchInput.addEventListener('input', filterAndPaginate);
+
+  firstPageBtn.addEventListener('click', () => goToPage(1));
+  prevPageBtn.addEventListener('click', () => goToPage(currentPage - 1));
+  nextPageBtn.addEventListener('click', () => goToPage(currentPage + 1));
+  lastPageBtn.addEventListener('click', () => goToPage(totalPages));
+
+  jumpPageBtn.addEventListener('click', () => {
+    let page = parseInt(jumpPageInput.value, 10);
+    if (isNaN(page)) page = 1;
+    goToPage(page);
+  });
+  jumpPageInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      let page = parseInt(jumpPageInput.value, 10);
+      if (isNaN(page)) page = 1;
+      goToPage(page);
     }
+  });
+}
 
-    seqTypeFilter.addEventListener('change', filterSamples);
-    countryFilter.addEventListener('change', filterSamples);
-    tissueFilter.addEventListener('change', filterSamples);
-    diseaseFilter.addEventListener('change', filterSamples);
-    searchInput.addEventListener('input', filterSamples);
-
-    filterSamples();
-  })();
+// Initialize
+initItems();
+bindEvents();
+filterAndPaginate();
 </script>
   </div>
 
   <!-- Fixed top navbar for desktop - 修改为左中右布局 -->
-    <div class="hidden lg:flex fixed top-0 left-0 right-0 z-50 bg-base-300 h-16 items-center px-6 shadow-md">  <!-- 高度从 h-16 改为 h-20，内边距加大 -->
+    <div class="hidden lg:flex fixed top-0 left-0 right-0 z-50 bg-base-300 h-16 items-center px-6 shadow-md desktop-navbar">  <!-- 高度从 h-16 改为 h-20，内边距加大 -->
       <!-- 左侧：网站标题（可稍大） -->
       <div class="flex-none">
         <a href="../index.html" class="btn btn-ghost normal-case text-2xl">HRMGC</a>  <!-- 字体从 text-xl 改为 text-2xl -->

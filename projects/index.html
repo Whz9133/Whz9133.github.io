@@ -66,7 +66,6 @@ var _hmt = _hmt || [];
 
 <meta name="generator" content="Hexo 8.1.1"></head>
 <body class="min-h-screen bg-base-200">
-
   <!-- Sidebar for Desktop - 完全隐藏 -->
   <aside class="hidden">
     <div class="relative h-full">
@@ -431,6 +430,7 @@ var _hmt = _hmt || [];
       <i class="fa-solid fa-arrow-left"></i> Back
     </button>
   </div>
+
   <h1 class="text-3xl font-bold mb-8 text-base-content">Research Projects</h1>
 
   <!-- Filters -->
@@ -484,30 +484,29 @@ var _hmt = _hmt || [];
     </div>
   </div>
 
-  <!-- Projects List -->
-  <div id="projectsList" class="space-y-6">
+  <!-- Projects List 带独立封面卡片 -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsContainer">
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="current"
         data-category="Artificial Intelligence"
         data-title="ai-powered research assistant"
         data-description="an ai system designed to help researchers conduct efficient literature reviews and synthesize scientific knowledge."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="AI-Powered Research Assistant" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-primary badge-sm">current</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            AI-Powered Research Assistant
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">AI-Powered Research Assistant</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -523,7 +522,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -539,36 +537,35 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">An AI system designed to help researchers conduct efficient literature reviews and synthesize scientific knowledge.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">An AI system designed to help researchers conduct efficient literature reviews and synthesize scientific knowledge.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://university.edu/alice-smith" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/alice-smith"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Alice Smith (PI)
                 </a>, 
               
-                <a 
-                  href="https://university.edu/john-doe" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/john-doe"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. John Doe (Co-PI)
                 </a>, 
               
-                <a 
-                  href="https://university.edu/emily-zhang" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/emily-zhang"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Emily Zhang (PhD Student)
@@ -576,15 +573,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://www.nature.com/articles/ai-research-synthesis" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://www.nature.com/articles/ai-research-synthesis"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -594,14 +590,13 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
           
             <div class="flex flex-wrap gap-2 mt-4">
               
-                <a 
-                  href="https://research-assistant.ai" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://research-assistant.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-solid fa-link mr-0"></i>
@@ -609,10 +604,10 @@ var _hmt = _hmt || [];
                 </a>
               
               
-                <a 
-                  href="https://github.com/username/ai-research-assistant" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://github.com/username/ai-research-assistant"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
@@ -621,31 +616,29 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
         </div>
       </div>
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="completed"
         data-category="Bioinformatics"
         data-title="bioinformatics data platform"
         data-description="a platform for integration and analysis of multi-omics data with user-friendly visualization."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Bioinformatics Data Platform" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-secondary badge-sm">completed</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Bioinformatics Data Platform
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">Bioinformatics Data Platform</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -661,7 +654,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -675,27 +667,26 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">A platform for integration and analysis of multi-omics data with user-friendly visualization.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">A platform for integration and analysis of multi-omics data with user-friendly visualization.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://university.edu/linda-wang" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/linda-wang"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Linda Wang (PI)
                 </a>, 
               
-                <a 
-                  href="https://university.edu/mark-lee" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/mark-lee"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Mark Lee (Researcher)
@@ -703,15 +694,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://bioinformaticsjournal.org/articles/integrative-omics" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://bioinformaticsjournal.org/articles/integrative-omics"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -721,14 +711,13 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
           
             <div class="flex flex-wrap gap-2 mt-4">
               
-                <a 
-                  href="https://bioinfo-platform.org" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://bioinfo-platform.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-solid fa-link mr-0"></i>
@@ -738,31 +727,29 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
         </div>
       </div>
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="current"
         data-category="Genomics"
         data-title="next-gen sequencing analysis pipeline"
         data-description="an automated pipeline for ngs data processing and variant calling optimized for large datasets."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Next-Gen Sequencing Analysis Pipeline" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-primary badge-sm">current</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Next-Gen Sequencing Analysis Pipeline
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">Next-Gen Sequencing Analysis Pipeline</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -778,7 +765,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -792,18 +778,17 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">An automated pipeline for NGS data processing and variant calling optimized for large datasets.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">An automated pipeline for NGS data processing and variant calling optimized for large datasets.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://university.edu/sarah-chen" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/sarah-chen"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Sarah Chen (Lead Scientist)
@@ -811,15 +796,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://genomeresearch.org/articles/efficient-ngs" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://genomeresearch.org/articles/efficient-ngs"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -829,15 +813,14 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
           
             <div class="flex flex-wrap gap-2 mt-4">
               
               
-                <a 
-                  href="https://github.com/username/ngs-pipeline" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://github.com/username/ngs-pipeline"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
@@ -846,31 +829,29 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
         </div>
       </div>
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="completed"
         data-category="Structural Biology"
         data-title="protein structure prediction tool"
         data-description="a computational tool for predicting protein 3d structures using deep learning methods."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Protein Structure Prediction Tool" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-secondary badge-sm">completed</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Protein Structure Prediction Tool
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">Protein Structure Prediction Tool</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -886,7 +867,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -900,18 +880,17 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">A computational tool for predicting protein 3D structures using deep learning methods.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">A computational tool for predicting protein 3D structures using deep learning methods.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://university.edu/kevin-brown" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/kevin-brown"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Kevin Brown (PI)
@@ -919,15 +898,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://jmb.org/articles/deep-learning-protein" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://jmb.org/articles/deep-learning-protein"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -937,14 +915,13 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
           
             <div class="flex flex-wrap gap-2 mt-4">
               
-                <a 
-                  href="https://proteinpredictor.org" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://proteinpredictor.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-solid fa-link mr-0"></i>
@@ -954,31 +931,29 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
         </div>
       </div>
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="current"
         data-category="Medical AI"
         data-title="multimodal ai for medical imaging"
         data-description="developing ai systems that can analyze medical images alongside patient data for improved diagnosis accuracy."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Multimodal AI for Medical Imaging" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-primary badge-sm">current</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Multimodal AI for Medical Imaging
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">Multimodal AI for Medical Imaging</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -994,7 +969,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -1010,36 +984,35 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">Developing AI systems that can analyze medical images alongside patient data for improved diagnosis accuracy.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">Developing AI systems that can analyze medical images alongside patient data for improved diagnosis accuracy.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://hospital.edu/maria-rodriguez" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://hospital.edu/maria-rodriguez"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Maria Rodriguez (Clinical Lead)
                 </a>, 
               
-                <a 
-                  href="https://university.edu/james-wilson" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/james-wilson"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. James Wilson (AI Researcher)
                 </a>, 
               
-                <a 
-                  href="https://university.edu/lisa-park" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/lisa-park"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Lisa Park (PhD Student)
@@ -1047,15 +1020,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://nature.com/articles/multimodal-medical-ai" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://nature.com/articles/multimodal-medical-ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -1065,14 +1037,13 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
           
             <div class="flex flex-wrap gap-2 mt-4">
               
-                <a 
-                  href="https://medai.stanford.edu" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://medai.stanford.edu"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-solid fa-link mr-0"></i>
@@ -1080,10 +1051,10 @@ var _hmt = _hmt || [];
                 </a>
               
               
-                <a 
-                  href="https://github.com/stanford-medai/multimodal-diagnosis" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://github.com/stanford-medai/multimodal-diagnosis"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
@@ -1092,31 +1063,29 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
         </div>
       </div>
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="current"
         data-category="Climate Science"
         data-title="climate change prediction models"
         data-description="using machine learning to improve climate change predictions and understand environmental impacts."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Climate Change Prediction Models" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-primary badge-lg font-semibold">current</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-primary badge-sm">current</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Climate Change Prediction Models
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">Climate Change Prediction Models</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -1132,7 +1101,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -1148,27 +1116,26 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">Using machine learning to improve climate change predictions and understand environmental impacts.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">Using machine learning to improve climate change predictions and understand environmental impacts.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://climatelab.edu/robert-green" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://climatelab.edu/robert-green"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Robert Green (Climate Scientist)
                 </a>, 
               
-                <a 
-                  href="https://university.edu/anna-thompson" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://university.edu/anna-thompson"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Anna Thompson (Data Scientist)
@@ -1176,15 +1143,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://nature.com/articles/ai-climate-prediction" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://nature.com/articles/ai-climate-prediction"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -1194,14 +1160,13 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
           
             <div class="flex flex-wrap gap-2 mt-4">
               
-                <a 
-                  href="https://climate-ai.org" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://climate-ai.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-solid fa-link mr-0"></i>
@@ -1211,31 +1176,29 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
         </div>
       </div>
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="completed"
         data-category="Educational Technology"
         data-title="educational ai platform"
         data-description="an adaptive learning platform that personalizes educational content based on student performance and learning styles."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Educational AI Platform" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-secondary badge-sm">completed</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Educational AI Platform
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">Educational AI Platform</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -1251,7 +1214,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -1267,27 +1229,26 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">An adaptive learning platform that personalizes educational content based on student performance and learning styles.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">An adaptive learning platform that personalizes educational content based on student performance and learning styles.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://education.edu/patricia-lee" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://education.edu/patricia-lee"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. Patricia Lee (Education Researcher)
                 </a>, 
               
-                <a 
-                  href="https://linkedin.com/in/michael-chang" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://linkedin.com/in/michael-chang"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Michael Chang (Software Engineer)
@@ -1295,15 +1256,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://sciencedirect.com/adaptive-learning-systems" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://sciencedirect.com/adaptive-learning-systems"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -1313,14 +1273,13 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
           
             <div class="flex flex-wrap gap-2 mt-4">
               
-                <a 
-                  href="https://eduai-platform.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://eduai-platform.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-solid fa-link mr-0"></i>
@@ -1328,10 +1287,10 @@ var _hmt = _hmt || [];
                 </a>
               
               
-                <a 
-                  href="https://github.com/eduai/adaptive-platform" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://github.com/eduai/adaptive-platform"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn-sm btn-outline"
                 >
                   <i class="fa-brands fa-github w-4 h-4 mr-0"></i>
@@ -1340,31 +1299,29 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
         </div>
       </div>
     
-      <div 
-        class="card glass rounded-box shadow-lg bg-base-100 text-base-content hover:shadow-xl transition-all duration-300 timeline-item"
+      <div
+        class="project-item card glass rounded-box shadow-lg bg-base-100 text-base-content overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300"
         data-status="completed"
         data-category="Autonomous Systems"
         data-title="autonomous vehicle safety system"
         data-description="developing safety-critical ai systems for autonomous vehicles with focus on edge case detection and handling."
       >
-        <div class="card-body relative">
-          <!-- Status Badge - Right Top Corner -->
+        <!-- 封面 16:9 -->
+        <div class="w-full aspect-[16/9] overflow-hidden relative">
+          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Autonomous Vehicle Safety System" onerror="this.src='../images/proj-default.jpg';this.onerror=null;">
           
-            <div class="absolute top-4 right-4 z-10">
-              <div class="badge badge-secondary badge-lg font-semibold">completed</div>
-            </div>
+          <div class="absolute top-2 right-2 z-10">
+            <div class="badge badge-secondary badge-sm">completed</div>
+          </div>
           
-          
-          <!-- Title -->
-          <h2 class="card-title text-xl font-bold mb-3 pr-20">
-            Autonomous Vehicle Safety System
-          </h2>
+        </div>
 
-          <!-- Metadata Row -->
+        <div class="card-body relative">
+          <h2 class="card-title text-xl font-bold mb-3">Autonomous Vehicle Safety System</h2>
+
           <div class="flex flex-wrap items-center gap-4 mb-4 text-sm">
             
               <div class="flex items-center gap-2 text-base-content/70">
@@ -1380,7 +1337,6 @@ var _hmt = _hmt || [];
             
           </div>
 
-          <!-- Tags -->
           
             <div class="flex flex-wrap gap-2 mb-4">
               
@@ -1396,27 +1352,26 @@ var _hmt = _hmt || [];
           
 
           
-            <p class="text-base-content opacity-90 mb-4">Developing safety-critical AI systems for autonomous vehicles with focus on edge case detection and handling.</p>
+            <p class="text-base-content opacity-90 mb-4 line-clamp-3">Developing safety-critical AI systems for autonomous vehicles with focus on edge case detection and handling.</p>
           
 
-          
           
             <div class="mb-4 text-sm flex-wrap">
               <span class="font-semibold">Collaborators: </span>
               
-                <a 
-                  href="https://robotics.edu/david-kim" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://robotics.edu/david-kim"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Dr. David Kim (Robotics Expert)
                 </a>, 
               
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="link link-info no-underline"
                 >
                   Tesla Research Team (Industry Partner)
@@ -1424,15 +1379,14 @@ var _hmt = _hmt || [];
               
             </div>
           
-          
 
           
             <div class="flex flex-wrap gap-2 max-w-full">
               
-                <a 
-                  href="https://ieee.org/safety-autonomous-systems" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://ieee.org/safety-autonomous-systems"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="px-3 py-2 rounded-md text-sm max-w-sm break-words whitespace-normal text-left hover:bg-base-200 transition"
                 >
                   <i class="fa-solid fa-newspaper"></i>
@@ -1442,65 +1396,178 @@ var _hmt = _hmt || [];
             </div>
           
 
-          <!-- Project Links -->
-          
           
         </div>
       </div>
     
   </div>
+
+  <!-- 空状态（当无卡片显示时） -->
+  <div id="emptyState" class="text-center py-16 hidden">
+    <div class="text-6xl opacity-20 mb-4">📂</div>
+    <h3 class="text-xl font-semibold mb-2">No projects found</h3>
+    <p class="opacity-70">Try adjusting your search criteria</p>
+  </div>
+
+  <!-- 分页控件（风格与 Browse 一致） -->
+  <div class="flex justify-center mt-12">
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <button id="firstPageBtn" class="btn btn-sm btn-primary">« First</button>
+      <button id="prevPageBtn" class="btn btn-sm btn-primary">‹ Prev</button>
+      <span class="btn btn-sm btn-outline pointer-events-none">Page <span id="currentPageDisplay">1</span> / <span id="totalPagesDisplay">1</span></span>
+      <button id="nextPageBtn" class="btn btn-sm btn-primary">Next ›</button>
+      <button id="lastPageBtn" class="btn btn-sm btn-primary">Last »</button>
+
+      <!-- 跳转输入框 + GO 按钮 -->
+      <div class="flex items-center gap-1 flex-shrink-0">
+        <input type="number" id="jumpPageInput" class="input input-bordered w-14 text-center" style="height: 2.25rem;" min="1" value="1">
+        <button id="jumpPageBtn" class="btn btn-sm btn-primary" style="height: 2.25rem;">GO</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
+  // ========== 分页配置 ==========
+  const pageSize = 12;  // 每页显示的卡片数量（3列x3行）
+  let currentPage = 1;
+  let totalPages = 1;
+  let matchedItems = [];    // 存储通过筛选的卡片 DOM 元素（按原始顺序）
+  let allItems = [];        // 存储所有卡片元素
+
+  // DOM 元素引用
   const statusFilter = document.getElementById('statusFilter');
   const categoryFilter = document.getElementById('categoryFilter');
   const searchInput = document.getElementById('searchInput');
-  const projectsList = document.getElementById('projectsList');
   const resultsCountSpan = document.getElementById('resultsCount');
+  const projectsContainer = document.getElementById('projectsContainer');
+  const emptyState = document.getElementById('emptyState');
+  const firstPageBtn = document.getElementById('firstPageBtn');
+  const prevPageBtn = document.getElementById('prevPageBtn');
+  const nextPageBtn = document.getElementById('nextPageBtn');
+  const lastPageBtn = document.getElementById('lastPageBtn');
+  const jumpPageInput = document.getElementById('jumpPageInput');
+  const jumpPageBtn = document.getElementById('jumpPageBtn');
+  const currentPageSpan = document.getElementById('currentPageDisplay');
+  const totalPagesSpan = document.getElementById('totalPagesDisplay');
 
-  function filterProjects() {
-    const status = statusFilter.value;
-    const category = categoryFilter.value;
-    const search = searchInput.value.toLowerCase();
+  // 初始化卡片元素列表（保留原始顺序）
+  function initItems() {
+    allItems = Array.from(document.querySelectorAll('.project-item'));
+  }
 
-    const items = projectsList.getElementsByClassName('timeline-item');
-    let visibleCount = 0;
+  // 根据当前筛选条件更新 matchedItems
+  function updateMatchedItems() {
+    const statusVal = statusFilter.value;
+    const categoryVal = categoryFilter.value;
+    const searchVal = searchInput.value.trim().toLowerCase();
 
-    Array.from(items).forEach(item => {
-      const itemStatus = item.dataset.status;
-      const itemCategory = item.dataset.category;
-      const itemTitle = item.dataset.title;
-      const itemDescription = item.dataset.description;
+    matchedItems = allItems.filter(item => {
+      const itemStatus = item.dataset.status || '';
+      const itemCategory = item.dataset.category || '';
+      const itemTitle = item.dataset.title || '';
+      const itemDescription = item.dataset.description || '';
 
-      const statusMatch = !status || itemStatus === status;
-      const categoryMatch = !category || itemCategory === category;
-      const searchMatch = !search ||
-        itemTitle.includes(search) ||
-        itemDescription.includes(search);
+      const matchesStatus = !statusVal || itemStatus === statusVal;
+      const matchesCategory = !categoryVal || itemCategory === categoryVal;
+      const matchesSearch = !searchVal ||
+        itemTitle.includes(searchVal) ||
+        itemDescription.includes(searchVal);
 
-      const isVisible = statusMatch && categoryMatch && searchMatch;
-      item.style.display = isVisible ? 'block' : 'none';
-      if (isVisible) visibleCount++;
+      return matchesStatus && matchesCategory && matchesSearch;
     });
 
-    // 更新计数显示
-    const totalItems = items.length;
-    if (status || category || search) {
-      resultsCountSpan.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''}`;
+    const totalMatched = matchedItems.length;
+    const hasFilter = statusVal || categoryVal || searchVal;
+    if (hasFilter) {
+      resultsCountSpan.textContent = `Found ${totalMatched} result${totalMatched !== 1 ? 's' : ''}`;
     } else {
-      resultsCountSpan.textContent = `Showing all ${totalItems} projects`;
+      resultsCountSpan.textContent = `Showing all ${totalMatched} projects`;
+    }
+    return totalMatched;
+  }
+
+  // 渲染当前页的卡片，并处理空状态
+  function renderPage() {
+    // 先隐藏所有卡片
+    allItems.forEach(item => item.style.display = 'none');
+    // 计算当前页的起止索引
+    const start = (currentPage - 1) * pageSize;
+    const end = start + pageSize;
+    const pageItems = matchedItems.slice(start, end);
+    // 显示当前页卡片
+    pageItems.forEach(item => item.style.display = 'block');
+    // 更新总页数（至少为1）
+    totalPages = Math.max(1, Math.ceil(matchedItems.length / pageSize));
+    if (currentPage > totalPages) currentPage = totalPages;
+    // 更新分页控件文字和状态
+    currentPageSpan.textContent = currentPage;
+    totalPagesSpan.textContent = totalPages;
+    jumpPageInput.value = currentPage;
+    jumpPageInput.max = totalPages;
+
+    firstPageBtn.disabled = currentPage === 1;
+    prevPageBtn.disabled = currentPage === 1;
+    nextPageBtn.disabled = currentPage === totalPages;
+    lastPageBtn.disabled = currentPage === totalPages;
+
+    // 处理空状态（无卡片显示时）
+    if (matchedItems.length === 0) {
+      projectsContainer.classList.add('hidden');
+      emptyState.classList.remove('hidden');
+    } else {
+      projectsContainer.classList.remove('hidden');
+      emptyState.classList.add('hidden');
     }
   }
 
-  statusFilter.addEventListener('change', filterProjects);
-  categoryFilter.addEventListener('change', filterProjects);
-  searchInput.addEventListener('input', filterProjects);
-</script>
+  // 跳转到指定页码
+  function goToPage(page) {
+    page = Math.max(1, Math.min(page, totalPages));
+    if (page === currentPage) return;
+    currentPage = page;
+    renderPage();
+  }
 
+  // 筛选后重置到第一页
+  function filterAndPaginate() {
+    updateMatchedItems();
+    currentPage = 1;
+    renderPage();
+  }
+
+  // 事件绑定
+  function bindEvents() {
+    statusFilter.addEventListener('change', filterAndPaginate);
+    categoryFilter.addEventListener('change', filterAndPaginate);
+    searchInput.addEventListener('input', filterAndPaginate);
+    firstPageBtn.addEventListener('click', () => goToPage(1));
+    prevPageBtn.addEventListener('click', () => goToPage(currentPage - 1));
+    nextPageBtn.addEventListener('click', () => goToPage(currentPage + 1));
+    lastPageBtn.addEventListener('click', () => goToPage(totalPages));
+    jumpPageBtn.addEventListener('click', () => {
+      let page = parseInt(jumpPageInput.value, 10);
+      if (isNaN(page)) page = 1;
+      goToPage(page);
+    });
+    jumpPageInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        let page = parseInt(jumpPageInput.value, 10);
+        if (isNaN(page)) page = 1;
+        goToPage(page);
+      }
+    });
+  }
+
+  // 初始化
+  initItems();
+  bindEvents();
+  filterAndPaginate();
+</script>
   </div>
 
   <!-- Fixed top navbar for desktop - 修改为左中右布局 -->
-    <div class="hidden lg:flex fixed top-0 left-0 right-0 z-50 bg-base-300 h-16 items-center px-6 shadow-md">  <!-- 高度从 h-16 改为 h-20，内边距加大 -->
+    <div class="hidden lg:flex fixed top-0 left-0 right-0 z-50 bg-base-300 h-16 items-center px-6 shadow-md desktop-navbar">  <!-- 高度从 h-16 改为 h-20，内边距加大 -->
       <!-- 左侧：网站标题（可稍大） -->
       <div class="flex-none">
         <a href="../index.html" class="btn btn-ghost normal-case text-2xl">HRMGC</a>  <!-- 字体从 text-xl 改为 text-2xl -->
