@@ -426,118 +426,39 @@ var _hmt = _hmt || [];
     <!-- ========== 主内容区域（滚动后显示） ========== -->
 <div id="main-content">
 
-  <!-- ========== 图片轮播 / Hero Carousel ========== -->
-  <div class="container mx-auto px-4 py-8">
-    
-
-    
-    <!-- 轮播外层容器 -->
-    <div class="relative" id="carousel-outer">
-
-      <!-- 轮播主体 -->
-      <div class="relative rounded-box shadow-2xl overflow-hidden h-[400px] md:h-[500px] bg-base-200" id="carousel-wrapper">
-
-        <!-- 轮播轨道 -->
-        <div id="carousel-track" class="flex h-full transition-transform duration-500 ease-in-out" style="transform: translateX(0%);">
-          
-          <div class="w-full h-full flex-shrink-0 flex-grow-0 relative">
-            <a href="2024/03/10/test2/" class="block w-full h-full relative overflow-hidden group">
-              <img src="/images/test2.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Bioinformatics Tools for Metagenomic Analysis" onerror="this.src='/images/default-cover.jpg';this.onerror=null;">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="badge badge-primary">Mar 10, 2024</span>
-                  
-                  <span class="badge badge-secondary">Tools</span>
-                  
-                </div>
-                <h3 class="text-2xl md:text-4xl font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">Bioinformatics Tools for Metagenomic Analysis</h3>
-                
-                <div class="mt-4 flex items-center text-primary font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read Article <i class="fas fa-arrow-right ml-2"></i></div>
-              </div>
-            </a>
-          </div>
-          
-          <div class="w-full h-full flex-shrink-0 flex-grow-0 relative">
-            <a href="2024/02/20/test/" class="block w-full h-full relative overflow-hidden group">
-              <img src="/images/test.jpeg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Optimized Culture Methods for Gut Anaerobes" onerror="this.src='/images/default-cover.jpg';this.onerror=null;">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="badge badge-primary">Feb 20, 2024</span>
-                  
-                  <span class="badge badge-secondary">Methodology</span>
-                  
-                </div>
-                <h3 class="text-2xl md:text-4xl font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">Optimized Culture Methods for Gut Anaerobes</h3>
-                
-                <div class="mt-4 flex items-center text-primary font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read Article <i class="fas fa-arrow-right ml-2"></i></div>
-              </div>
-            </a>
-          </div>
-          
-          <div class="w-full h-full flex-shrink-0 flex-grow-0 relative">
-            <a href="2024/01/15/about/" class="block w-full h-full relative overflow-hidden group">
-              <img src="/images/about.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Project Introduction: Human Gut Microbiome Database" onerror="this.src='/images/default-cover.jpg';this.onerror=null;">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="badge badge-primary">Jan 15, 2024</span>
-                  
-                  <span class="badge badge-secondary">Research</span>
-                  
-                </div>
-                <h3 class="text-2xl md:text-4xl font-bold mb-2 line-clamp-2 group-hover:text-primary transition-colors">Project Introduction: Human Gut Microbiome Database</h3>
-                
-                <div class="mt-4 flex items-center text-primary font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Read Article <i class="fas fa-arrow-right ml-2"></i></div>
-              </div>
-            </a>
-          </div>
-          
+<!-- ========== 图文介绍（替换原轮播） ========== -->
+<div class="container mx-auto px-4 py-8">
+  <div class="card glass rounded-box shadow-2xl overflow-hidden bg-base-100">
+    <div class="flex flex-col md:flex-row">
+      <!-- 左侧：图片 -->
+      <div class="md:w-1/2 w-full">
+        <div class="aspect-[4/3] md:aspect-auto md:h-full w-full overflow-hidden">
+          <img src="/images/test2.jpg"
+               alt="Introduction"
+               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+               onerror="this.src='/images/default-cover.jpg';">
         </div>
-
-      </div><!-- /carousel-wrapper -->
-
-      <!-- 左右箭头 - 放在 wrapper 外部，避免被裁剪 -->
-      <button type="button"
-              id="carousel-prev-btn"
-              class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 border-white/50 shadow-lg cursor-pointer"
-              style="z-index: 20; margin-top: -24px;"
-              aria-label="Previous">
-        <span class="text-2xl md:text-3xl font-bold select-none" style="line-height: 1; display: block; width: 100%; text-align: center;">&#10094;</span>
-      </button>
-
-      <button type="button"
-              id="carousel-next-btn"
-              class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 border-white/50 shadow-lg cursor-pointer"
-              style="z-index: 20; margin-top: -24px;"
-              aria-label="Next">
-        <span class="text-2xl md:text-3xl font-bold select-none" style="line-height: 1; display: block; width: 100%; text-align: center;">&#10095;</span>
-      </button>
-
-      <!-- 圆点指示器 - 放在 wrapper 外部底部 -->
-      <div class="flex justify-center gap-2 md:gap-3 mt-4" id="carousel-dots">
-        
-        <button type="button"
-                class="carousel-dot w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-primary transition-all duration-300 hover:scale-125 bg-primary"
-                data-index="0"
-                aria-label="Go to slide 1"></button>
-        
-        <button type="button"
-                class="carousel-dot w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-primary transition-all duration-300 hover:scale-125 bg-transparent"
-                data-index="1"
-                aria-label="Go to slide 2"></button>
-        
-        <button type="button"
-                class="carousel-dot w-3 h-3 md:w-4 md:h-4 rounded-full border-2 border-primary transition-all duration-300 hover:scale-125 bg-transparent"
-                data-index="2"
-                aria-label="Go to slide 3"></button>
-        
       </div>
-
-    </div><!-- /carousel-outer -->
-    
+      <!-- 右侧：文字介绍 -->
+      <div class="md:w-1/2 w-full p-6 md:p-10 flex flex-col justify-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">About Our Research</h2>
+        <div class="prose prose-lg max-w-none text-base-content/80">
+          <p>Welcome to the Metagenomics & Translatomics Research Group. Our team focuses on deciphering the complex microbial communities in various ecological niches using cutting-edge sequencing technologies and bioinformatics approaches.</p>
+          <p class="mt-4">We integrate metagenomic, metatranscriptomic, and clinical data to uncover novel insights into host-microbe interactions, disease mechanisms, and potential therapeutic targets. Our resources include curated datasets, genome catalogues, and open-access publications.</p>
+          <p class="mt-4">Explore our database to browse samples, culture collections, taxonomy assignments, and download analytical datasets.</p>
+        </div>
+        <!-- 四个按钮：默认轮廓，悬停/点击变主色 -->
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="/browse" class="btn btn-outline nav-btn">Browse Samples</a>
+          <a href="/culture" class="btn btn-outline nav-btn">Culture Collection</a>
+          <a href="/taxonomy" class="btn btn-outline nav-btn">Taxonomy</a>
+          <a href="/data" class="btn btn-outline nav-btn">Data Resources</a>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+
 
   <!-- ========== Recent Notes 首页卡片 ========== -->
   <div class="container mx-auto px-4 py-8">
@@ -748,159 +669,34 @@ var _hmt = _hmt || [];
   </div>
 </div>
 
-<!-- ========== 轮播 JavaScript ========== -->
-<script>
-  // 轮播状态
-  var carouselState = {
-    currentIndex: 0,
-    totalSlides: 0,
-    autoInterval: null,
-    initialized: false
-  };
+<style>
+/* ========== 按钮交互效果（已完美实现） ========== */
+.nav-btn {
+  transition: all 0.25s ease-in-out !important;
+  border-width: 2px !important;
+}
 
-  // 更新轮播位置
-  function updateCarousel() {
-    var track = document.getElementById('carousel-track');
-    var dots = document.querySelectorAll('.carousel-dot');
+/* 悬停 + 点击按下时：主色背景 + 白色文字 + 上浮阴影 */
+.nav-btn:hover,
+.nav-btn:active,
+.nav-btn:focus {
+  background-color: var(--p) !important;
+  border-color: var(--p) !important;
+  color: #422ad5 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
 
-    if (!track) return;
+/* 释放/离开后：自动恢复轮廓样式 */
+.nav-btn:not(:hover):not(:active):not(:focus) {
+  background-color: transparent !important;
+  color: var(--p) !important;
+  border-color: var(--p) !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+</style>
 
-    // 移动轨道
-    track.style.transform = 'translateX(-' + (carouselState.currentIndex * 100) + '%)';
-
-    // 更新圆点
-    dots.forEach(function(dot, idx) {
-      if (idx === carouselState.currentIndex) {
-        dot.classList.remove('bg-transparent');
-        dot.classList.add('bg-primary');
-      } else {
-        dot.classList.remove('bg-primary');
-        dot.classList.add('bg-transparent');
-      }
-    });
-
-    console.log('Carousel updated to slide:', carouselState.currentIndex);
-  }
-
-  // 下一张
-  function carouselNext() {
-    if (!carouselState.initialized) return;
-    carouselState.currentIndex = (carouselState.currentIndex + 1) % carouselState.totalSlides;
-    updateCarousel();
-  }
-
-  // 上一张
-  function carouselPrev() {
-    if (!carouselState.initialized) return;
-    carouselState.currentIndex = (carouselState.currentIndex - 1 + carouselState.totalSlides) % carouselState.totalSlides;
-    updateCarousel();
-  }
-
-  // 跳转到指定
-  function carouselGoTo(index) {
-    if (!carouselState.initialized) return;
-    if (index >= 0 && index < carouselState.totalSlides) {
-      carouselState.currentIndex = index;
-      updateCarousel();
-    }
-  }
-
-  // 自动播放
-  function startAutoPlay() {
-    stopAutoPlay();
-    carouselState.autoInterval = setInterval(carouselNext, 5000);
-  }
-
-  function stopAutoPlay() {
-    if (carouselState.autoInterval) {
-      clearInterval(carouselState.autoInterval);
-      carouselState.autoInterval = null;
-    }
-  }
-
-  // 初始化
-  function initCarousel() {
-    var track = document.getElementById('carousel-track');
-    var prevBtn = document.getElementById('carousel-prev-btn');
-    var nextBtn = document.getElementById('carousel-next-btn');
-    var dots = document.querySelectorAll('.carousel-dot');
-    var wrapper = document.getElementById('carousel-wrapper');
-
-    if (!track) {
-      console.log('Carousel track not found');
-      return;
-    }
-
-    var slides = track.children;
-    var totalSlides = slides.length;
-
-    if (totalSlides <= 1) {
-      console.log('Only one slide, no carousel needed');
-      // 隐藏按钮和圆点
-      if (prevBtn) prevBtn.style.display = 'none';
-      if (nextBtn) nextBtn.style.display = 'none';
-      return;
-    }
-
-    carouselState.totalSlides = totalSlides;
-    carouselState.initialized = true;
-
-    // 绑定按钮点击事件
-    if (prevBtn) {
-      prevBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Prev button clicked');
-        stopAutoPlay();
-        carouselPrev();
-        startAutoPlay();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Next button clicked');
-        stopAutoPlay();
-        carouselNext();
-        startAutoPlay();
-      });
-    }
-
-    // 绑定圆点点击
-    dots.forEach(function(dot) {
-      dot.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        var idx = parseInt(this.getAttribute('data-index'));
-        console.log('Dot clicked:', idx);
-        stopAutoPlay();
-        carouselGoTo(idx);
-        startAutoPlay();
-      });
-    });
-
-    // 悬停暂停
-    if (wrapper) {
-      wrapper.addEventListener('mouseenter', stopAutoPlay);
-      wrapper.addEventListener('mouseleave', startAutoPlay);
-    }
-
-    // 初始化显示
-    updateCarousel();
-    startAutoPlay();
-
-    console.log('Carousel initialized with', totalSlides, 'slides');
-  }
-
-  // 页面加载完成后初始化
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCarousel);
-  } else {
-    initCarousel();
-  }
-</script>
   </div>
 
   <!-- Fixed top navbar for desktop - 修改为左中右布局 -->
