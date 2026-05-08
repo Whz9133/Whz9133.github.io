@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>HRMGC</title>
+<title>Function</title>
 <meta name="description" content="Human Respiratory Microbial Gene Catalogue">
 <meta name="keywords" content="">
 <meta name="author" content="Dr. Zhang Wang">
@@ -16,14 +16,14 @@
 
 
 <!-- Open Graph tags -->
-<meta property="og:title" content="HRMGC">
+<meta property="og:title" content="Function">
 <meta property="og:description" content="Human Respiratory Microbial Gene Catalogue">
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://Whz9133.github.io">
 
 <!-- Twitter Card tags -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HRMGC">
+<meta name="twitter:title" content="Function">
 <meta name="twitter:description" content="Human Respiratory Microbial Gene Catalogue">
 
 <!-- Academicons -->
@@ -433,147 +433,478 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop - 取消左边距 -->
   <div class="lg:ml-0 pt-20 px-4 py-8">
-    <!-- ========== 主内容区域（滚动后显示） ========== -->
-<div id="main-content">
+    <div class="container mx-auto px-4 py-8">
+  <!-- 返回按钮（仅当从 Culture 页面跳转来时显示） -->
+  <div id="backButtonContainer" class="mb-4" style="display: none;">
+    <button onclick="history.back();" class="btn btn-outline btn-sm gap-2">
+      <i class="fa-solid fa-arrow-left"></i> Back to Culture
+    </button>
+  </div>
 
-<!-- ========== 图文介绍（替换原轮播） ========== -->
-<div class="container mx-auto px-4 py-8">
-  <div class="card glass rounded-box shadow-2xl overflow-hidden bg-base-100">
-    <div class="flex flex-col md:flex-row">
-      <!-- 左侧：图片 -->
-      <div class="md:w-1/2 w-full">
-        <div class="aspect-[4/3] md:aspect-auto md:h-full w-full overflow-hidden">
-          <img src="../images/test2.jpg"
-               alt="Introduction"
-               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-               onerror="this.src='../images/default-cover.jpg';">
+  <h1 class="text-3xl font-bold mb-6 text-base-content">Functional Analysis</h1>
+
+  <!-- 标签页按钮 -->
+  <div class="custom-tabs mb-8 border-b border-base-300">
+    <button class="custom-tab-btn text-lg font-semibold py-2 px-4 mr-4 transition-all duration-200 active" data-tab="metabolomics" style="color: #2563eb;">Metabolomics</button>
+    <button class="custom-tab-btn text-lg font-semibold py-2 px-4 transition-all duration-200" data-tab="transcriptome" style="color: #16a34a;">Transcriptome</button>
+  </div>
+
+  
+
+  <!-- ========== Metabolomics 面板 ========== -->
+  <div id="metabolomicsPanel" class="tab-panel">
+    <div class="grid grid-cols-1 gap-8">
+      <div class="glass-card p-6 flex justify-center">
+        <img src="../images/about.jpg"
+             alt="Metabolomics Overview"
+             class="rounded-box shadow-lg max-w-full h-auto"
+             onerror="this.src='../images/default-cover.jpg'">
+      </div>
+      <div class="glass-card p-6">
+        <h2 class="text-2xl font-bold mb-4 text-base-content">Key Metabolites</h2>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full">
+            <thead>
+              <tr><th>Metabolite Name</th><th>Compound Class</th><th>Abundance Range</th><th>Trend</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>Glycerophospholipid</td>
+                <td>Lipid</td>
+                <td>28.5 ~ 88.2</td>
+                <td>Up-regulated in COPD</td>
+              </tr>
+              
+              <tr>
+                <td>Organic acid</td>
+                <td>Primary Metabolite</td>
+                <td>15.3 ~ 62.7</td>
+                <td>Stable across disease</td>
+              </tr>
+              
+              <tr>
+                <td>Fatty acid</td>
+                <td>Lipid</td>
+                <td>33.1 ~ 75.8</td>
+                <td>Enriched in Asthma</td>
+              </tr>
+              
+              <tr>
+                <td>Amino acid</td>
+                <td>Protein Derivative</td>
+                <td>22.6 ~ 71.9</td>
+                <td>Healthy group higher</td>
+              </tr>
+              
+              <tr>
+                <td>Terpene &amp; Phenolic</td>
+                <td>Secondary Metabolite</td>
+                <td>12.4 ~ 49.2</td>
+                <td>COPD specific enrichment</td>
+              </tr>
+              
+            </tbody>
+          </table>
         </div>
       </div>
-      <!-- 右侧：文字介绍 -->
-      <div class="md:w-1/2 w-full p-6 md:p-10 flex flex-col justify-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">About Our Research</h2>
-        <div class="prose prose-lg max-w-none text-base-content/80">
-          <p>Welcome to the Metagenomics & Translatomics Research Group. Our team focuses on deciphering the complex microbial communities in various ecological niches using cutting-edge sequencing technologies and bioinformatics approaches.</p>
-          <p class="mt-4">We integrate metagenomic, metatranscriptomic, and clinical data to uncover novel insights into host-microbe interactions, disease mechanisms, and potential therapeutic targets. Our resources include curated datasets, genome catalogues, and open-access publications.</p>
-          <p class="mt-4">Explore our database to browse samples, culture collections, taxonomy assignments, and download analytical datasets.</p>
+    </div>
+  </div>
+
+  <!-- ========== Transcriptome 面板 ========== -->
+  <div id="transcriptomePanel" class="tab-panel hidden">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold text-base-content">Transcriptome Profiles</h2>
+      <button id="resetTranscriptomeBtn" class="btn btn-sm btn-outline hidden">Show All Fungi</button>
+    </div>
+
+    <div id="allFungiContainer" class="grid grid-cols-1 gap-8">
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F001">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F001</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F001"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
         </div>
-        <!-- 四个按钮：默认轮廓，悬停/点击变主色 -->
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="../browse" class="btn btn-outline nav-btn">Browse Samples</a>
-          <a href="../culture" class="btn btn-outline nav-btn">Culture Collection</a>
-          <a href="../taxonomy" class="btn btn-outline nav-btn">Taxonomy</a>
-          <a href="../function" class="btn btn-outline nav-btn">Function</a>
-          <a href="../data" class="btn btn-outline nav-btn">Data Resources</a>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>3.21</td>
+                <td>0.012</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Airway immune response</td>
+              </tr>
+              
+              <tr>
+                <td>ENGS002</td>
+                <td>-2.87</td>
+                <td>0.023</td>
+                <td><span class="badge badge-error">Down</span></td>
+                <td>Mucus secretion regulation</td>
+              </tr>
+              
+              <tr>
+                <td>ENGS003</td>
+                <td>4.15</td>
+                <td>0.004</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Antimicrobial peptide synthesis</td>
+              </tr>
+              
+            </tbody>
+          </table>
         </div>
       </div>
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F002">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F002</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F002"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>2.11</td>
+                <td>0.032</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Inflammatory cytokine</td>
+              </tr>
+              
+              <tr>
+                <td>ENGS002</td>
+                <td>-2.56</td>
+                <td>0.019</td>
+                <td><span class="badge badge-error">Down</span></td>
+                <td>Epithelial cell repair</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F005">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F005</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F005"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>3.86</td>
+                <td>0.007</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Lung fibrosis pathway</td>
+              </tr>
+              
+              <tr>
+                <td>ENGS002</td>
+                <td>-3.12</td>
+                <td>0.015</td>
+                <td><span class="badge badge-error">Down</span></td>
+                <td>Cell cycle control</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F006">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F006</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F006"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>2.94</td>
+                <td>0.021</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Oxidative stress response</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F009">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F009</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F009"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>3.57</td>
+                <td>0.009</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Innate immunity activation</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F010">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F010</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F010"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>-2.73</td>
+                <td>0.026</td>
+                <td><span class="badge badge-error">Down</span></td>
+                <td>Airway smooth muscle contraction</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F013">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F013</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F013"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>4.22</td>
+                <td>0.003</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Pathogen recognition receptor</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="fungi-transcriptome-card glass-card p-6 rounded-box shadow-lg" data-fungi-id="VIR_F014">
+        <h3 class="text-xl font-bold mb-4 text-primary">VIR_F014</h3>
+        <div class="flex justify-center mb-6">
+          <img src="../images/about.jpg"
+               alt="Volcano plot for VIR_F014"
+               class="rounded-box shadow-md max-w-full h-auto"
+               onerror="this.src='../images/default-cover.jpg'">
+        </div>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full text-sm">
+            <thead>
+              <tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                <td>ENGS001</td>
+                <td>2.45</td>
+                <td>0.028</td>
+                <td><span class="badge badge-success">Up</span></td>
+                <td>Inflammatory mediator release</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+
+    <div id="singleFungiContainer" class="hidden">
+      <div class="glass-card p-6 rounded-box shadow-lg" id="singleFungiCard"></div>
     </div>
   </div>
 </div>
 
-
-  <!-- ========== Recent Notes 首页卡片 ========== -->
-  <div class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl font-bold mb-8 text-base-content">Recent Notes</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <article class="card rounded-box shadow-lg bg-base-100 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-        <div class="w-full aspect-[16/9] overflow-hidden">
-          <img src="../images/test2.jpg" class="w-full h-full object-cover" alt="Bioinformatics Tools for Metagenomic Analysis" onerror="this.src='../images/default-cover.jpg';this.onerror=null;">
-        </div>
-        <div class="card-body flex-1 flex flex-col">
-          <h3 class="card-title text-lg font-bold leading-tight mb-2">
-            <a href="../2024/03/10/test2/" class="hover:text-primary no-underline transition-colors duration-200">
-              Bioinformatics Tools for Metagenomic Analysis
-            </a>
-          </h3>
-          <div class="flex items-center justify-between mb-2">
-            <time class="text-sm opacity-70">Mar 10, 2024</time>
-            
-              <div class="badge badge-primary badge-sm">Tools</div>
-            
-          </div>
-          <p class="text-sm opacity-80 flex-1 line-clamp-4"></p>
-          <a href="../2024/03/10/test2/" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </article>
-      
-      <article class="card rounded-box shadow-lg bg-base-100 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-        <div class="w-full aspect-[16/9] overflow-hidden">
-          <img src="../images/test.jpeg" class="w-full h-full object-cover" alt="Optimized Culture Methods for Gut Anaerobes" onerror="this.src='../images/default-cover.jpg';this.onerror=null;">
-        </div>
-        <div class="card-body flex-1 flex flex-col">
-          <h3 class="card-title text-lg font-bold leading-tight mb-2">
-            <a href="../2024/02/20/test/" class="hover:text-primary no-underline transition-colors duration-200">
-              Optimized Culture Methods for Gut Anaerobes
-            </a>
-          </h3>
-          <div class="flex items-center justify-between mb-2">
-            <time class="text-sm opacity-70">Feb 20, 2024</time>
-            
-              <div class="badge badge-primary badge-sm">Methodology</div>
-            
-          </div>
-          <p class="text-sm opacity-80 flex-1 line-clamp-4"></p>
-          <a href="../2024/02/20/test/" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </article>
-      
-      <article class="card rounded-box shadow-lg bg-base-100 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-        <div class="w-full aspect-[16/9] overflow-hidden">
-          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Project Introduction: Human Gut Microbiome Database" onerror="this.src='../images/default-cover.jpg';this.onerror=null;">
-        </div>
-        <div class="card-body flex-1 flex flex-col">
-          <h3 class="card-title text-lg font-bold leading-tight mb-2">
-            <a href="../2024/01/15/about/" class="hover:text-primary no-underline transition-colors duration-200">
-              Project Introduction: Human Gut Microbiome Database
-            </a>
-          </h3>
-          <div class="flex items-center justify-between mb-2">
-            <time class="text-sm opacity-70">Jan 15, 2024</time>
-            
-              <div class="badge badge-primary badge-sm">Research</div>
-            
-          </div>
-          <p class="text-sm opacity-80 flex-1 line-clamp-4"></p>
-          <a href="../2024/01/15/about/" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </article>
-      
-    </div>
-    <div class="text-center mt-8">
-      <a href="../notes" class="btn btn-primary">View All Notes</a>
-    </div>
-  </div>
-
-
 <style>
-/* ========== 按钮交互效果（已完美实现） ========== */
-.nav-btn {
-  transition: all 0.25s ease-in-out !important;
-  border-width: 2px !important;
-}
-
-/* 悬停 + 点击按下时：主色背景 + 白色文字 + 上浮阴影 */
-.nav-btn:hover,
-.nav-btn:active,
-.nav-btn:focus {
-  background-color: var(--p) !important;
-  border-color: var(--p) !important;
-  color: #422ad5 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-}
-
-/* 释放/离开后：自动恢复轮廓样式 */
-.nav-btn:not(:hover):not(:active):not(:focus) {
-  background-color: transparent !important;
-  color: var(--p) !important;
-  border-color: var(--p) !important;
-  transform: none !important;
-  box-shadow: none !important;
-}
+  .custom-tabs { display: flex; gap: 0.5rem; }
+  .custom-tab-btn { cursor: pointer; background: transparent; border: none; font-weight: 600; position: relative; transition: color 0.2s; }
+  .custom-tab-btn.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: currentColor; border-radius: 1px; }
+  .custom-tab-btn[data-tab="metabolomics"].active { color: #2563eb; }
+  .custom-tab-btn[data-tab="transcriptome"].active { color: #16a34a; }
+  .custom-tab-btn:not(.active) { color: #6b7280; }
 </style>
 
+<script>
+  // 检查是否从 Culture 页面跳转来（通过 fromCulture 标记）
+  const fromCulture = localStorage.getItem('fromCulture');
+  if (fromCulture === 'true') {
+    document.getElementById('backButtonContainer').style.display = 'block';
+    localStorage.removeItem('fromCulture');
+  }
+
+  // 获取可能存在的跳转 ID
+  let targetMetabolomicsId = localStorage.getItem('currentFungusMetabolomics');
+  let targetTranscriptomeId = localStorage.getItem('currentFungusTranscriptome');
+
+  // 转录组数据（从 EJS 注入）
+  const transcriptomeData = {"VIR_F001":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":3.21,"p_value":0.012,"regulation":"Up","gene_function":"Airway immune response"},{"gene_id":"ENGS002","log2fc":-2.87,"p_value":0.023,"regulation":"Down","gene_function":"Mucus secretion regulation"},{"gene_id":"ENGS003","log2fc":4.15,"p_value":0.004,"regulation":"Up","gene_function":"Antimicrobial peptide synthesis"}]},"VIR_F002":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":2.11,"p_value":0.032,"regulation":"Up","gene_function":"Inflammatory cytokine"},{"gene_id":"ENGS002","log2fc":-2.56,"p_value":0.019,"regulation":"Down","gene_function":"Epithelial cell repair"}]},"VIR_F005":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":3.86,"p_value":0.007,"regulation":"Up","gene_function":"Lung fibrosis pathway"},{"gene_id":"ENGS002","log2fc":-3.12,"p_value":0.015,"regulation":"Down","gene_function":"Cell cycle control"}]},"VIR_F006":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":2.94,"p_value":0.021,"regulation":"Up","gene_function":"Oxidative stress response"}]},"VIR_F009":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":3.57,"p_value":0.009,"regulation":"Up","gene_function":"Innate immunity activation"}]},"VIR_F010":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":-2.73,"p_value":0.026,"regulation":"Down","gene_function":"Airway smooth muscle contraction"}]},"VIR_F013":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":4.22,"p_value":0.003,"regulation":"Up","gene_function":"Pathogen recognition receptor"}]},"VIR_F014":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":2.45,"p_value":0.028,"regulation":"Up","gene_function":"Inflammatory mediator release"}]}};
+
+  // 验证 ID 有效性，无效则清除
+  if (!targetMetabolomicsId) {
+    localStorage.removeItem('currentFungusMetabolomics');
+  }
+  if (!targetTranscriptomeId || !transcriptomeData[targetTranscriptomeId]) {
+    localStorage.removeItem('currentFungusTranscriptome');
+    targetTranscriptomeId = null;
+  }
+
+  // 决定默认激活的标签页：优先代谢组，其次转录组（单个菌），最后都不存在则默认代谢组（显示全局图）
+  let defaultTab = 'metabolomics';  // 默认代谢组
+  if (targetMetabolomicsId) {
+    defaultTab = 'metabolomics';
+    // 清除转录组 ID 以避免干扰（可选）
+    localStorage.removeItem('currentFungusTranscriptome');
+  } else if (targetTranscriptomeId) {
+    defaultTab = 'transcriptome';
+  }
+
+  // DOM 元素
+  const metabolomicsBtn = document.querySelector('[data-tab="metabolomics"]');
+  const transcriptomeBtn = document.querySelector('[data-tab="transcriptome"]');
+  const metabolomicsPanel = document.getElementById('metabolomicsPanel');
+  const transcriptomePanel = document.getElementById('transcriptomePanel');
+  const allFungiContainer = document.getElementById('allFungiContainer');
+  const singleFungiContainer = document.getElementById('singleFungiContainer');
+  const resetBtn = document.getElementById('resetTranscriptomeBtn');
+
+  // 渲染单个真菌的转录组
+  function renderSingleFungus(fungiId) {
+    const item = transcriptomeData[fungiId];
+    if (!item) return;
+    const imgSrc = item.volcano_img || '/images/default-volcano.jpg';
+    let genesHtml = '';
+    (item.deg_list || []).forEach(gene => {
+      genesHtml += `
+        <tr>
+          <td>${gene.gene_id}</td>
+          <td>${gene.log2fc}</td>
+          <td>${gene.p_value}</td>
+          <td><span class="badge ${gene.regulation === 'Up' ? 'badge-success' : 'badge-error'}">${gene.regulation}</span></td>
+          <td>${gene.gene_function || '-'}</td>
+        </tr>
+      `;
+    });
+    const html = `
+      <h3 class="text-xl font-bold mb-4 text-primary">${fungiId}</h3>
+      <div class="flex justify-center mb-6">
+        <img src="${imgSrc}" alt="Volcano plot for ${fungiId}" class="rounded-box shadow-md max-w-full h-auto" onerror="this.src='../images/default-cover.jpg'">
+      </div>
+      <div class="overflow-x-auto">
+        <table class="table table-zebra w-full text-sm">
+          <thead><tr><th>Gene ID</th><th>log2FC</th><th>p-value</th><th>Regulation</th><th>Gene Function</th></tr></thead>
+          <tbody>${genesHtml}</tbody>
+        </table>
+      </div>
+    `;
+    document.getElementById('singleFungiCard').innerHTML = html;
+  }
+
+  function switchTab(tabId) {
+    document.querySelectorAll('.custom-tab-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === tabId);
+    });
+    metabolomicsPanel.classList.toggle('hidden', tabId !== 'metabolomics');
+    transcriptomePanel.classList.toggle('hidden', tabId !== 'transcriptome');
+
+    if (tabId === 'transcriptome') {
+      if (targetTranscriptomeId && transcriptomeData[targetTranscriptomeId]) {
+        allFungiContainer.classList.add('hidden');
+        singleFungiContainer.classList.remove('hidden');
+        renderSingleFungus(targetTranscriptomeId);
+        resetBtn.classList.remove('hidden');
+      } else {
+        allFungiContainer.classList.remove('hidden');
+        singleFungiContainer.classList.add('hidden');
+        resetBtn.classList.add('hidden');
+      }
+    }
+  }
+
+  function resetToAll() {
+    targetTranscriptomeId = null;
+    localStorage.removeItem('currentFungusTranscriptome');
+    allFungiContainer.classList.remove('hidden');
+    singleFungiContainer.classList.add('hidden');
+    resetBtn.classList.add('hidden');
+  }
+
+  // 绑定事件
+  metabolomicsBtn.addEventListener('click', () => switchTab('metabolomics'));
+  transcriptomeBtn.addEventListener('click', () => switchTab('transcriptome'));
+  resetBtn.addEventListener('click', resetToAll);
+
+  // 初始化：根据 defaultTab 切换到对应标签页
+  switchTab(defaultTab);
+</script>
   </div>
 
   <!-- Fixed top navbar for desktop - 修改为左中右布局 -->

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>HRMGC</title>
+<title>sample</title>
 <meta name="description" content="Human Respiratory Microbial Gene Catalogue">
 <meta name="keywords" content="">
 <meta name="author" content="Dr. Zhang Wang">
@@ -16,14 +16,14 @@
 
 
 <!-- Open Graph tags -->
-<meta property="og:title" content="HRMGC">
+<meta property="og:title" content="sample">
 <meta property="og:description" content="Human Respiratory Microbial Gene Catalogue">
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://Whz9133.github.io">
 
 <!-- Twitter Card tags -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HRMGC">
+<meta name="twitter:title" content="sample">
 <meta name="twitter:description" content="Human Respiratory Microbial Gene Catalogue">
 
 <!-- Academicons -->
@@ -433,146 +433,289 @@ var _hmt = _hmt || [];
 
   <!-- Content area for Desktop - 取消左边距 -->
   <div class="lg:ml-0 pt-20 px-4 py-8">
-    <!-- ========== 主内容区域（滚动后显示） ========== -->
-<div id="main-content">
+    <div class="container mx-auto px-4 py-8">
+  <div class="mb-4">
+    <button onclick="history.back();" class="btn btn-outline btn-sm gap-2">
+      <i class="fa-solid fa-arrow-left"></i> Back to Projects
+    </button>
+  </div>
+  <h1 class="text-3xl font-bold mb-8 text-base-content">
+    Samples <span id="projectTitle"></span>
+  </h1>
 
-<!-- ========== 图文介绍（替换原轮播） ========== -->
-<div class="container mx-auto px-4 py-8">
-  <div class="card glass rounded-box shadow-2xl overflow-hidden bg-base-100">
-    <div class="flex flex-col md:flex-row">
-      <!-- 左侧：图片 -->
-      <div class="md:w-1/2 w-full">
-        <div class="aspect-[4/3] md:aspect-auto md:h-full w-full overflow-hidden">
-          <img src="../images/test2.jpg"
-               alt="Introduction"
-               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-               onerror="this.src='../images/default-cover.jpg';">
-        </div>
+  <div class="glass-card p-4 mb-8">
+    <div class="flex flex-wrap gap-4 items-center">
+      <div class="form-control w-44">
+        <select class="select select-bordered" id="typeFilter">
+          <option value="">All Types</option>
+          
+              <option value="metagenome">metagenome</option>
+          
+              <option value="metatranscriptome">metatranscriptome</option>
+          
+        </select>
       </div>
-      <!-- 右侧：文字介绍 -->
-      <div class="md:w-1/2 w-full p-6 md:p-10 flex flex-col justify-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">About Our Research</h2>
-        <div class="prose prose-lg max-w-none text-base-content/80">
-          <p>Welcome to the Metagenomics & Translatomics Research Group. Our team focuses on deciphering the complex microbial communities in various ecological niches using cutting-edge sequencing technologies and bioinformatics approaches.</p>
-          <p class="mt-4">We integrate metagenomic, metatranscriptomic, and clinical data to uncover novel insights into host-microbe interactions, disease mechanisms, and potential therapeutic targets. Our resources include curated datasets, genome catalogues, and open-access publications.</p>
-          <p class="mt-4">Explore our database to browse samples, culture collections, taxonomy assignments, and download analytical datasets.</p>
-        </div>
-        <!-- 四个按钮：默认轮廓，悬停/点击变主色 -->
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="../browse" class="btn btn-outline nav-btn">Browse Samples</a>
-          <a href="../culture" class="btn btn-outline nav-btn">Culture Collection</a>
-          <a href="../taxonomy" class="btn btn-outline nav-btn">Taxonomy</a>
-          <a href="../function" class="btn btn-outline nav-btn">Function</a>
-          <a href="../data" class="btn btn-outline nav-btn">Data Resources</a>
-        </div>
+      <div class="form-control w-40">
+        <select class="select select-bordered" id="countryFilter">
+          <option value="">All Countries</option>
+          
+              <option value="Australia">Australia</option>
+          
+              <option value="Brazil">Brazil</option>
+          
+              <option value="Canada">Canada</option>
+          
+              <option value="China">China</option>
+          
+              <option value="Egypt">Egypt</option>
+          
+              <option value="Germany">Germany</option>
+          
+              <option value="India">India</option>
+          
+              <option value="Japan">Japan</option>
+          
+              <option value="Mexico">Mexico</option>
+          
+              <option value="South Africa">South Africa</option>
+          
+              <option value="UK">UK</option>
+          
+        </select>
+      </div>
+      <div class="form-control w-40">
+        <select class="select select-bordered" id="tissueFilter">
+          <option value="">All Tissues</option>
+          
+              <option value="Blood">Blood</option>
+          
+              <option value="Feces">Feces</option>
+          
+              <option value="Gut">Gut</option>
+          
+              <option value="Milk">Milk</option>
+          
+              <option value="Nasal_swab">Nasal_swab</option>
+          
+              <option value="Saliva">Saliva</option>
+          
+              <option value="Skin">Skin</option>
+          
+              <option value="Sputum">Sputum</option>
+          
+              <option value="Stool">Stool</option>
+          
+              <option value="Urine">Urine</option>
+          
+              <option value="Vaginal_swab">Vaginal_swab</option>
+          
+        </select>
+      </div>
+      <div class="form-control w-44">
+        <select class="select select-bordered" id="diseaseFilter">
+          <option value="">All Diseases</option>
+          
+              <option value="Atopic_dermatitis">Atopic_dermatitis</option>
+          
+              <option value="BV">BV</option>
+          
+              <option value="COVID19">COVID19</option>
+          
+              <option value="Caries">Caries</option>
+          
+              <option value="Diabetes">Diabetes</option>
+          
+              <option value="Healthy">Healthy</option>
+          
+              <option value="IBD">IBD</option>
+          
+              <option value="Mastitis">Mastitis</option>
+          
+              <option value="Sepsis">Sepsis</option>
+          
+              <option value="Tuberculosis">Tuberculosis</option>
+          
+              <option value="UTI">UTI</option>
+          
+        </select>
+      </div>
+      <div class="form-control flex-grow min-w-[200px]">
+        <input type="text" placeholder="Search Run, BioProject, PMID..." class="input input-bordered" id="searchInput" />
+      </div>
+    </div>
+    <div class="mt-2 text-sm opacity-70">
+      <span id="resultsCount">Loading...</span>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto mb-8">
+    <table class="table w-full table-zebra">
+      <thead>
+        <tr><th>Run</th><th>Type</th><th>BioProject</th><th>Country</th><th>Tissue</th><th>Disease</th><th>PMID</th><th>Author</th></tr>
+      </thead>
+      <tbody id="sampleTableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="mt-8 flex justify-center">
+    <div class="flex flex-wrap items-center justify-center gap-2">
+      <button id="firstBtn" class="btn btn-sm btn-primary">« First</button>
+      <button id="prevBtn" class="btn btn-sm btn-primary">‹ Prev</button>
+      <span class="btn btn-sm btn-outline pointer-events-none">Page <span id="currentPage">1</span> / <span id="totalPages">1</span></span>
+      <button id="nextBtn" class="btn btn-sm btn-primary">Next ›</button>
+      <button id="lastBtn" class="btn btn-sm btn-primary">Last »</button>
+      <div class="flex-shrink-0 flex items-center gap-1">
+        <input type="number" id="jumpInput" class="w-14 input input-bordered text-center" min="1" value="1">
+        <button id="jumpBtn" class="btn btn-sm btn-primary">GO</button>
       </div>
     </div>
   </div>
 </div>
 
+<script>
+const selectedProject = localStorage.getItem('selectedProject');
+const allSamples = [{"Type":"metagenome","BioProject":"PRJNA123456","Run":"SRR12345678","country":"China","tissue":"Feces","disease":"Healthy","PMID":30000001,"author":"Li, Wei_2023"},{"Type":"metagenome","BioProject":"PRJNA123456","Run":"SRR12345679","country":"China","tissue":"Feces","disease":"Healthy","PMID":30000001,"author":"Li, Wei_2023"},{"Type":"metagenome","BioProject":"PRJNA123456","Run":"SRR12345680","country":"China","tissue":"Feces","disease":"Healthy","PMID":30000001,"author":"Li, Wei_2023"},{"Type":"metagenome","BioProject":"PRJNA789012","Run":"SRR22345678","country":"UK","tissue":"Saliva","disease":"Caries","PMID":30000002,"author":"Smith, John_2024"},{"Type":"metagenome","BioProject":"PRJNA789012","Run":"SRR22345679","country":"UK","tissue":"Saliva","disease":"Caries","PMID":30000002,"author":"Smith, John_2024"},{"Type":"metagenome","BioProject":"PRJNA789012","Run":"SRR22345680","country":"UK","tissue":"Saliva","disease":"Caries","PMID":30000002,"author":"Smith, John_2024"},{"Type":"metagenome","BioProject":"PRJNA345678","Run":"SRR32345678","country":"India","tissue":"Stool","disease":"IBD","PMID":30000003,"author":"Kumar, Raj_2023"},{"Type":"metagenome","BioProject":"PRJNA345678","Run":"SRR32345679","country":"India","tissue":"Stool","disease":"IBD","PMID":30000003,"author":"Kumar, Raj_2023"},{"Type":"metagenome","BioProject":"PRJNA345678","Run":"SRR32345680","country":"India","tissue":"Stool","disease":"IBD","PMID":30000003,"author":"Kumar, Raj_2023"},{"Type":"metagenome","BioProject":"PRJNA901234","Run":"SRR42345678","country":"Germany","tissue":"Skin","disease":"Atopic_dermatitis","PMID":30000004,"author":"Schmidt, Anna_2024"},{"Type":"metagenome","BioProject":"PRJNA901234","Run":"SRR42345679","country":"Germany","tissue":"Skin","disease":"Atopic_dermatitis","PMID":30000004,"author":"Schmidt, Anna_2024"},{"Type":"metatranscriptome","BioProject":"PRJNA567890","Run":"SRR52345678","country":"Brazil","tissue":"Blood","disease":"Sepsis","PMID":30000005,"author":"Silva, Carlos_2023"},{"Type":"metatranscriptome","BioProject":"PRJNA567890","Run":"SRR52345679","country":"Brazil","tissue":"Blood","disease":"Sepsis","PMID":30000005,"author":"Silva, Carlos_2023"},{"Type":"metatranscriptome","BioProject":"PRJNA567890","Run":"SRR52345680","country":"Brazil","tissue":"Blood","disease":"Sepsis","PMID":30000005,"author":"Silva, Carlos_2023"},{"Type":"metatranscriptome","BioProject":"PRJNA678901","Run":"SRR62345678","country":"South Africa","tissue":"Sputum","disease":"Tuberculosis","PMID":30000006,"author":"Ndlovu, Thabo_2025"},{"Type":"metatranscriptome","BioProject":"PRJNA678901","Run":"SRR62345679","country":"South Africa","tissue":"Sputum","disease":"Tuberculosis","PMID":30000006,"author":"Ndlovu, Thabo_2025"},{"Type":"metatranscriptome","BioProject":"PRJNA678901","Run":"SRR62345680","country":"South Africa","tissue":"Sputum","disease":"Tuberculosis","PMID":30000006,"author":"Ndlovu, Thabo_2025"},{"Type":"metagenome","BioProject":"PRJNA112233","Run":"SRR72345678","country":"Japan","tissue":"Gut","disease":"Diabetes","PMID":30000007,"author":"Tanaka, Yuki_2024"},{"Type":"metagenome","BioProject":"PRJNA112233","Run":"SRR72345679","country":"Japan","tissue":"Gut","disease":"Diabetes","PMID":30000007,"author":"Tanaka, Yuki_2024"},{"Type":"metagenome","BioProject":"PRJNA112233","Run":"SRR72345680","country":"Japan","tissue":"Gut","disease":"Diabetes","PMID":30000007,"author":"Tanaka, Yuki_2024"},{"Type":"metatranscriptome","BioProject":"PRJNA445566","Run":"SRR82345678","country":"Australia","tissue":"Nasal_swab","disease":"COVID19","PMID":30000008,"author":"Williams, Emma_2024"},{"Type":"metatranscriptome","BioProject":"PRJNA445566","Run":"SRR82345679","country":"Australia","tissue":"Nasal_swab","disease":"COVID19","PMID":30000008,"author":"Williams, Emma_2024"},{"Type":"metatranscriptome","BioProject":"PRJNA445566","Run":"SRR82345680","country":"Australia","tissue":"Nasal_swab","disease":"COVID19","PMID":30000008,"author":"Williams, Emma_2024"},{"Type":"metagenome","BioProject":"PRJNA998877","Run":"SRR92345678","country":"Canada","tissue":"Milk","disease":"Mastitis","PMID":30000009,"author":"Tremblay, Jean_2023"},{"Type":"metagenome","BioProject":"PRJNA998877","Run":"SRR92345679","country":"Canada","tissue":"Milk","disease":"Mastitis","PMID":30000009,"author":"Tremblay, Jean_2023"},{"Type":"metatranscriptome","BioProject":"PRJNA665544","Run":"SRR102345678","country":"Egypt","tissue":"Urine","disease":"UTI","PMID":30000010,"author":"Hassan, Ahmed_2025"},{"Type":"metatranscriptome","BioProject":"PRJNA665544","Run":"SRR102345679","country":"Egypt","tissue":"Urine","disease":"UTI","PMID":30000010,"author":"Hassan, Ahmed_2025"},{"Type":"metatranscriptome","BioProject":"PRJNA665544","Run":"SRR102345680","country":"Egypt","tissue":"Urine","disease":"UTI","PMID":30000010,"author":"Hassan, Ahmed_2025"},{"Type":"metagenome","BioProject":"PRJNA334455","Run":"SRR112345678","country":"Mexico","tissue":"Vaginal_swab","disease":"BV","PMID":30000011,"author":"Garcia, Maria_2024"},{"Type":"metagenome","BioProject":"PRJNA334455","Run":"SRR112345679","country":"Mexico","tissue":"Vaginal_swab","disease":"BV","PMID":30000011,"author":"Garcia, Maria_2024"}];
 
-  <!-- ========== Recent Notes 首页卡片 ========== -->
-  <div class="container mx-auto px-4 py-8">
-    <h2 class="text-3xl font-bold mb-8 text-base-content">Recent Notes</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <article class="card rounded-box shadow-lg bg-base-100 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-        <div class="w-full aspect-[16/9] overflow-hidden">
-          <img src="../images/test2.jpg" class="w-full h-full object-cover" alt="Bioinformatics Tools for Metagenomic Analysis" onerror="this.src='../images/default-cover.jpg';this.onerror=null;">
-        </div>
-        <div class="card-body flex-1 flex flex-col">
-          <h3 class="card-title text-lg font-bold leading-tight mb-2">
-            <a href="../2024/03/10/test2/" class="hover:text-primary no-underline transition-colors duration-200">
-              Bioinformatics Tools for Metagenomic Analysis
-            </a>
-          </h3>
-          <div class="flex items-center justify-between mb-2">
-            <time class="text-sm opacity-70">Mar 10, 2024</time>
-            
-              <div class="badge badge-primary badge-sm">Tools</div>
-            
-          </div>
-          <p class="text-sm opacity-80 flex-1 line-clamp-4"></p>
-          <a href="../2024/03/10/test2/" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </article>
-      
-      <article class="card rounded-box shadow-lg bg-base-100 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-        <div class="w-full aspect-[16/9] overflow-hidden">
-          <img src="../images/test.jpeg" class="w-full h-full object-cover" alt="Optimized Culture Methods for Gut Anaerobes" onerror="this.src='../images/default-cover.jpg';this.onerror=null;">
-        </div>
-        <div class="card-body flex-1 flex flex-col">
-          <h3 class="card-title text-lg font-bold leading-tight mb-2">
-            <a href="../2024/02/20/test/" class="hover:text-primary no-underline transition-colors duration-200">
-              Optimized Culture Methods for Gut Anaerobes
-            </a>
-          </h3>
-          <div class="flex items-center justify-between mb-2">
-            <time class="text-sm opacity-70">Feb 20, 2024</time>
-            
-              <div class="badge badge-primary badge-sm">Methodology</div>
-            
-          </div>
-          <p class="text-sm opacity-80 flex-1 line-clamp-4"></p>
-          <a href="../2024/02/20/test/" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </article>
-      
-      <article class="card rounded-box shadow-lg bg-base-100 overflow-hidden hover:shadow-xl hover:scale-105 transition-all duration-300 flex flex-col">
-        <div class="w-full aspect-[16/9] overflow-hidden">
-          <img src="../images/about.jpg" class="w-full h-full object-cover" alt="Project Introduction: Human Gut Microbiome Database" onerror="this.src='../images/default-cover.jpg';this.onerror=null;">
-        </div>
-        <div class="card-body flex-1 flex flex-col">
-          <h3 class="card-title text-lg font-bold leading-tight mb-2">
-            <a href="../2024/01/15/about/" class="hover:text-primary no-underline transition-colors duration-200">
-              Project Introduction: Human Gut Microbiome Database
-            </a>
-          </h3>
-          <div class="flex items-center justify-between mb-2">
-            <time class="text-sm opacity-70">Jan 15, 2024</time>
-            
-              <div class="badge badge-primary badge-sm">Research</div>
-            
-          </div>
-          <p class="text-sm opacity-80 flex-1 line-clamp-4"></p>
-          <a href="../2024/01/15/about/" class="btn btn-primary btn-sm mt-2">Read More</a>
-        </div>
-      </article>
-      
-    </div>
-    <div class="text-center mt-8">
-      <a href="../notes" class="btn btn-primary">View All Notes</a>
-    </div>
-  </div>
-
-
-<style>
-/* ========== 按钮交互效果（已完美实现） ========== */
-.nav-btn {
-  transition: all 0.25s ease-in-out !important;
-  border-width: 2px !important;
+let filteredSamples = allSamples;
+if (selectedProject) {
+  filteredSamples = allSamples.filter(s => s.BioProject === selectedProject);
+  document.getElementById('projectTitle').innerHTML = `for Project <span class="text-primary">${selectedProject}</span>`;
+} else {
+  document.getElementById('projectTitle').innerHTML = '(All Projects)';
 }
 
-/* 悬停 + 点击按下时：主色背景 + 白色文字 + 上浮阴影 */
-.nav-btn:hover,
-.nav-btn:active,
-.nav-btn:focus {
-  background-color: var(--p) !important;
-  border-color: var(--p) !important;
-  color: #422ad5 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+const pageSize = 25;
+let currentPage = 1;
+let totalPages = 1;
+let displaySamples = [];
+
+const typeFilter = document.getElementById('typeFilter');
+const countryFilter = document.getElementById('countryFilter');
+const tissueFilter = document.getElementById('tissueFilter');
+const diseaseFilter = document.getElementById('diseaseFilter');
+const searchInput = document.getElementById('searchInput');
+const resultsCountSpan = document.getElementById('resultsCount');
+const tableBody = document.getElementById('sampleTableBody');
+
+const firstBtn = document.getElementById('firstBtn');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const lastBtn = document.getElementById('lastBtn');
+const jumpInput = document.getElementById('jumpInput');
+const jumpBtn = document.getElementById('jumpBtn');
+const currentPageSpan = document.getElementById('currentPage');
+const totalPagesSpan = document.getElementById('totalPages');
+
+function renderTablePage() {
+  const start = (currentPage - 1) * pageSize;
+  const end = start + pageSize;
+  const pageData = displaySamples.slice(start, end);
+
+  if (!pageData.length) {
+    tableBody.innerHTML = '<tr><td colspan="8" class="py-6 text-center">No samples found.</td></tr>';
+    return;
+  }
+
+  let html = '';
+  pageData.forEach(sample => {
+    const runLink = `https://www.ncbi.nlm.nih.gov/sra/${sample.Run}`;
+    const bpLink = `https://www.ncbi.nlm.nih.gov/bioproject/?term=${sample.BioProject}`;
+    const pmidHtml = sample.PMID
+      ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${sample.PMID}" target="_blank" class="link link-accent">${sample.PMID}</a>`
+      : '-';
+
+    // 和 browse 卡片完全一致的 badge 样式
+    let typeBadge = '';
+    if (sample.Type === 'metagenome') {
+      typeBadge = '<span class="badge badge-primary badge-sm">metagenome</span>';
+    } else if (sample.Type === 'metatranscriptome') {
+      typeBadge = '<span class="badge badge-secondary badge-sm">metatranscriptome</span>';
+    } else {
+      typeBadge = `<span class="badge badge-ghost badge-sm">${sample.Type || 'Unknown'}</span>`;
+    }
+
+    // SRR 链接保持默认好看样式
+    html += `
+      <tr>
+        <td><a href="${runLink}" target="_blank" class="link link-primary">${sample.Run}</a></td>
+        <td>${typeBadge}</td>
+        <td><a href="${bpLink}" target="_blank" class="link link-info">${sample.BioProject}</a></td>
+        <td>${sample.country || '-'}</td>
+        <td>${sample.tissue || '-'}</td>
+        <td>${sample.disease || '-'}</td>
+        <td>${pmidHtml}</td>
+        <td>${sample.author || '-'}</td>
+      </tr>
+    `;
+  });
+  tableBody.innerHTML = html;
 }
 
-/* 释放/离开后：自动恢复轮廓样式 */
-.nav-btn:not(:hover):not(:active):not(:focus) {
-  background-color: transparent !important;
-  color: var(--p) !important;
-  border-color: var(--p) !important;
-  transform: none !important;
-  box-shadow: none !important;
+function updatePaginationUI() {
+  totalPages = Math.max(1, Math.ceil(displaySamples.length / pageSize));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  currentPageSpan.textContent = currentPage;
+  totalPagesSpan.textContent = totalPages;
+  jumpInput.value = currentPage;
+  jumpInput.max = totalPages;
+
+  firstBtn.disabled = currentPage === 1;
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+  lastBtn.disabled = currentPage === totalPages;
 }
-</style>
+
+function filterSamples() {
+  const type = typeFilter.value;
+  const country = countryFilter.value;
+  const tissue = tissueFilter.value;
+  const disease = diseaseFilter.value;
+  const search = searchInput.value.trim().toLowerCase();
+
+  displaySamples = filteredSamples.filter(s => {
+    if (type && s.Type !== type) return false;
+    if (country && s.country !== country) return false;
+    if (tissue && s.tissue !== tissue) return false;
+    if (disease && s.disease !== disease) return false;
+    if (search) {
+      const txt = `${s.Run} ${s.BioProject} ${s.PMID || ''} ${s.author || ''}`.toLowerCase();
+      if (!txt.includes(search)) return false;
+    }
+    return true;
+  });
+
+  resultsCountSpan.textContent = `Showing ${displaySamples.length} sample${displaySamples.length !== 1 ? 's' : ''}`;
+  currentPage = 1;
+  renderTablePage();
+  updatePaginationUI();
+}
+
+function goToPage(page) {
+  page = Math.max(1, Math.min(page, totalPages));
+  if (page === currentPage) return;
+  currentPage = page;
+  renderTablePage();
+  updatePaginationUI();
+}
+
+typeFilter.addEventListener('change', filterSamples);
+countryFilter.addEventListener('change', filterSamples);
+tissueFilter.addEventListener('change', filterSamples);
+diseaseFilter.addEventListener('change', filterSamples);
+searchInput.addEventListener('input', filterSamples);
+
+firstBtn.addEventListener('click', () => goToPage(1));
+prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
+nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
+lastBtn.addEventListener('click', () => goToPage(totalPages));
+jumpBtn.addEventListener('click', () => goToPage(parseInt(jumpInput.value) || 1));
+jumpInput.addEventListener('keypress', e => {
+  if (e.key === 'Enter') goToPage(parseInt(jumpInput.value) || 1);
+});
+
+filterSamples();
+</script>
 
   </div>
 

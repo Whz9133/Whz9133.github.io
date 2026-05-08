@@ -88,6 +88,11 @@ var _hmt = _hmt || [];
         Taxonomy
       </a>
     
+      <a href="../function/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
+        <i class="fa-solid fa-bong mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        Function
+      </a>
+    
       <a href="../data/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
         <i class="fa-solid fa-database mr-3 text-lg group-hover:scale-110 transition-transform"></i>
         Data
@@ -404,6 +409,11 @@ var _hmt = _hmt || [];
         Taxonomy
       </a>
     
+      <a href="../function/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
+        <i class="fa-solid fa-bong mr-3 text-lg group-hover:scale-110 transition-transform"></i>
+        Function
+      </a>
+    
       <a href="../data/" class="btn btn-ghost w-full justify-start text-base-content hover:text-primary hover:bg-primary/10 transition-all duration-200 flex items-center group">
         <i class="fa-solid fa-database mr-3 text-lg group-hover:scale-110 transition-transform"></i>
         Data
@@ -426,7 +436,7 @@ var _hmt = _hmt || [];
     <div class="container mx-auto px-4 py-8">
   <h1 class="text-3xl font-bold mb-6 text-base-content">Taxonomy</h1>
 
-  <!-- 标签页按钮（不同颜色） -->
+  <!-- 标签页按钮 -->
   <div class="custom-tabs mb-8 border-b border-base-300">
     <button class="custom-tab-btn text-lg font-semibold py-2 px-4 mr-4 transition-all duration-200 active" data-tab="bacteria" style="color: #2563eb;">Bacteria</button>
     <button class="custom-tab-btn text-lg font-semibold py-2 px-4 mr-4 transition-all duration-200" data-tab="fungi" style="color: #16a34a;">Fungi</button>
@@ -478,871 +488,13 @@ var _hmt = _hmt || [];
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="bacteriaContainer">
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="Culture" data-phylum="Proteobacteria"
-             data-search-text="vir_bact_001 pseudomonas_aeruginosa pseudomonas pseudomonadaceae proteobacteria">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_001
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Proteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Gammaproteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Pseudomonadales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Pseudomonadaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Pseudomonas</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Pseudomonas_aeruginosa</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>2,150,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.47</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>98.5%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>450,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="MAG" data-phylum="Firmicutes"
-             data-search-text="vir_bact_002 streptococcus_pneumoniae streptococcus streptococcaceae firmicutes">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #f97316; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                MAG
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_002
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Firmicutes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Bacilli</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Lactobacillales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Streptococcaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Streptococcus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Streptococcus_pneumoniae</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>1,780,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.41</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>92.3%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.8%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>320,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="Public" data-phylum="Actinobacteriota"
-             data-search-text="vir_bact_003 mycobacterium_tuberculosis mycobacterium mycobacteriaceae actinobacteriota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #3b82f6; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Public
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_003
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Actinobacteriota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Actinomycetia</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Mycobacteriales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Mycobacteriaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Mycobacterium</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Mycobacterium_tuberculosis</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>4,600,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.55</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>99.9%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>-%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>890,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="Culture" data-phylum="Bacteroidota"
-             data-search-text="vir_bact_004 prevotella_melaninogenica prevotella prevotellaceae bacteroidota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_004
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Bacteroidota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Bacteroidia</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Bacteroidales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Prevotellaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Prevotella</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Prevotella_melaninogenica</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>1,920,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.38</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>96.7%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.4%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>210,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="MAG" data-phylum="Proteobacteria"
-             data-search-text="vir_bact_005 burkholderia_cepacia burkholderia burkholderiaceae proteobacteria">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #f97316; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                MAG
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_005
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Proteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Betaproteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Burkholderiales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Burkholderiaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Burkholderia</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Burkholderia_cepacia</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>3,100,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.63</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>88.4%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>1.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>680,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="Culture" data-phylum="Fusobacteriota"
-             data-search-text="vir_bact_006 fusobacterium_nucleatum fusobacterium fusobacteriaceae fusobacteriota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_006
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Fusobacteriota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Fusobacteriia</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Fusobacteriales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Fusobacteriaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Fusobacterium</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Fusobacterium_nucleatum</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>1,650,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.39</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>94.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.1%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>190,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="Public" data-phylum="Proteobacteria"
-             data-search-text="vir_bact_007 klebsiella_pneumoniae klebsiella enterobacteriaceae proteobacteria">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #3b82f6; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Public
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_007
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Proteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Gammaproteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Enterobacterales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Enterobacteriaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Klebsiella</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Klebsiella_pneumoniae</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>5,200,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.58</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>100%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.1%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>1,200,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="MAG" data-phylum="Methanobacteriota"
-             data-search-text="vir_bact_008 methanobrevibacter_smithii methanobrevibacter methanobacteriaceae methanobacteriota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #f97316; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                MAG
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_008
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Methanobacteriota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Methanobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Methanobacteriales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Methanobacteriaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Methanobrevibacter</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Methanobrevibacter_smithii</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>1,430,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.33</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>76.5%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>-%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>87,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="Culture" data-phylum="Firmicutes"
-             data-search-text="vir_bact_009 blautia_obeum blautia lachnospiraceae firmicutes">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_009
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Firmicutes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Clostridia</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Eubacteriales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Lachnospiraceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Blautia</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Blautia_obeum</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>2,300,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.45</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>97.8%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.6%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>550,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item bacteria-item"
-             data-group="Public" data-phylum="Proteobacteria"
-             data-search-text="vir_bact_010 haemophilus_influenzae haemophilus pasteurellaceae proteobacteria">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #3b82f6; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Public
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-dna text-primary mr-2"></i>
-              VIR_BACT_010
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <!-- 左侧：分类学层级 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Bacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Proteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Gammaproteobacteria</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Pasteurellales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Pasteurellaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Haemophilus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Haemophilus_influenzae</span>
-                </div>
-              </div>
-              <!-- 右侧：基因组统计数据 -->
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>3,950,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.52</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>99.4%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>710,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full" id="bacteriaTable">
+        <thead id="bacteriaTableHead"></thead>
+        <tbody id="bacteriaTableBody"></tbody>
+      </table>
     </div>
 
-    <!-- Bacteria 分页控件 -->
     <div class="flex justify-center mt-12">
       <div class="flex flex-wrap items-center justify-center gap-2">
         <button id="bacteriaFirstBtn" class="btn btn-sm btn-primary">« First</button>
@@ -1393,851 +545,13 @@ var _hmt = _hmt || [];
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="fungiContainer">
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="Culture" data-phylum="Ascomycota"
-             data-search-text="vir_fungi_001 aspergillus_fumigatus aspergillus aspergillaceae ascomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_001
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Ascomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Eurotiomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Eurotiales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Aspergillaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Aspergillus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Aspergillus_fumigatus</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>28,500,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.48</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>97.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.5%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>130,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="Public" data-phylum="Basidiomycota"
-             data-search-text="vir_fungi_002 cryptococcus_neoformans cryptococcus cryptococcaceae basidiomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #3b82f6; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Public
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_002
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Basidiomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Tremellomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Tremellales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Cryptococcaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Cryptococcus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Cryptococcus_neoformans</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>19,200,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.51</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>98.8%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.1%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>95,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="MAG" data-phylum="Ascomycota"
-             data-search-text="vir_fungi_003 candida_albicans candida debaryomycetaceae ascomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #f97316; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                MAG
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_003
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Ascomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Saccharomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Saccharomycetales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Debaryomycetaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Candida</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Candida_albicans</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>12,600,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.34</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>91.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>-%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>22,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="Culture" data-phylum="Ascomycota"
-             data-search-text="vir_fungi_004 penicillium_chrysogenum penicillium aspergillaceae ascomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_004
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Ascomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Eurotiomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Eurotiales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Aspergillaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Penicillium</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Penicillium_chrysogenum</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>35,000,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.53</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>100%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>1.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>180,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="Public" data-phylum="Basidiomycota"
-             data-search-text="vir_fungi_005 pleurotus_ostreatus pleurotus pleurotaceae basidiomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #3b82f6; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Public
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_005
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Basidiomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Agaricomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Agaricales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Pleurotaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Pleurotus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Pleurotus_ostreatus</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>22,000,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.47</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>96.3%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.3%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>110,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="MAG" data-phylum="Ascomycota"
-             data-search-text="vir_fungi_006 cladosporium_cladosporioides cladosporium cladosporiaceae ascomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #f97316; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                MAG
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_006
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Ascomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Dothideomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Capnodiales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Cladosporiaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Cladosporium</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Cladosporium_cladosporioides</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>14,800,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.36</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>89.7%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.6%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>29,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="Culture" data-phylum="Ascomycota"
-             data-search-text="vir_fungi_007 trichophyton_rubrum trichophyton arthrodermataceae ascomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_007
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Ascomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Eurotiomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Onygenales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Arthrodermataceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Trichophyton</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Trichophyton_rubrum</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>39,000,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.55</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>99.5%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.8%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>250,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="Public" data-phylum="Ascomycota"
-             data-search-text="vir_fungi_008 fusarium_oxysporum fusarium nectriaceae ascomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #3b82f6; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Public
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_008
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Ascomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Sordariomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Hypocreales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Nectriaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Fusarium</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Fusarium_oxysporum</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>30,500,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.49</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>97.9%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>0.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>145,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="MAG" data-phylum="Ascomycota"
-             data-search-text="vir_fungi_009 pichia_kudriavzevii pichia debaryomycetaceae ascomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #f97316; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                MAG
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_009
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Ascomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Pichiomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Serinales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Debaryomycetaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Pichia</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Pichia_kudriavzevii</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>11,000,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.32</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>85.4%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>1.1%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>18,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item fungi-item"
-             data-group="Culture" data-phylum="Basidiomycota"
-             data-search-text="vir_fungi_010 ganoderma_lucidum ganoderma polyporaceae basidiomycota">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #22c55e; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                Culture
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-seedling text-secondary mr-2"></i>
-              VIR_FUNGI_010
-            </h2>
-
-            <!-- 两列布局 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-crown text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Kingdom:</span>
-                  <span>Fungi</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-layer-group text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Phylum:</span>
-                  <span>Basidiomycota</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-cubes text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Class:</span>
-                  <span>Agaricomycetes</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-list text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Order:</span>
-                  <span>Polyporales</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Polyporaceae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Ganoderma</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Ganoderma_lucidum</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Size:</span>
-                  <span>42,000,000 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-percent text-base-content/60 w-4"></i>
-                  <span class="font-semibold">GC:</span>
-                  <span>0.56</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>100%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-x text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Contamination:</span>
-                  <span>-%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-link text-base-content/60 w-4"></i>
-                  <span class="font-semibold">N50:</span>
-                  <span>310,000</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full" id="fungiTable">
+        <thead id="fungiTableHead"></thead>
+        <tbody id="fungiTableBody"></tbody>
+      </table>
     </div>
 
-    <!-- Fungi 分页控件 -->
     <div class="flex justify-center mt-12">
       <div class="flex flex-wrap items-center justify-center gap-2">
         <button id="fungiFirstBtn" class="btn btn-sm btn-primary">« First</button>
@@ -2286,751 +600,13 @@ var _hmt = _hmt || [];
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="virusContainer">
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="DNA" data-lifestyle="Temperate"
-             data-search-text="vir_vir_001 enterobacteria_phage_lambda unclassified siphoviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #a855f7; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                DNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_001
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Enterobacteria_phage_lambda</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Unclassified</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Siphoviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Temperate</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>High-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>5120 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>6</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>98.2%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>5</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>1</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="RNA" data-lifestyle="Virulent"
-             data-search-text="vir_vir_002 saccharomyces_20s_narnavirus unclassified narnaviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #ef4444; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                RNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_002
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Saccharomyces_20S_narnavirus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Unclassified</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Narnaviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Virulent</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>Medium-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>3450 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>3</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>72.5%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>3</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>-</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="DNA" data-lifestyle="Virulent"
-             data-search-text="vir_vir_003 escherichia_phage_t4 t4virus myoviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #a855f7; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                DNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_003
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Escherichia_phage_T4</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>T4virus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Myoviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Virulent</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>High-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>8700 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>12</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>99.1%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>11</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>1</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="RNA" data-lifestyle="Virulent"
-             data-search-text="vir_vir_004 escherichia_phage_ms2 unclassified leviviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #ef4444; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                RNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_004
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Escherichia_phage_MS2</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Unclassified</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Leviviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Virulent</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>Low-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>2100 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>2</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>44.8%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>2</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>-</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="DNA" data-lifestyle="Temperate"
-             data-search-text="vir_vir_005 human_alphaherpesvirus_1 simplexvirus herpesviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #a855f7; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                DNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_005
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Human_alphaherpesvirus_1</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Simplexvirus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Herpesviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Temperate</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>High-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>12500 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>18</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>100%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>15</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>3</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="DNA" data-lifestyle="Virulent"
-             data-search-text="vir_vir_006 escherichia_phage_t7 t7virus podoviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #a855f7; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                DNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_006
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Escherichia_phage_T7</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>T7virus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Podoviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Virulent</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>Medium-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>6700 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>8</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>83.6%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>7</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>1</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="RNA" data-lifestyle="Virulent"
-             data-search-text="vir_vir_007 ophiostoma_mitovirus_1 unclassified narnaviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #ef4444; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                RNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_007
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Ophiostoma_mitovirus_1</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Unclassified</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Narnaviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Virulent</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>Medium-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>4300 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>5</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>77.3%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>4</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>1</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="DNA" data-lifestyle="Virulent"
-             data-search-text="vir_vir_008 pseudomonas_phage_p1 unclassified autographiviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #a855f7; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                DNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_008
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Pseudomonas_phage_P1</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Unclassified</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Autographiviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Virulent</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>High-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>15600 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>22</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>99.7%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>20</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>2</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="RNA" data-lifestyle="Virulent"
-             data-search-text="vir_vir_009 helicoverpa_armigera_virus unclassified alphatetraviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #ef4444; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                RNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_009
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Helicoverpa_armigera_virus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>Unclassified</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Alphatetraviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Virulent</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>Low-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>2800 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>3</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>55.4%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>3</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>-</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="card glass rounded-box shadow-lg bg-base-100 hover:shadow-xl hover:scale-105 transition-all taxonomy-item virus-item"
-             data-genome-type="DNA" data-lifestyle="Temperate"
-             data-search-text="vir_vir_010 mycobacterium_phage_l5 l5virus siphoviridae">
-          <div class="card-body relative p-5">
-            <div class="absolute top-4 right-4">
-              <span style="background-color: #a855f7; color: white; font-size: 0.75rem; font-weight: bold; padding: 0.25rem 0.625rem; border-radius: 9999px; display: inline-block;">
-                DNA
-              </span>
-            </div>
-            <h2 class="card-title text-xl font-bold mb-3 flex items-center pr-20">
-              <i class="fa-solid fa-virus text-accent mr-2"></i>
-              VIR_VIR_010
-            </h2>
-
-            <!-- 两列布局：左侧分类信息，右侧病毒特征 -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-microscope text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Species:</span>
-                  <span>Mycobacterium_phage_L5</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genus:</span>
-                  <span>L5virus</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-users text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Family:</span>
-                  <span>Siphoviridae</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-heart-pulse text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Lifestyle:</span>
-                  <span>Temperate</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-star text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Quality:</span>
-                  <span>High-quality</span>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-ruler text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Length:</span>
-                  <span>9800 bp</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-gene text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Genes:</span>
-                  <span>14</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-check text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Completeness:</span>
-                  <span>96.8%</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-shield-virus text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Viral genes:</span>
-                  <span>12</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <i class="fa-solid fa-house-user text-base-content/60 w-4"></i>
-                  <span class="font-semibold">Host genes:</span>
-                  <span>2</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full" id="virusTable">
+        <thead id="virusTableHead"></thead>
+        <tbody id="virusTableBody"></tbody>
+      </table>
     </div>
 
-    <!-- Virus 分页控件 -->
     <div class="flex justify-center mt-12">
       <div class="flex flex-wrap items-center justify-center gap-2">
         <button id="virusFirstBtn" class="btn btn-sm btn-primary">« First</button>
@@ -3058,155 +634,280 @@ var _hmt = _hmt || [];
 </style>
 
 <script>
-  // ========== 标签页切换 ==========
+  // 注入原始数据
+  const bacteriaData = [{"Genome":"VIR_BACT_001","Group":"Culture","GenomeSize":2150000,"N50":450000,"GCcontent":0.47,"Completeness":98.5,"Contamination":0.2,"Kingdom":"Bacteria","Phylum":"Proteobacteria","Class":"Gammaproteobacteria","Order":"Pseudomonadales","Family":"Pseudomonadaceae","Genus":"Pseudomonas","Species":"Pseudomonas_aeruginosa"},{"Genome":"VIR_BACT_002","Group":"MAG","GenomeSize":1780000,"N50":320000,"GCcontent":0.41,"Completeness":92.3,"Contamination":0.8,"Kingdom":"Bacteria","Phylum":"Firmicutes","Class":"Bacilli","Order":"Lactobacillales","Family":"Streptococcaceae","Genus":"Streptococcus","Species":"Streptococcus_pneumoniae"},{"Genome":"VIR_BACT_003","Group":"Public","GenomeSize":4600000,"N50":890000,"GCcontent":0.55,"Completeness":99.9,"Contamination":0,"Kingdom":"Bacteria","Phylum":"Actinobacteriota","Class":"Actinomycetia","Order":"Mycobacteriales","Family":"Mycobacteriaceae","Genus":"Mycobacterium","Species":"Mycobacterium_tuberculosis"},{"Genome":"VIR_BACT_004","Group":"Culture","GenomeSize":1920000,"N50":210000,"GCcontent":0.38,"Completeness":96.7,"Contamination":0.4,"Kingdom":"Bacteria","Phylum":"Bacteroidota","Class":"Bacteroidia","Order":"Bacteroidales","Family":"Prevotellaceae","Genus":"Prevotella","Species":"Prevotella_melaninogenica"},{"Genome":"VIR_BACT_005","Group":"MAG","GenomeSize":3100000,"N50":680000,"GCcontent":0.63,"Completeness":88.4,"Contamination":1.2,"Kingdom":"Bacteria","Phylum":"Proteobacteria","Class":"Betaproteobacteria","Order":"Burkholderiales","Family":"Burkholderiaceae","Genus":"Burkholderia","Species":"Burkholderia_cepacia"},{"Genome":"VIR_BACT_006","Group":"Culture","GenomeSize":1650000,"N50":190000,"GCcontent":0.39,"Completeness":94.2,"Contamination":0.1,"Kingdom":"Bacteria","Phylum":"Fusobacteriota","Class":"Fusobacteriia","Order":"Fusobacteriales","Family":"Fusobacteriaceae","Genus":"Fusobacterium","Species":"Fusobacterium_nucleatum"},{"Genome":"VIR_BACT_007","Group":"Public","GenomeSize":5200000,"N50":1200000,"GCcontent":0.58,"Completeness":100,"Contamination":0.1,"Kingdom":"Bacteria","Phylum":"Proteobacteria","Class":"Gammaproteobacteria","Order":"Enterobacterales","Family":"Enterobacteriaceae","Genus":"Klebsiella","Species":"Klebsiella_pneumoniae"},{"Genome":"VIR_BACT_008","Group":"MAG","GenomeSize":1430000,"N50":87000,"GCcontent":0.33,"Completeness":76.5,"Contamination":0,"Kingdom":"Bacteria","Phylum":"Methanobacteriota","Class":"Methanobacteria","Order":"Methanobacteriales","Family":"Methanobacteriaceae","Genus":"Methanobrevibacter","Species":"Methanobrevibacter_smithii"},{"Genome":"VIR_BACT_009","Group":"Culture","GenomeSize":2300000,"N50":550000,"GCcontent":0.45,"Completeness":97.8,"Contamination":0.6,"Kingdom":"Bacteria","Phylum":"Firmicutes","Class":"Clostridia","Order":"Eubacteriales","Family":"Lachnospiraceae","Genus":"Blautia","Species":"Blautia_obeum"},{"Genome":"VIR_BACT_010","Group":"Public","GenomeSize":3950000,"N50":710000,"GCcontent":0.52,"Completeness":99.4,"Contamination":0.2,"Kingdom":"Bacteria","Phylum":"Proteobacteria","Class":"Gammaproteobacteria","Order":"Pasteurellales","Family":"Pasteurellaceae","Genus":"Haemophilus","Species":"Haemophilus_influenzae"}];
+  const fungiData = [{"Genome":"VIR_FUNGI_001","Group":"Culture","GenomeSize":28500000,"N50":130000,"GCcontent":0.48,"Completeness":97.2,"Contamination":0.5,"Kingdom":"Fungi","Phylum":"Ascomycota","Class":"Eurotiomycetes","Order":"Eurotiales","Family":"Aspergillaceae","Genus":"Aspergillus","Species":"Aspergillus_fumigatus"},{"Genome":"VIR_FUNGI_002","Group":"Public","GenomeSize":19200000,"N50":95000,"GCcontent":0.51,"Completeness":98.8,"Contamination":0.1,"Kingdom":"Fungi","Phylum":"Basidiomycota","Class":"Tremellomycetes","Order":"Tremellales","Family":"Cryptococcaceae","Genus":"Cryptococcus","Species":"Cryptococcus_neoformans"},{"Genome":"VIR_FUNGI_003","Group":"MAG","GenomeSize":12600000,"N50":22000,"GCcontent":0.34,"Completeness":91.2,"Contamination":0,"Kingdom":"Fungi","Phylum":"Ascomycota","Class":"Saccharomycetes","Order":"Saccharomycetales","Family":"Debaryomycetaceae","Genus":"Candida","Species":"Candida_albicans"},{"Genome":"VIR_FUNGI_004","Group":"Culture","GenomeSize":35000000,"N50":180000,"GCcontent":0.53,"Completeness":100,"Contamination":1.2,"Kingdom":"Fungi","Phylum":"Ascomycota","Class":"Eurotiomycetes","Order":"Eurotiales","Family":"Aspergillaceae","Genus":"Penicillium","Species":"Penicillium_chrysogenum"},{"Genome":"VIR_FUNGI_005","Group":"Public","GenomeSize":22000000,"N50":110000,"GCcontent":0.47,"Completeness":96.3,"Contamination":0.3,"Kingdom":"Fungi","Phylum":"Basidiomycota","Class":"Agaricomycetes","Order":"Agaricales","Family":"Pleurotaceae","Genus":"Pleurotus","Species":"Pleurotus_ostreatus"},{"Genome":"VIR_FUNGI_006","Group":"MAG","GenomeSize":14800000,"N50":29000,"GCcontent":0.36,"Completeness":89.7,"Contamination":0.6,"Kingdom":"Fungi","Phylum":"Ascomycota","Class":"Dothideomycetes","Order":"Capnodiales","Family":"Cladosporiaceae","Genus":"Cladosporium","Species":"Cladosporium_cladosporioides"},{"Genome":"VIR_FUNGI_007","Group":"Culture","GenomeSize":39000000,"N50":250000,"GCcontent":0.55,"Completeness":99.5,"Contamination":0.8,"Kingdom":"Fungi","Phylum":"Ascomycota","Class":"Eurotiomycetes","Order":"Onygenales","Family":"Arthrodermataceae","Genus":"Trichophyton","Species":"Trichophyton_rubrum"},{"Genome":"VIR_FUNGI_008","Group":"Public","GenomeSize":30500000,"N50":145000,"GCcontent":0.49,"Completeness":97.9,"Contamination":0.2,"Kingdom":"Fungi","Phylum":"Ascomycota","Class":"Sordariomycetes","Order":"Hypocreales","Family":"Nectriaceae","Genus":"Fusarium","Species":"Fusarium_oxysporum"},{"Genome":"VIR_FUNGI_009","Group":"MAG","GenomeSize":11000000,"N50":18000,"GCcontent":0.32,"Completeness":85.4,"Contamination":1.1,"Kingdom":"Fungi","Phylum":"Ascomycota","Class":"Pichiomycetes","Order":"Serinales","Family":"Debaryomycetaceae","Genus":"Pichia","Species":"Pichia_kudriavzevii"},{"Genome":"VIR_FUNGI_010","Group":"Culture","GenomeSize":42000000,"N50":310000,"GCcontent":0.56,"Completeness":100,"Contamination":0,"Kingdom":"Fungi","Phylum":"Basidiomycota","Class":"Agaricomycetes","Order":"Polyporales","Family":"Polyporaceae","Genus":"Ganoderma","Species":"Ganoderma_lucidum"}];
+  const virusData = [{"contig_id":"VIR_VIR_001","contig_length":5120,"gene_count":6,"viral_genes":5,"host_genes":1,"checkv_quality":"High-quality","miuvig_quality":"Complete","completeness":98.2,"Phylum":"Uroviricota","Class":"Caudoviricetes","Order":"Caudovirales","Family":"Siphoviridae","Genus":"Unclassified","Species":"Enterobacteria_phage_lambda","Genome_type":"DNA","Lifestyle":"Temperate"},{"contig_id":"VIR_VIR_002","contig_length":3450,"gene_count":3,"viral_genes":3,"host_genes":0,"checkv_quality":"Medium-quality","miuvig_quality":"Genome-fragment","completeness":72.5,"Phylum":"Lenarviricota","Class":"Amabiliviricetes","Order":"Wolframvirales","Family":"Narnaviridae","Genus":"Unclassified","Species":"Saccharomyces_20S_narnavirus","Genome_type":"RNA","Lifestyle":"Virulent"},{"contig_id":"VIR_VIR_003","contig_length":8700,"gene_count":12,"viral_genes":11,"host_genes":1,"checkv_quality":"High-quality","miuvig_quality":"Complete","completeness":99.1,"Phylum":"Uroviricota","Class":"Caudoviricetes","Order":"Caudovirales","Family":"Myoviridae","Genus":"T4virus","Species":"Escherichia_phage_T4","Genome_type":"DNA","Lifestyle":"Virulent"},{"contig_id":"VIR_VIR_004","contig_length":2100,"gene_count":2,"viral_genes":2,"host_genes":0,"checkv_quality":"Low-quality","miuvig_quality":"Genome-fragment","completeness":44.8,"Phylum":"Lenarviricota","Class":"Allassoviricetes","Order":"Levivirales","Family":"Leviviridae","Genus":"Unclassified","Species":"Escherichia_phage_MS2","Genome_type":"RNA","Lifestyle":"Virulent"},{"contig_id":"VIR_VIR_005","contig_length":12500,"gene_count":18,"viral_genes":15,"host_genes":3,"checkv_quality":"High-quality","miuvig_quality":"Complete","completeness":100,"Phylum":"Peploviricota","Class":"Herviviricetes","Order":"Herpesvirales","Family":"Herpesviridae","Genus":"Simplexvirus","Species":"Human_alphaherpesvirus_1","Genome_type":"DNA","Lifestyle":"Temperate"},{"contig_id":"VIR_VIR_006","contig_length":6700,"gene_count":8,"viral_genes":7,"host_genes":1,"checkv_quality":"Medium-quality","miuvig_quality":"Genome-fragment","completeness":83.6,"Phylum":"Uroviricota","Class":"Caudoviricetes","Order":"Caudovirales","Family":"Podoviridae","Genus":"T7virus","Species":"Escherichia_phage_T7","Genome_type":"DNA","Lifestyle":"Virulent"},{"contig_id":"VIR_VIR_007","contig_length":4300,"gene_count":5,"viral_genes":4,"host_genes":1,"checkv_quality":"Medium-quality","miuvig_quality":"Genome-fragment","completeness":77.3,"Phylum":"Lenarviricota","Class":"Amabiliviricetes","Order":"Wolframvirales","Family":"Narnaviridae","Genus":"Unclassified","Species":"Ophiostoma_mitovirus_1","Genome_type":"RNA","Lifestyle":"Virulent"},{"contig_id":"VIR_VIR_008","contig_length":15600,"gene_count":22,"viral_genes":20,"host_genes":2,"checkv_quality":"High-quality","miuvig_quality":"Complete","completeness":99.7,"Phylum":"Uroviricota","Class":"Caudoviricetes","Order":"Caudovirales","Family":"Autographiviridae","Genus":"Unclassified","Species":"Pseudomonas_phage_P1","Genome_type":"DNA","Lifestyle":"Virulent"},{"contig_id":"VIR_VIR_009","contig_length":2800,"gene_count":3,"viral_genes":3,"host_genes":0,"checkv_quality":"Low-quality","miuvig_quality":"Genome-fragment","completeness":55.4,"Phylum":"Kitrinoviricota","Class":"Alsuviricetes","Order":"Hepelivirales","Family":"Alphatetraviridae","Genus":"Unclassified","Species":"Helicoverpa_armigera_virus","Genome_type":"RNA","Lifestyle":"Virulent"},{"contig_id":"VIR_VIR_010","contig_length":9800,"gene_count":14,"viral_genes":12,"host_genes":2,"checkv_quality":"High-quality","miuvig_quality":"Complete","completeness":96.8,"Phylum":"Uroviricota","Class":"Caudoviricetes","Order":"Caudovirales","Family":"Siphoviridae","Genus":"L5virus","Species":"Mycobacterium_phage_L5","Genome_type":"DNA","Lifestyle":"Temperate"}];
+
+  // ============================================================
+  // 1. 列定义（在这里控制展示哪些列，以及表头文字、格式化）
+  // ============================================================
+  // 细菌列定义
+  const bacteriaColumns = [
+    { field: 'Genome', label: 'Genome' },
+    { field: 'Group', label: 'Group' },
+    { field: 'Kingdom', label: 'Kingdom' },
+    { field: 'Phylum', label: 'Phylum' },
+    { field: 'Class', label: 'Class' },
+    { field: 'Order', label: 'Order' },
+    { field: 'Family', label: 'Family' },
+    { field: 'Genus', label: 'Genus' },
+    { field: 'Species', label: 'Species' },
+    { field: 'GenomeSize', label: 'Size (bp)', formatter: v => v ? v.toLocaleString() : '-' },
+    { field: 'GCcontent', label: 'GC%' },
+    { field: 'Completeness', label: 'Completeness%' },
+    { field: 'N50', label: 'N50', formatter: v => v ? v.toLocaleString() : '-' }
+  ];
+
+  // 真菌列定义（可以独立定制，这里与细菌相同，示例中可修改）
+  const fungiColumns = [...bacteriaColumns];
+
+  // 病毒列定义
+  const virusColumns = [
+    { field: 'contig_id', label: 'Contig ID' },
+    { field: 'Genome_type', label: 'Genome Type' },
+    { field: 'Lifestyle', label: 'Lifestyle' },
+    { field: 'Phylum', label: 'Phylum' },
+    { field: 'Class', label: 'Class' },
+    { field: 'Order', label: 'Order' },
+    { field: 'Family', label: 'Family' },
+    { field: 'Genus', label: 'Genus' },
+    { field: 'Species', label: 'Species' },
+    { field: 'contig_length', label: 'Length (bp)' },
+    { field: 'gene_count', label: 'Genes' },
+    { field: 'completeness', label: 'Completeness%' },
+    { field: 'checkv_quality', label: 'Quality' }
+  ];
+
+  // ============================================================
+  // 2. 动态生成表头
+  // ============================================================
+  function generateTableHead(theadId, columns) {
+    const thead = document.getElementById(theadId);
+    if (!thead) return;
+    let html = '<tr>';
+    columns.forEach(col => { html += `<th>${col.label}</th>`; });
+    html += '</tr>';
+    thead.innerHTML = html;
+  }
+
+  // 渲染表格内容
+  function renderTableBody(tbodyId, data, columns) {
+    const tbody = document.getElementById(tbodyId);
+    if (!tbody) return;
+    let html = '';
+    data.forEach(row => {
+      html += '<tr>';
+      columns.forEach(col => {
+        let val = row[col.field];
+        if (val === undefined || val === null) val = '-';
+        if (col.formatter) val = col.formatter(val);
+        html += `<td>${val}</td>`;
+      });
+      html += '</tr>';
+    });
+    tbody.innerHTML = html;
+  }
+
+  // ============================================================
+  // 3. 分页与筛选逻辑（细菌）
+  // ============================================================
+  let bacteriaMatched = [], fungiMatched = [], virusMatched = [];
+  let bacteriaCurrent = 1, fungiCurrent = 1, virusCurrent = 1;
+  let bacteriaTotal = 1, fungiTotal = 1, virusTotal = 1;
+  const pageSize = 12;
+
+  // 细菌筛选
+  function updateBacteriaMatched() {
+    const group = document.getElementById('bacteriaGroupFilter').value;
+    const phylum = document.getElementById('bacteriaPhylumFilter').value;
+    const search = document.getElementById('bacteriaSearchInput').value.toLowerCase();
+    bacteriaMatched = bacteriaData.filter(item => {
+      const g = item.Group || '', p = item.Phylum || '';
+      const searchText = `${item.Genome || ''} ${item.Species || ''} ${item.Genus || ''} ${item.Family || ''} ${item.Phylum || ''}`.toLowerCase();
+      return (!group || g === group) && (!phylum || p === phylum) && (!search || searchText.includes(search));
+    });
+    const cnt = bacteriaMatched.length;
+    document.getElementById('bacteriaResultsCount').innerText = `Found ${cnt} result${cnt !== 1 ? 's' : ''}`;
+    bacteriaTotal = Math.max(1, Math.ceil(cnt / pageSize));
+    if (bacteriaCurrent > bacteriaTotal) bacteriaCurrent = bacteriaTotal;
+    paginateBacteria();
+  }
+  function paginateBacteria() {
+    const start = (bacteriaCurrent - 1) * pageSize;
+    const pageData = bacteriaMatched.slice(start, start + pageSize);
+    renderTableBody('bacteriaTableBody', pageData, bacteriaColumns);
+    document.getElementById('bacteriaCurrentPage').innerText = bacteriaCurrent;
+    document.getElementById('bacteriaTotalPages').innerText = bacteriaTotal;
+    const jumpInput = document.getElementById('bacteriaJumpInput');
+    if (jumpInput) jumpInput.max = bacteriaTotal;
+    const firstBtn = document.getElementById('bacteriaFirstBtn');
+    const prevBtn = document.getElementById('bacteriaPrevBtn');
+    const nextBtn = document.getElementById('bacteriaNextBtn');
+    const lastBtn = document.getElementById('bacteriaLastBtn');
+    if (firstBtn) firstBtn.disabled = bacteriaCurrent === 1;
+    if (prevBtn) prevBtn.disabled = bacteriaCurrent === 1;
+    if (nextBtn) nextBtn.disabled = bacteriaCurrent === bacteriaTotal;
+    if (lastBtn) lastBtn.disabled = bacteriaCurrent === bacteriaTotal;
+  }
+  function bacteriaGoTo(p) {
+    p = Math.max(1, Math.min(p, bacteriaTotal));
+    if (p === bacteriaCurrent) return;
+    bacteriaCurrent = p;
+    paginateBacteria();
+  }
+
+  // 真菌筛选
+  function updateFungiMatched() {
+    const group = document.getElementById('fungiGroupFilter').value;
+    const phylum = document.getElementById('fungiPhylumFilter').value;
+    const search = document.getElementById('fungiSearchInput').value.toLowerCase();
+    fungiMatched = fungiData.filter(item => {
+      const g = item.Group || '', p = item.Phylum || '';
+      const searchText = `${item.Genome || ''} ${item.Species || ''} ${item.Genus || ''} ${item.Family || ''} ${item.Phylum || ''}`.toLowerCase();
+      return (!group || g === group) && (!phylum || p === phylum) && (!search || searchText.includes(search));
+    });
+    const cnt = fungiMatched.length;
+    document.getElementById('fungiResultsCount').innerText = `Found ${cnt} result${cnt !== 1 ? 's' : ''}`;
+    fungiTotal = Math.max(1, Math.ceil(cnt / pageSize));
+    if (fungiCurrent > fungiTotal) fungiCurrent = fungiTotal;
+    paginateFungi();
+  }
+  function paginateFungi() {
+    const start = (fungiCurrent - 1) * pageSize;
+    const pageData = fungiMatched.slice(start, start + pageSize);
+    renderTableBody('fungiTableBody', pageData, fungiColumns);
+    document.getElementById('fungiCurrentPage').innerText = fungiCurrent;
+    document.getElementById('fungiTotalPages').innerText = fungiTotal;
+    const jumpInput = document.getElementById('fungiJumpInput');
+    if (jumpInput) jumpInput.max = fungiTotal;
+    const firstBtn = document.getElementById('fungiFirstBtn');
+    const prevBtn = document.getElementById('fungiPrevBtn');
+    const nextBtn = document.getElementById('fungiNextBtn');
+    const lastBtn = document.getElementById('fungiLastBtn');
+    if (firstBtn) firstBtn.disabled = fungiCurrent === 1;
+    if (prevBtn) prevBtn.disabled = fungiCurrent === 1;
+    if (nextBtn) nextBtn.disabled = fungiCurrent === fungiTotal;
+    if (lastBtn) lastBtn.disabled = fungiCurrent === fungiTotal;
+  }
+  function fungiGoTo(p) {
+    p = Math.max(1, Math.min(p, fungiTotal));
+    if (p === fungiCurrent) return;
+    fungiCurrent = p;
+    paginateFungi();
+  }
+
+  // 病毒筛选
+  function updateVirusMatched() {
+    const type = document.getElementById('virusGenomeTypeFilter').value;
+    const life = document.getElementById('virusLifestyleFilter').value;
+    const search = document.getElementById('virusSearchInput').value.toLowerCase();
+    virusMatched = virusData.filter(item => {
+      const t = item.Genome_type || '', l = item.Lifestyle || '';
+      const searchText = `${item.contig_id || ''} ${item.Species || ''} ${item.Genus || ''} ${item.Family || ''}`.toLowerCase();
+      return (!type || t === type) && (!life || l === life) && (!search || searchText.includes(search));
+    });
+    const cnt = virusMatched.length;
+    document.getElementById('virusResultsCount').innerText = `Found ${cnt} result${cnt !== 1 ? 's' : ''}`;
+    virusTotal = Math.max(1, Math.ceil(cnt / pageSize));
+    if (virusCurrent > virusTotal) virusCurrent = virusTotal;
+    paginateVirus();
+  }
+  function paginateVirus() {
+    const start = (virusCurrent - 1) * pageSize;
+    const pageData = virusMatched.slice(start, start + pageSize);
+    renderTableBody('virusTableBody', pageData, virusColumns);
+    document.getElementById('virusCurrentPage').innerText = virusCurrent;
+    document.getElementById('virusTotalPages').innerText = virusTotal;
+    const jumpInput = document.getElementById('virusJumpInput');
+    if (jumpInput) jumpInput.max = virusTotal;
+    const firstBtn = document.getElementById('virusFirstBtn');
+    const prevBtn = document.getElementById('virusPrevBtn');
+    const nextBtn = document.getElementById('virusNextBtn');
+    const lastBtn = document.getElementById('virusLastBtn');
+    if (firstBtn) firstBtn.disabled = virusCurrent === 1;
+    if (prevBtn) prevBtn.disabled = virusCurrent === 1;
+    if (nextBtn) nextBtn.disabled = virusCurrent === virusTotal;
+    if (lastBtn) lastBtn.disabled = virusCurrent === virusTotal;
+  }
+  function virusGoTo(p) {
+    p = Math.max(1, Math.min(p, virusTotal));
+    if (p === virusCurrent) return;
+    virusCurrent = p;
+    paginateVirus();
+  }
+
+  // ============================================================
+  // 4. 标签切换
+  // ============================================================
   const tabBtns = document.querySelectorAll('.custom-tab-btn');
   const bacteriaPanel = document.getElementById('bacteriaPanel');
   const fungiPanel = document.getElementById('fungiPanel');
   const virusPanel = document.getElementById('virusPanel');
+
   function switchTab(tabId) {
     tabBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabId));
     bacteriaPanel.classList.add('hidden');
     fungiPanel.classList.add('hidden');
     virusPanel.classList.add('hidden');
-    if (tabId === 'bacteria') { bacteriaPanel.classList.remove('hidden'); paginateBacteria(); }
-    if (tabId === 'fungi') { fungiPanel.classList.remove('hidden'); paginateFungi(); }
-    if (tabId === 'virus') { virusPanel.classList.remove('hidden'); paginateVirus(); }
+    if (tabId === 'bacteria') {
+      bacteriaPanel.classList.remove('hidden');
+      paginateBacteria();
+    } else if (tabId === 'fungi') {
+      fungiPanel.classList.remove('hidden');
+      paginateFungi();
+    } else if (tabId === 'virus') {
+      virusPanel.classList.remove('hidden');
+      paginateVirus();
+    }
   }
+
   tabBtns.forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
-  // ========== 分页函数 ==========
-  const pageSize = 12;
+  // ============================================================
+  // 5. 绑定事件
+  // ============================================================
+  document.getElementById('bacteriaGroupFilter').addEventListener('change', () => { bacteriaCurrent = 1; updateBacteriaMatched(); });
+  document.getElementById('bacteriaPhylumFilter').addEventListener('change', () => { bacteriaCurrent = 1; updateBacteriaMatched(); });
+  document.getElementById('bacteriaSearchInput').addEventListener('input', () => { bacteriaCurrent = 1; updateBacteriaMatched(); });
+  document.getElementById('bacteriaFirstBtn').addEventListener('click', () => bacteriaGoTo(1));
+  document.getElementById('bacteriaPrevBtn').addEventListener('click', () => bacteriaGoTo(bacteriaCurrent - 1));
+  document.getElementById('bacteriaNextBtn').addEventListener('click', () => bacteriaGoTo(bacteriaCurrent + 1));
+  document.getElementById('bacteriaLastBtn').addEventListener('click', () => bacteriaGoTo(bacteriaTotal));
+  document.getElementById('bacteriaJumpBtn').addEventListener('click', () => { let p = parseInt(document.getElementById('bacteriaJumpInput').value,10); if(isNaN(p)) p=1; bacteriaGoTo(p); });
+  document.getElementById('bacteriaJumpInput').addEventListener('keypress', e => { if(e.key==='Enter') { let p=parseInt(e.target.value,10); if(isNaN(p)) p=1; bacteriaGoTo(p); } });
 
-  // Bacteria 分页
-  let bacteriaAll = [], bacteriaMatched = [], bacteriaCurrent = 1, bacteriaTotal = 1;
-  function updateBacteria() {
-    const group = document.getElementById('bacteriaGroupFilter').value;
-    const phylum = document.getElementById('bacteriaPhylumFilter').value;
-    const search = document.getElementById('bacteriaSearchInput').value.toLowerCase();
-    bacteriaMatched = bacteriaAll.filter(i => {
-      const g = i.dataset.group || '', p = i.dataset.phylum || '', s = i.dataset.searchText || '';
-      return (!group || g === group) && (!phylum || p === phylum) && (!search || s.includes(search));
-    });
-    document.getElementById('bacteriaResultsCount').textContent = `Found ${bacteriaMatched.length} result${bacteriaMatched.length !== 1 ? 's' : ''}`;
-    bacteriaTotal = Math.max(1, Math.ceil(bacteriaMatched.length / pageSize));
-    if (bacteriaCurrent > bacteriaTotal) bacteriaCurrent = bacteriaTotal;
-    paginateBacteria();
-  }
-  function paginateBacteria() {
-    bacteriaAll.forEach(i => i.style.display = 'none');
-    const start = (bacteriaCurrent - 1) * pageSize;
-    bacteriaMatched.slice(start, start + pageSize).forEach(i => i.style.display = 'block');
-    document.getElementById('bacteriaCurrentPage').textContent = bacteriaCurrent;
-    document.getElementById('bacteriaTotalPages').textContent = bacteriaTotal;
-    const p = document.getElementById('bacteriaJumpInput'); if(p) p.max = bacteriaTotal;
-    ['First','Prev','Next','Last'].forEach(id => {
-      const btn = document.getElementById(`bacteria${id}Btn`);
-      if(btn) btn.disabled = (id==='First'||id==='Prev') ? bacteriaCurrent===1 : (id==='Next'||id==='Last') ? bacteriaCurrent===bacteriaTotal : false;
-    });
-  }
-  function bacteriaGoTo(p) { p = Math.max(1, Math.min(p, bacteriaTotal)); if(p!==bacteriaCurrent) { bacteriaCurrent=p; paginateBacteria(); } }
+  document.getElementById('fungiGroupFilter').addEventListener('change', () => { fungiCurrent = 1; updateFungiMatched(); });
+  document.getElementById('fungiPhylumFilter').addEventListener('change', () => { fungiCurrent = 1; updateFungiMatched(); });
+  document.getElementById('fungiSearchInput').addEventListener('input', () => { fungiCurrent = 1; updateFungiMatched(); });
+  document.getElementById('fungiFirstBtn').addEventListener('click', () => fungiGoTo(1));
+  document.getElementById('fungiPrevBtn').addEventListener('click', () => fungiGoTo(fungiCurrent - 1));
+  document.getElementById('fungiNextBtn').addEventListener('click', () => fungiGoTo(fungiCurrent + 1));
+  document.getElementById('fungiLastBtn').addEventListener('click', () => fungiGoTo(fungiTotal));
+  document.getElementById('fungiJumpBtn').addEventListener('click', () => { let p = parseInt(document.getElementById('fungiJumpInput').value,10); if(isNaN(p)) p=1; fungiGoTo(p); });
+  document.getElementById('fungiJumpInput').addEventListener('keypress', e => { if(e.key==='Enter') { let p=parseInt(e.target.value,10); if(isNaN(p)) p=1; fungiGoTo(p); } });
 
-  // Fungi 分页
-  let fungiAll = [], fungiMatched = [], fungiCurrent = 1, fungiTotal = 1;
-  function updateFungi() {
-    const group = document.getElementById('fungiGroupFilter').value;
-    const phylum = document.getElementById('fungiPhylumFilter').value;
-    const search = document.getElementById('fungiSearchInput').value.toLowerCase();
-    fungiMatched = fungiAll.filter(i => {
-      const g = i.dataset.group || '', p = i.dataset.phylum || '', s = i.dataset.searchText || '';
-      return (!group || g === group) && (!phylum || p === phylum) && (!search || s.includes(search));
-    });
-    document.getElementById('fungiResultsCount').textContent = `Found ${fungiMatched.length} result${fungiMatched.length !== 1 ? 's' : ''}`;
-    fungiTotal = Math.max(1, Math.ceil(fungiMatched.length / pageSize));
-    if (fungiCurrent > fungiTotal) fungiCurrent = fungiTotal;
-    paginateFungi();
-  }
-  function paginateFungi() {
-    fungiAll.forEach(i => i.style.display = 'none');
-    const start = (fungiCurrent - 1) * pageSize;
-    fungiMatched.slice(start, start + pageSize).forEach(i => i.style.display = 'block');
-    document.getElementById('fungiCurrentPage').textContent = fungiCurrent;
-    document.getElementById('fungiTotalPages').textContent = fungiTotal;
-    const p = document.getElementById('fungiJumpInput'); if(p) p.max = fungiTotal;
-    ['First','Prev','Next','Last'].forEach(id => {
-      const btn = document.getElementById(`fungi${id}Btn`);
-      if(btn) btn.disabled = (id==='First'||id==='Prev') ? fungiCurrent===1 : (id==='Next'||id==='Last') ? fungiCurrent===fungiTotal : false;
-    });
-  }
-  function fungiGoTo(p) { p = Math.max(1, Math.min(p, fungiTotal)); if(p!==fungiCurrent) { fungiCurrent=p; paginateFungi(); } }
+  document.getElementById('virusGenomeTypeFilter').addEventListener('change', () => { virusCurrent = 1; updateVirusMatched(); });
+  document.getElementById('virusLifestyleFilter').addEventListener('change', () => { virusCurrent = 1; updateVirusMatched(); });
+  document.getElementById('virusSearchInput').addEventListener('input', () => { virusCurrent = 1; updateVirusMatched(); });
+  document.getElementById('virusFirstBtn').addEventListener('click', () => virusGoTo(1));
+  document.getElementById('virusPrevBtn').addEventListener('click', () => virusGoTo(virusCurrent - 1));
+  document.getElementById('virusNextBtn').addEventListener('click', () => virusGoTo(virusCurrent + 1));
+  document.getElementById('virusLastBtn').addEventListener('click', () => virusGoTo(virusTotal));
+  document.getElementById('virusJumpBtn').addEventListener('click', () => { let p = parseInt(document.getElementById('virusJumpInput').value,10); if(isNaN(p)) p=1; virusGoTo(p); });
+  document.getElementById('virusJumpInput').addEventListener('keypress', e => { if(e.key==='Enter') { let p=parseInt(e.target.value,10); if(isNaN(p)) p=1; virusGoTo(p); } });
 
-  // Virus 分页
-  let virusAll = [], virusMatched = [], virusCurrent = 1, virusTotal = 1;
-  function updateVirus() {
-    const type = document.getElementById('virusGenomeTypeFilter').value;
-    const life = document.getElementById('virusLifestyleFilter').value;
-    const search = document.getElementById('virusSearchInput').value.toLowerCase();
-    virusMatched = virusAll.filter(i => {
-      const t = i.dataset.genomeType || '', l = i.dataset.lifestyle || '', s = i.dataset.searchText || '';
-      return (!type || t === type) && (!life || l === life) && (!search || s.includes(search));
-    });
-    document.getElementById('virusResultsCount').textContent = `Found ${virusMatched.length} result${virusMatched.length !== 1 ? 's' : ''}`;
-    virusTotal = Math.max(1, Math.ceil(virusMatched.length / pageSize));
-    if (virusCurrent > virusTotal) virusCurrent = virusTotal;
-    paginateVirus();
-  }
-  function paginateVirus() {
-    virusAll.forEach(i => i.style.display = 'none');
-    const start = (virusCurrent - 1) * pageSize;
-    virusMatched.slice(start, start + pageSize).forEach(i => i.style.display = 'block');
-    document.getElementById('virusCurrentPage').textContent = virusCurrent;
-    document.getElementById('virusTotalPages').textContent = virusTotal;
-    const p = document.getElementById('virusJumpInput'); if(p) p.max = virusTotal;
-    ['First','Prev','Next','Last'].forEach(id => {
-      const btn = document.getElementById(`virus${id}Btn`);
-      if(btn) btn.disabled = (id==='First'||id==='Prev') ? virusCurrent===1 : (id==='Next'||id==='Last') ? virusCurrent===virusTotal : false;
-    });
-  }
-  function virusGoTo(p) { p = Math.max(1, Math.min(p, virusTotal)); if(p!==virusCurrent) { virusCurrent=p; paginateVirus(); } }
+  // ============================================================
+  // 6. 初始化表头和初始分页
+  // ============================================================
+  generateTableHead('bacteriaTableHead', bacteriaColumns);
+  generateTableHead('fungiTableHead', fungiColumns);
+  generateTableHead('virusTableHead', virusColumns);
 
-  // 初始化
-  (function init() {
-    // Bacteria
-    bacteriaAll = Array.from(document.querySelectorAll('#bacteriaContainer .bacteria-item'));
-    updateBacteria();
-    document.getElementById('bacteriaGroupFilter').addEventListener('change', () => { bacteriaCurrent = 1; updateBacteria(); });
-    document.getElementById('bacteriaPhylumFilter').addEventListener('change', () => { bacteriaCurrent = 1; updateBacteria(); });
-    document.getElementById('bacteriaSearchInput').addEventListener('input', () => { bacteriaCurrent = 1; updateBacteria(); });
-    document.getElementById('bacteriaFirstBtn').addEventListener('click', () => bacteriaGoTo(1));
-    document.getElementById('bacteriaPrevBtn').addEventListener('click', () => bacteriaGoTo(bacteriaCurrent - 1));
-    document.getElementById('bacteriaNextBtn').addEventListener('click', () => bacteriaGoTo(bacteriaCurrent + 1));
-    document.getElementById('bacteriaLastBtn').addEventListener('click', () => bacteriaGoTo(bacteriaTotal));
-    document.getElementById('bacteriaJumpBtn').addEventListener('click', () => { let p = parseInt(document.getElementById('bacteriaJumpInput').value,10); if(isNaN(p)) p=1; bacteriaGoTo(p); });
-    document.getElementById('bacteriaJumpInput').addEventListener('keypress', e => { if(e.key==='Enter') { let p=parseInt(e.target.value,10); if(isNaN(p)) p=1; bacteriaGoTo(p); } });
-
-    // Fungi
-    fungiAll = Array.from(document.querySelectorAll('#fungiContainer .fungi-item'));
-    updateFungi();
-    document.getElementById('fungiGroupFilter').addEventListener('change', () => { fungiCurrent = 1; updateFungi(); });
-    document.getElementById('fungiPhylumFilter').addEventListener('change', () => { fungiCurrent = 1; updateFungi(); });
-    document.getElementById('fungiSearchInput').addEventListener('input', () => { fungiCurrent = 1; updateFungi(); });
-    document.getElementById('fungiFirstBtn').addEventListener('click', () => fungiGoTo(1));
-    document.getElementById('fungiPrevBtn').addEventListener('click', () => fungiGoTo(fungiCurrent - 1));
-    document.getElementById('fungiNextBtn').addEventListener('click', () => fungiGoTo(fungiCurrent + 1));
-    document.getElementById('fungiLastBtn').addEventListener('click', () => fungiGoTo(fungiTotal));
-    document.getElementById('fungiJumpBtn').addEventListener('click', () => { let p = parseInt(document.getElementById('fungiJumpInput').value,10); if(isNaN(p)) p=1; fungiGoTo(p); });
-    document.getElementById('fungiJumpInput').addEventListener('keypress', e => { if(e.key==='Enter') { let p=parseInt(e.target.value,10); if(isNaN(p)) p=1; fungiGoTo(p); } });
-
-    // Virus
-    virusAll = Array.from(document.querySelectorAll('#virusContainer .virus-item'));
-    updateVirus();
-    document.getElementById('virusGenomeTypeFilter').addEventListener('change', () => { virusCurrent = 1; updateVirus(); });
-    document.getElementById('virusLifestyleFilter').addEventListener('change', () => { virusCurrent = 1; updateVirus(); });
-    document.getElementById('virusSearchInput').addEventListener('input', () => { virusCurrent = 1; updateVirus(); });
-    document.getElementById('virusFirstBtn').addEventListener('click', () => virusGoTo(1));
-    document.getElementById('virusPrevBtn').addEventListener('click', () => virusGoTo(virusCurrent - 1));
-    document.getElementById('virusNextBtn').addEventListener('click', () => virusGoTo(virusCurrent + 1));
-    document.getElementById('virusLastBtn').addEventListener('click', () => virusGoTo(virusTotal));
-    document.getElementById('virusJumpBtn').addEventListener('click', () => { let p = parseInt(document.getElementById('virusJumpInput').value,10); if(isNaN(p)) p=1; virusGoTo(p); });
-    document.getElementById('virusJumpInput').addEventListener('keypress', e => { if(e.key==='Enter') { let p=parseInt(e.target.value,10); if(isNaN(p)) p=1; virusGoTo(p); } });
-
-    switchTab('bacteria');
-  })();
+  updateBacteriaMatched();
+  updateFungiMatched();
+  updateVirusMatched();
+  switchTab('bacteria');
 </script>
   </div>
 
@@ -3234,6 +935,11 @@ var _hmt = _hmt || [];
     <a href="../taxonomy/" class="btn btn-ghost btn-md transition-all duration-200">  <!-- 按钮尺寸从 btn-sm 改为 btn-md -->
       <i class="fa-solid fa-table-cells mr-2"></i>  <!-- 图标间距加大 -->
       Taxonomy
+    </a>
+  
+    <a href="../function/" class="btn btn-ghost btn-md transition-all duration-200">  <!-- 按钮尺寸从 btn-sm 改为 btn-md -->
+      <i class="fa-solid fa-bong mr-2"></i>  <!-- 图标间距加大 -->
+      Function
     </a>
   
     <a href="../data/" class="btn btn-ghost btn-md transition-all duration-200">  <!-- 按钮尺寸从 btn-sm 改为 btn-md -->
