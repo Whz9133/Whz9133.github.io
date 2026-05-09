@@ -796,36 +796,51 @@ var _hmt = _hmt || [];
 <script>
   // 检查是否从 Culture 页面跳转来（通过 fromCulture 标记）
   const fromCulture = localStorage.getItem('fromCulture');
-  if (fromCulture === 'true') {
-    document.getElementById('backButtonContainer').style.display = 'block';
-    localStorage.removeItem('fromCulture');
-  }
+  let targetMetabolomicsId = null;
+  let targetTranscriptomeId = null;
 
-  // 获取可能存在的跳转 ID
-  let targetMetabolomicsId = localStorage.getItem('currentFungusMetabolomics');
-  let targetTranscriptomeId = localStorage.getItem('currentFungusTranscriptome');
+  if (fromCulture === 'true') {
+    // 只有从 Culture 跳转时才使用存储的 ID
+    targetMetabolomicsId = localStorage.getItem('currentFungusMetabolomics');
+    targetTranscriptomeId = localStorage.getItem('currentFungusTranscriptome');
+    // 显示返回按钮
+    document.getElementById('backButtonContainer').style.display = 'block';
+    // 清除标记，避免下次刷新仍然使用
+    localStorage.removeItem('fromCulture');
+    // 注意：不立即清除 currentFungusMetabolomics 和 currentFungusTranscriptome，因为后面要用
+  } else {
+    // 直接通过导航栏访问，清除所有残留的跳转 ID
+    localStorage.removeItem('currentFungusMetabolomics');
+    localStorage.removeItem('currentFungusTranscriptome');
+    // 确保返回按钮隐藏
+    document.getElementById('backButtonContainer').style.display = 'none';
+  }
 
   // 转录组数据（从 EJS 注入）
   const transcriptomeData = {"VIR_F001":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":3.21,"p_value":0.012,"regulation":"Up","gene_function":"Airway immune response"},{"gene_id":"ENGS002","log2fc":-2.87,"p_value":0.023,"regulation":"Down","gene_function":"Mucus secretion regulation"},{"gene_id":"ENGS003","log2fc":4.15,"p_value":0.004,"regulation":"Up","gene_function":"Antimicrobial peptide synthesis"}]},"VIR_F002":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":2.11,"p_value":0.032,"regulation":"Up","gene_function":"Inflammatory cytokine"},{"gene_id":"ENGS002","log2fc":-2.56,"p_value":0.019,"regulation":"Down","gene_function":"Epithelial cell repair"}]},"VIR_F005":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":3.86,"p_value":0.007,"regulation":"Up","gene_function":"Lung fibrosis pathway"},{"gene_id":"ENGS002","log2fc":-3.12,"p_value":0.015,"regulation":"Down","gene_function":"Cell cycle control"}]},"VIR_F006":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":2.94,"p_value":0.021,"regulation":"Up","gene_function":"Oxidative stress response"}]},"VIR_F009":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":3.57,"p_value":0.009,"regulation":"Up","gene_function":"Innate immunity activation"}]},"VIR_F010":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":-2.73,"p_value":0.026,"regulation":"Down","gene_function":"Airway smooth muscle contraction"}]},"VIR_F013":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":4.22,"p_value":0.003,"regulation":"Up","gene_function":"Pathogen recognition receptor"}]},"VIR_F014":{"volcano_img":"/images/about.jpg","deg_list":[{"gene_id":"ENGS001","log2fc":2.45,"p_value":0.028,"regulation":"Up","gene_function":"Inflammatory mediator release"}]}};
 
   // 验证 ID 有效性，无效则清除
-  if (!targetMetabolomicsId) {
+  if (targetMetabolomicsId && !targetMetabolomicsId) {
+    // 实际上 targetMetabolomicsId 可能为空字符串，但这里逻辑不需要额外处理
     localStorage.removeItem('currentFungusMetabolomics');
+    targetMetabolomicsId = null;
   }
-  if (!targetTranscriptomeId || !transcriptomeData[targetTranscriptomeId]) {
+  if (targetTranscriptomeId && !transcriptomeData[targetTranscriptomeId]) {
     localStorage.removeItem('currentFungusTranscriptome');
     targetTranscriptomeId = null;
   }
 
-  // 决定默认激活的标签页：优先代谢组，其次转录组（单个菌），最后都不存在则默认代谢组（显示全局图）
-  let defaultTab = 'metabolomics';  // 默认代谢组
-  if (targetMetabolomicsId) {
-    defaultTab = 'metabolomics';
-    // 清除转录组 ID 以避免干扰（可选）
-    localStorage.removeItem('currentFungusTranscriptome');
-  } else if (targetTranscriptomeId) {
-    defaultTab = 'transcriptome';
-  }
+  // 决定默认激活的标签页：如果是从 Culture 跳转且有对应的 ID，则按 ID 决定标签页；否则默认 Metabolomics
+  let defaultTab = 'metabolomics';
+  if (fromCulture === 'true') {
+    if (targetMetabolomicsId) {
+      defaultTab = 'metabolomics';
+      // 清除可能残留的转录组 ID
+      localStorage.removeItem('currentFungusTranscriptome');
+    } else if (targetTranscriptomeId) {
+      defaultTab = 'transcriptome';
+    }
+  } // 否则默认 metabolomics
 
   // DOM 元素
   const metabolomicsBtn = document.querySelector('[data-tab="metabolomics"]');
